@@ -1,0 +1,97 @@
+@import 'variables';
+//aeonik
+$Aeonik-bold: 'Aeonik-Bold';
+$Aeonik-Regular: 'Aeonik-Regular';
+@font-face {
+    font-family: $Aeonik-bold;
+    src: url('../assets/fonts/Aeonik/Aeonik-Bold.ttf');
+}
+@font-face {
+    font-family: $Aeonik-Regular;
+    src: url('../assets/fonts/Aeonik/Aeonik-Regular.ttf');
+}
+.h1-A{
+    font-family: 'Aeonik-Regular', sans-serif;
+    font-size: 60px;
+    line-height: 120%;
+}
+.h2-A{
+    font-family: 'Aeonik-Regular', sans-serif;
+    font-size: 40px;
+    line-height: 160%;
+}
+.bodyM-A{
+    font-family: 'Aeonik-Regular', sans-serif;
+    font-size: 22px;
+    line-height: 140%;
+}
+.bodyS-A{
+    font-family: 'Aeonik-Regular', sans-serif;
+    font-size: 16px;
+    line-height: 140%;
+}
+.captions-A{
+    font-family: 'Aeonik-Regular', sans-serif;
+    font-size: 16px;
+    line-height: 140%;
+}
+.details-A{
+    font-family: 'Aeonik-Regular', sans-serif;
+    font-size: 14px;
+    line-height: 150%;
+}
+.numbers-A{
+    font-family: 'Aeonik-Regular', sans-serif;
+    font-size: 120px;
+    line-height: 87%;
+}
+
+//defectica
+$Defectica-Regular: 'Defectica-Regular';
+@font-face {
+    font-family: $Defectica-Regular;
+    src: url('../assets/fonts/Defectica/Defectica.otf');
+}
+
+.h1{
+    font-family: 'Defectica-Regular', sans-serif;
+    font-size: 117px;
+    line-height: 124%;
+}
+.h2{
+    font-family: 'Defectica-Regular', sans-serif;
+    font-size: 60px;
+    line-height: 124%;
+}
+.numbers-D{
+    font-family: 'Defectica-Regular', sans-serif;
+    font-size: 190px;
+    line-height: 87%;
+}
+.cookies-D{
+    font-family: 'Aeonik-Regular', sans-serif;
+    font-size: 14px;
+    line-height: 124%;
+}
+.bodyM-D{
+    font-family: 'Aeonik-Regular', sans-serif;
+    font-size: 36px;
+    line-height: 120%;
+}
+.bodyS-D{
+    font-family: 'Aeonik-Regular', sans-serif;
+    font-size: 18px;
+    line-height: 140%;
+}
+.captions-D{
+    font-family: 'Aeonik-Regular', sans-serif;
+    font-size: 18px;
+    line-height: 140%;
+}
+
+.red{
+    color: red !important;
+    // font-family: 'Defectica-Regular', sans-serif;
+    // font-size: 68px;
+    // font-weight: 900;
+}
