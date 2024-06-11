@@ -1,0 +1,1 @@
+{"version":3,"sources":["main.scss"],"names":[],"mappings":"AAEA,KACI,wBAAA,CAGJ,GACI,aAAA","file":"main.css","sourcesContent":["$primary-color: #3498db;\r\n\r\nbody {\r\n    background-color: #f0f0f0; /* Change this color */\r\n}\r\n\r\nh1 {\r\n    color: darken($primary-color, 20%);\r\n}"]}
