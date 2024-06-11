@@ -11,6 +11,10 @@ get_header();
 ?>
 
 	<main id="primary" class="site-main">
+	<div data-scroll-container>
+    <!-- Your website content here -->
+	<h4>eroer</h4>
+	</div>
 
 		<?php
 		while ( have_posts() ) :

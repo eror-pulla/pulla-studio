@@ -180,3 +180,22 @@ function theme_enqueue_styles() {
     wp_enqueue_style('main-style', get_template_directory_uri() . '/assets/css/main.css', array(), '1.0.0');
 }
 add_action('wp_enqueue_scripts', 'theme_enqueue_styles');
+
+// Enqueue Locomotive Scroll CSS
+function enqueue_locomotive_scroll_styles() {
+    wp_enqueue_style('locomotive-scroll', get_template_directory_uri() . '/locomotive/locomotive-scroll.css');
+}
+add_action('wp_enqueue_scripts', 'enqueue_locomotive_scroll_styles');
+
+// Enqueue Locomotive Scroll JavaScript
+function enqueue_locomotive_scroll_script() {
+    wp_enqueue_script('locomotive-scroll', get_template_directory_uri() . '/locomotive/locomotive-scroll.js', array('jquery'), null, true);
+}
+add_action('wp_enqueue_scripts', 'enqueue_locomotive_scroll_script');
+
+// Enqueue custom script
+function enqueue_custom_script() {
+    // Here, we enqueue 'app.js' with 'locomotive-scroll.js' as a dependency
+    wp_enqueue_script('custom-script', get_template_directory_uri() . '/src/js/app.js', array('locomotive-scroll'), '1.0', true);
+}
+add_action('wp_enqueue_scripts', 'enqueue_custom_script');
