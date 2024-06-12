@@ -95,3 +95,30 @@ $Defectica-Regular: 'Defectica-Regular';
     // font-size: 68px;
     // font-weight: 900;
 }
+
+//Switzer
+$Switzer-bold: 'Switzer-Bold';
+$Switzer-Regular: 'Switzer-Regular';
+$Switzer-SemiBold: 'Switzer-SemiBold';
+$Switzer-Thin: 'Switzer-Thin';
+$Switzer-Medium: 'Switzer-Medium';
+@font-face {
+    font-family: $Switzer-bold;
+    src: url('../assets/fonts/Switzer/Switzer-Bold.otf');
+}
+@font-face {
+    font-family: $Switzer-Regular;
+    src: url('../assets/fonts/Switzer/Switzer-Regular.otf');
+}
+@font-face {
+    font-family: $Switzer-SemiBold;
+    src: url('../assets/fonts/Switzer/Switzer-Semibold.otf');
+}
+@font-face {
+    font-family: $Switzer-Thin;
+    src: url('../assets/fonts/Switzer/Switzer-Thin.otf');
+}
+@font-face {
+    font-family: $Switzer-Medium;
+    src: url('../assets/fonts/Switzer/Switzer-Medium.otf');
+}

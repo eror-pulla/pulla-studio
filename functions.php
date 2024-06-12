@@ -199,3 +199,12 @@ function enqueue_custom_script() {
     wp_enqueue_script('custom-script', get_template_directory_uri() . '/src/js/app.js', array('locomotive-scroll'), '1.0', true);
 }
 add_action('wp_enqueue_scripts', 'enqueue_custom_script');
+
+// Register the menu location
+function my_custom_theme_setup() {
+    register_nav_menus(array(
+        'main-menu' => __('Main Menu', 'pulla-studio'),
+    ));
+}
+
+add_action('after_setup_theme', 'my_custom_theme_setup');

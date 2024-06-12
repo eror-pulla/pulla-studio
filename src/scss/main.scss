@@ -1,6 +1,10 @@
 @import 'globals';
 @import 'variables';
+@import 'header';
+@import 'footer';
 
 body {
-    background-color: #f0f0f0; /* Change this color */
+    // background-color: #f0f0f0; /* Change this color */
+    padding: 0;
+    margin: 0;
 }

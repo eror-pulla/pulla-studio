@@ -11,21 +11,50 @@
 
 ?>
 
-	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'pulla-studio' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'pulla-studio' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'pulla-studio' ), 'pulla-studio', '<a href="http://underscores.me/">Underscores.me</a>' );
-				?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
+	<footer class="footer">
+		<div class="footer-wraper">
+			<div class="menus-footer">
+				<div class="columns-2">
+					<div class="wrap-menu-footer">
+						<ul>
+							<li><a href="">er</a></li>
+							<li><a href="">as</a></li>
+							<li><a href="">ds</a></li>
+							<li><a href="">cs</a></li>
+							<li><a href="">dc</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="columns-2">
+					<div class="wrap-menu-footer">
+						<ul>
+							<li><a href="">er</a></li>
+							<li><a href="">as</a></li>
+							<li><a href="">ds</a></li>
+							<li><a href="">cs</a></li>
+							<li><a href="">dc</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="columns-3">
+					<div class="addres">
+						<p></p>
+					</div>
+				</div>
+				<div class="columns-3">
+					<div class="one-click">
+						<p></p>
+					</div>
+				</div>
+			</div>
+			<div class="info-big-banner">
+
+			</div>
+			<div class="copy-rights">
+
+			</div>
+		</div>
+	</footer>
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

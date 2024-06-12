@@ -1,0 +1,30 @@
+@import 'globals';
+@import 'variables';
+
+.footer{
+    background-color: $priamry_color;
+    .footer-wraper{
+        .menus-footer{
+            .columns-2{
+                .wrap-menu-footer{
+                    ul{
+                        li{
+                            a{
+
+                            }
+                        }
+                    }
+                }
+            }
+            .columns-3{
+
+            }
+        }
+        .info-big-banner{
+
+        }
+        .copy-rights{
+            
+        }
+    }
+}
