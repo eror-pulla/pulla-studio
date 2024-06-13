@@ -2,29 +2,190 @@
 @import 'variables';
 
 .footer{
+    position: relative;
+    margin-top: 40px;
+    height: 100vh;
     background-color: $priamry_color;
+    display: flex;
+    align-items: end;
+    &::after{
+        content: "";
+        background-image: url('../../imgs/union-white.svg');
+        display: block; 
+        top: 40%;
+        left: 21%;
+        width: 42px;
+        height: 42px;
+        position: absolute;
+        background-size: contain;
+        background-repeat: no-repeat;
+        z-index: 2;
+    }
     .footer-wraper{
+        padding: 0 48px;
         .menus-footer{
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid $border-col;
             .columns-2{
+                width: 20%;
                 .wrap-menu-footer{
-                    ul{
-                        li{
-                            a{
-
+                    .menu-footer-main-menu-container{
+                        ul{
+                            display: flex;
+                            flex-direction: column;
+                            gap: 8px;
+                            padding: 0;
+                            li{
+                                list-style: none;
+                                a{
+                                    text-decoration: none;
+                                    color: $third_color;
+                                    font-family: 'Aeonik-Regular', sans-serif;
+                                    font-weight: 400;
+                                    font-size: 18px;
+                                    line-height: 22.32px;
+                                    transition: all ease .3s;
+                                    &:hover{
+                                        color: $secondary_color;
+                                        transition: all ease .3s;
+                                    }
+                                }    
+                            }
+                        }
+                    }
+                    .menu-social-menu-container{
+                        ul{
+                            display: flex;
+                            flex-direction: column;
+                            gap: 8px;
+                            padding: 0;
+                            li{
+                                list-style: none;
+                                a{
+                                    text-decoration: none;
+                                    color: $third_color;
+                                    font-family: 'Aeonik-Regular', sans-serif;
+                                    font-weight: 400;
+                                    font-size: 18px;
+                                    line-height: 22.32px;
+                                    transition: all ease .3s;
+                                    &:hover{
+                                        color: $secondary_color;
+                                        transition: all ease .3s;
+                                    }
+                                }    
                             }
                         }
                     }
                 }
             }
             .columns-3{
-
+                width: 30%;
+                display: flex;
+                align-items: end;
+                .address{
+                    p{
+                        color: $third_color;
+                        font-family: 'Aeonik-Regular', sans-serif;
+                        font-weight: 400;
+                        font-size: 18px;
+                        line-height: 22.32px;                   
+                    }
+                }
+                .one-click{
+                    p{
+                        color: $third_color;
+                        color: $third_color;
+                        font-family: 'Aeonik-Regular', sans-serif;
+                        font-weight: 400;
+                        font-size: 18px;
+                        line-height: 22.32px;
+                    }
+                }
             }
         }
         .info-big-banner{
+            width: 100%;
+            p{
+                margin: 0;
+                width: 100%;
+                margin: 0;
+                margin-top: 13px;
+                color: $third_color;
+                border-bottom: 1px solid $border-col;
+                a{
+                    text-decoration: none;
+                    width: 100%;
+                    margin: 0;
+                    color: $third_color;
+                    font-size: 8.9vw;
+                    font-family: 'Defecita-Regular', sans-serif;
+                    font-weight: 400;
+                    line-height: 256.68px;
+                    text-transform: uppercase;
+                    transition: all ease .3s;
+                    &:hover{
+                        color: $secondary_color;
+                        transition: all ease .3s;
+                    }
+                }
+            }
 
         }
         .copy-rights{
-            
+            margin-top: 28px;
+            margin-bottom: 31px;
+            display: flex;
+            align-items: center;
+            .columns-2{
+                width: 20%;
+                p{
+                    margin: 0;
+                    color: $border-col;
+                    font-family: 'Aeonik-Regular', sans-serif;
+                    font-weight: 400;
+                    font-size: 18px;
+                    line-height: 22.32px;
+                    .white{
+                        color: $third_color;
+                        font-weight: 400;
+                    }
+                }
+            }
+            .columns-5{
+                width: 45%;
+                text-align: center;
+                p{
+                    margin: 0;
+                    color: $third_color;
+                    font-family: 'Aeonik-Regular', sans-serif;
+                    font-weight: 400;
+                    font-size: 18px;
+                    line-height: 22.32px;
+                }
+            }
+            .columns-4{
+                width: 15%;
+                text-align: end;
+                p{
+                    margin: 0;
+                    .go-top{
+                        color: $third_color;
+                        text-transform: uppercase;
+                        font-family: 'Aeonik-Regular', sans-serif;
+                        font-weight: 400;
+                        font-size: 18px;
+                        line-height: 22.32px;
+                        transition: all ease .3s;
+                        &:hover{
+                            color: $secondary_color;
+                            transition: all ease .3s;
+                        }
+                    }
+                }
+            }
         }
     }
 }
+

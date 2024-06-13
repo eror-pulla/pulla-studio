@@ -16,42 +16,55 @@
 			<div class="menus-footer">
 				<div class="columns-2">
 					<div class="wrap-menu-footer">
-						<ul>
-							<li><a href="">er</a></li>
-							<li><a href="">as</a></li>
-							<li><a href="">ds</a></li>
-							<li><a href="">cs</a></li>
-							<li><a href="">dc</a></li>
-						</ul>
+						<?php
+						wp_nav_menu(array(
+							'theme_location' => 'footer-main-menu',
+						));
+						?>
 					</div>
 				</div>
 				<div class="columns-2">
 					<div class="wrap-menu-footer">
-						<ul>
-							<li><a href="">er</a></li>
-							<li><a href="">as</a></li>
-							<li><a href="">ds</a></li>
-							<li><a href="">cs</a></li>
-							<li><a href="">dc</a></li>
-						</ul>
+						<?php
+						wp_nav_menu(array(
+							'theme_location' => 'social-menu'
+						));
+						?>
 					</div>
 				</div>
 				<div class="columns-3">
-					<div class="addres">
-						<p></p>
+					<div class="address">
+						<p>Ali Vitia, nr. 258 <br> Prishtine, 10000 Kosovo</p>
 					</div>
 				</div>
 				<div class="columns-3">
 					<div class="one-click">
-						<p></p>
+						<p>The doorway to amazing is one click away, so choose any form you like <br> and we will be happy to help.</p>
 					</div>
 				</div>
 			</div>
 			<div class="info-big-banner">
-
+				<p>
+					<a href="">
+					info@pulla.Studio
+					</a>
+				</p>
 			</div>
 			<div class="copy-rights">
-
+				<div class="columns-2">
+					<p>© 2024 by Pulla. All rights reserved.</p>
+				</div>
+				<div class="columns-2">
+					<p>Site by <b class='white'>Pulla Digital</b></p>
+				</div>
+				<div class="columns-5">
+					<p>We'd love to hear from you!</p>
+				</div>
+				<div class="columns-4">
+					<p>
+						<a href="" class="go-top">Go to Top</a>
+					</p>
+				</div>
 			</div>
 		</div>
 	</footer>

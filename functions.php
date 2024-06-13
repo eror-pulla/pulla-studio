@@ -188,10 +188,10 @@ function enqueue_locomotive_scroll_styles() {
 add_action('wp_enqueue_scripts', 'enqueue_locomotive_scroll_styles');
 
 // Enqueue Locomotive Scroll JavaScript
-function enqueue_locomotive_scroll_script() {
-    wp_enqueue_script('locomotive-scroll', get_template_directory_uri() . '/locomotive/locomotive-scroll.js', array('jquery'), null, true);
-}
-add_action('wp_enqueue_scripts', 'enqueue_locomotive_scroll_script');
+// function enqueue_locomotive_scroll_script() {
+//     wp_enqueue_script('locomotive-scroll', get_template_directory_uri() . '/locomotive/locomotive-scroll.js', array('jquery'), null, true);
+// }
+// add_action('wp_enqueue_scripts', 'enqueue_locomotive_scroll_script');
 
 // Enqueue custom script
 function enqueue_custom_script() {
@@ -204,7 +204,10 @@ add_action('wp_enqueue_scripts', 'enqueue_custom_script');
 function my_custom_theme_setup() {
     register_nav_menus(array(
         'main-menu' => __('Main Menu', 'pulla-studio'),
+		'footer-main-menu' => __('Footer Main Menu', 'pulla-studio'),
+        'social-menu' => __('Social Menu', 'pulla-studio'),
     ));
 }
 
 add_action('after_setup_theme', 'my_custom_theme_setup');
+

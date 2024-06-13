@@ -4,12 +4,14 @@ $Aeonik-bold: 'Aeonik-Bold';
 $Aeonik-Regular: 'Aeonik-Regular';
 @font-face {
     font-family: $Aeonik-bold;
-    src: url('../assets/fonts/Aeonik/Aeonik-Bold.ttf');
+    src: url('../../resoursces/fonts/Aeonik/Aeonik-Bold.ttf')  format('truetype');
+
 }
 @font-face {
     font-family: $Aeonik-Regular;
-    src: url('../assets/fonts/Aeonik/Aeonik-Regular.ttf');
+    src: url('../../resoursces/fonts/Aeonik/Aeonik-Regular.ttf')  format('truetype');
 }
+
 .h1-A{
     font-family: 'Aeonik-Regular', sans-serif;
     font-size: 60px;
@@ -50,7 +52,7 @@ $Aeonik-Regular: 'Aeonik-Regular';
 $Defectica-Regular: 'Defectica-Regular';
 @font-face {
     font-family: $Defectica-Regular;
-    src: url('../assets/fonts/Defectica/Defectica.otf');
+    src: url('../../resoursces/fonts/Defectica/Defectica.otf') format('opentype');
 }
 
 .h1{
@@ -104,21 +106,21 @@ $Switzer-Thin: 'Switzer-Thin';
 $Switzer-Medium: 'Switzer-Medium';
 @font-face {
     font-family: $Switzer-bold;
-    src: url('../assets/fonts/Switzer/Switzer-Bold.otf');
+    src: url('../../resoursces/fonts/Switzer/Switzer-Bold.otf') format('opentype');
 }
 @font-face {
     font-family: $Switzer-Regular;
-    src: url('../assets/fonts/Switzer/Switzer-Regular.otf');
+    src: url('../../resoursces/fonts/Switzer/Switzer-Regular.otf') format('opentype');
 }
 @font-face {
     font-family: $Switzer-SemiBold;
-    src: url('../assets/fonts/Switzer/Switzer-Semibold.otf');
+    src: url('../../resoursces/fonts/Switzer/Switzer-Semibold.otf') format('opentype');
 }
 @font-face {
     font-family: $Switzer-Thin;
-    src: url('../assets/fonts/Switzer/Switzer-Thin.otf');
+    src: url('../../resoursces/fonts/Switzer/Switzer-Thin.otf') format('opentype');
 }
 @font-face {
     font-family: $Switzer-Medium;
-    src: url('../assets/fonts/Switzer/Switzer-Medium.otf');
+    src: url('../../resoursces/fonts/Switzer/Switzer-Medium.otf') format('opentype');
 }
