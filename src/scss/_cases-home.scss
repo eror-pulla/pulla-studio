@@ -1,3 +1,35 @@
 @import 'globals';
 @import 'variables';
 
+.cases{
+    margin-top: 130px;
+    .wraper-cases{
+        padding: 0 48px;
+        .inside-cases{
+            .img-1{
+                .wrap-img{
+                    img{
+                        width: 100%;
+                        max-height: 900px;
+                    }
+                    .text{
+                        margin-top: 24px;
+                        .cat{
+                            margin-bottom: 0;
+                            margin-top: 0;
+                            color: $color-cat;
+                        }
+                        .name{
+                            margin-bottom: 0;
+                            margin-top: 0;
+                            font-family: 'Aeonik-Regular', sans-serif;
+                            color: $priamry_color;
+                            font-size: 18px;
+                            line-height: 28.8px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

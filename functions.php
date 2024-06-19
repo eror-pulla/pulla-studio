@@ -212,45 +212,10 @@ function my_custom_theme_setup() {
 add_action('after_setup_theme', 'my_custom_theme_setup');
 
 
+if( function_exists('acf_add_options_page') ) {
 
-// // Add this to your theme's functions.php file
+    acf_add_options_page();
 
-// function get_banner_images() {
-//     $banner = get_field('banner');
-//     $options = $banner['options'];
-//     $images = array();
-
-//     if ($options === 'random') {
-//         // Fetch 3 random images from the media library
-//         $query_args = array(
-//             'post_type' => 'attachment',
-//             'post_mime_type' => 'image',
-//             'post_status' => 'inherit',
-//             'posts_per_page' => 3,
-//             'orderby' => 'rand'
-//         );
-//         $query = new WP_Query($query_args);
-//         if ($query->have_posts()) {
-//             while ($query->have_posts()) {
-//                 $query->the_post();
-//                 $images[] = wp_get_attachment_url(get_the_ID());
-//             }
-//             wp_reset_postdata();
-//         }
-//     } else {
-//         // Fetch the first 3 specific images from the ACF group field
-//         if (isset($banner['image']) && is_array($banner['image'])) {
-//             foreach ($banner['image'] as $image_field) {
-//                 if (isset($image_field['url'])) {
-//                     $images[] = $image_field['url'];
-//                 }
-//             }
-//             $images = array_slice($images, 0, 3); // Get the first 3 images
-//         }
-//     }
-
-//     return $images;
-// }
-
+}
 
 

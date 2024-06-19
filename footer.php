@@ -11,6 +11,23 @@
 
 ?>
 
+<?php
+// Template Name: Home
+
+// Fetch ACF fields
+$footer= get_field('footer', 'option');
+$copyrights=$footer['copyrights'];
+$address=$footer['address'];
+$address_brake=$footer['address_brake'];
+$text_footer=$footer['text_footer'];
+$text_footer_brake=$footer['text_footer_brake'];
+$site_by=$footer['site_by'];
+$site_by=$footer['site_by'];
+$message=$footer['message'];
+$info=$footer['info'];
+
+
+?>
 	<footer class="footer">
 		<div class="footer-wraper">
 			<div class="menus-footer">
@@ -34,31 +51,31 @@
 				</div>
 				<div class="columns-3">
 					<div class="address">
-						<p>Ali Vitia, nr. 258 <br> Prishtine, 10000 Kosovo</p>
+						<p><?php echo($address);?> <br><?php echo($address_brake);?></p>
 					</div>
 				</div>
 				<div class="columns-3">
 					<div class="one-click">
-						<p>The doorway to amazing is one click away, so choose any form you like <br> and we will be happy to help.</p>
+						<p><?php echo($text_footer); ?><br><?php echo($text_footer_brake); ?></p>
 					</div>
 				</div>
 			</div>
 			<div class="info-big-banner">
 				<p>
 					<a href="">
-					info@pulla.Studio
+					<?php echo($info); ?>
 					</a>
 				</p>
 			</div>
 			<div class="copy-rights">
 				<div class="columns-2">
-					<p>© 2024 by Pulla. All rights reserved.</p>
+					<p><?php echo($copyrights); ?></p>
 				</div>
 				<div class="columns-2">
-					<p>Site by <b class='white'>Pulla Digital</b></p>
+					<p><?php echo($site_by); ?> <b class='white'>Pulla Digital</b></p>
 				</div>
 				<div class="columns-5">
-					<p>We'd love to hear from you!</p>
+					<p><?php echo($message); ?></p>
 				</div>
 				<div class="columns-4">
 					<p>
