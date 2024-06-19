@@ -14,8 +14,8 @@
 
             }
             .nav{
-                .menu{
-                    ul{ 
+                .menu-main-menu-container{
+                    .menu{ 
                         display: flex;
                         align-items: center;
                         gap: 56px;
@@ -24,6 +24,7 @@
                             a{
                                 text-decoration: none;
                                 font-family: 'Switzer-Regular', sans-serif;
+                                text-transform: uppercase;
                                 font-weight: 400;
                                 font-size: 18px;
                                 line-height: 28.8px;
