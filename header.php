@@ -23,12 +23,17 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 <!-- <div id="page" class="site"> -->
+	<?php
+	$logo= get_field('logo', 'option');
+	?>
 	<header class="header">
 		<div class="header-wrpaper">
 			<div class="inside-header">
 				<div class="img-logo-wrap">
-					<!-- <img src="" alt=""> -->
-					<p>Logo</p>
+					<a href="">
+						<img src="<?php echo($logo); ?>" alt="">
+					</a>
+					<!-- <p>Logo</p> -->
 				</div>
 				<nav class="nav">
 				<?php

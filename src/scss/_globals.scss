@@ -124,3 +124,46 @@ $Switzer-Medium: 'Switzer-Medium';
     font-family: $Switzer-Medium;
     src: url('../../resoursces/fonts/Switzer/Switzer-Medium.otf') format('opentype');
 }
+
+//positioning 
+
+.left{
+    position: absolute;
+    left: 0%;
+    top: 25%;
+}
+.middle{
+    position: relative;
+    left: 35%;
+}
+
+.right{
+    position: relative;
+    left: 62.8%;
+    margin-bottom: 140px;
+}
+
+.left2{
+    position: relative;
+    left: 0%;
+    top: 0%;
+}
+.middle2{
+    position: relative;
+    left: 35%;
+    margin-top: 17%;
+}
+
+.right2{
+    // padding-top: 20%;
+    position: absolute;
+    top: 10%;
+    left: 62.8%;
+    // margin-bottom: 140px;
+}
+.left3{
+    position: absolute;
+    left: 0%;
+    /* top: 0%; */
+    top: 75%;
+}
