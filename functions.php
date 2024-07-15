@@ -196,7 +196,7 @@ add_action('wp_enqueue_scripts', 'enqueue_locomotive_scroll_styles');
 // Enqueue custom script
 function enqueue_custom_script() {
     // Here, we enqueue 'app.js' with 'locomotive-scroll.js' as a dependency
-    wp_enqueue_script('custom-script', get_template_directory_uri() . '/src/js/app.js', array('locomotive-scroll'), '1.0', true);
+    wp_enqueue_script('custom-script', get_template_directory_uri() . '/src/js/app.js', array('jquery'), '1.0', true);
 }
 add_action('wp_enqueue_scripts', 'enqueue_custom_script');
 

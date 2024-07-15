@@ -30,7 +30,7 @@
 		<div class="header-wrpaper">
 			<div class="inside-header">
 				<div class="img-logo-wrap">
-					<a href="">
+					<a href="/pulla/">
 						<img src="<?php echo($logo); ?>" alt="">
 					</a>
 					<!-- <p>Logo</p> -->

@@ -1,8 +1,81 @@
 @import 'globals';
 @import 'variables';
 
+
+.filter-section{
+    .wraper-filter{
+        .inside-banner{
+            padding: 0 48px;
+            height: 100%;
+            .filter{
+                position: relative;
+                max-width: 85%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                &::after{
+                    content: "";
+                    background-image: url('../../imgs/black-union.svg');
+                    display: block;
+                    top: 50%;
+                    left: 45%;
+                    width: 42px;
+                    height: 42px;
+                    position: absolute;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    z-index: 2;
+                    transform: translate(-65%, -50%);
+                }
+                h2{
+                    font-family: 'Defectica-Regular', sans-serif;
+                    color: $priamry_color;
+                    font-size: 60px;
+                    line-height: 72px;
+                    font-weight: 400;
+                    margin: 0;
+                }
+                .wrap-filters{
+                    ul{
+                        display: flex;
+                        align-items: center;
+                        gap: 24px;
+                        padding: 0;
+                        margin: 0;
+                        li{
+                            list-style: none;
+                            // a{
+                            //     text-decoration: underline;
+                            //     text-underline-offset: 6px;
+                            //     font-family: 'Aeonik-Regular', sans-serif;
+                            //     color: $priamry_color;
+                            //     font-size: 16px;
+                            //     line-height: 25.6px;
+                            //     font-weight: 400;
+                            // }
+                            .filter-button{
+                                text-transform: uppercase;
+                                background: none;
+                                cursor: pointer;
+                                border: none;
+                                text-decoration: underline;
+                                text-underline-offset: 6px;
+                                font-family: 'Aeonik-Regular', sans-serif;
+                                color: $priamry_color;
+                                font-size: 16px;
+                                line-height: 25.6px;
+                                font-weight: 400;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 .cases{
-    margin-top: 130px;
+    margin-top: 120px;
     .wraper-cases{
         padding: 0 48px;
         .inside-cases{
@@ -144,7 +217,8 @@
             }
             .wraper-grid-2{
                 position: relative;
-                // margin-bottom: 4%;
+                margin-bottom: 5%;
+                // margin-bottom: 5% !important;
                 .img-M{
                     width: 37.2%;
                     // position: relative;
@@ -167,6 +241,7 @@
                                     margin-bottom: 0;
                                     margin-top: 0;
                                     color: $color-cat;
+                                    text-transform: capitalize;
                                 }
                                 .name{
                                     margin-bottom: 0;
@@ -175,6 +250,7 @@
                                     color: $priamry_color;
                                     font-size: 18px;
                                     line-height: 28.8px;
+                                    text-transform: uppercase;
                                 }
                             }
                         }
@@ -256,9 +332,8 @@
 }
 
 .img-last{
-    margin-top: 100px;
-    margin-bottom: 120px;
     // margin-top: 20%;
+    margin-top: 100px;
     a{
         text-decoration: none;
         .wrap-img{
@@ -285,3 +360,11 @@
         }
     }
 }
+
+// .project-item {
+//     display: none;
+// }
+
+// .project-item.visible {
+//     display: block;
+// }

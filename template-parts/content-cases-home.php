@@ -1,99 +1,4 @@
 <!-- 
-<section class="cases">
-    <div class="wraper-cases">
-        <div class="inside-cases">
-            <div class="img-1">
-                <a href="">
-                    <div class="wrap-img">
-                        <img src="<?php echo get_template_directory_uri() . '/imgs/Rectangle-4.png'; ?>" alt="">
-                        <div class="text">
-                            <p class="cat bodyS-D">E-commerce</p>
-                            <p class="name">Lunar Habitat Initiative</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="wraper-grid-1">
-                <div class="img-M right">
-                    <a href="">
-                        <div class="wrap-img">
-                            <img src="<?php echo get_template_directory_uri() . '/imgs/Rectangle-3.png'; ?>" alt="">
-                            <div class="text">
-                                <p class="cat bodyS-D">E-commerce</p>
-                                <p class="name">Lunar Habitat Initiative</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="img-S left">
-                    <a href="">
-                        <div class="wrap-img">
-                            <img src="<?php echo get_template_directory_uri() . '/imgs/Rectangle-1.png'; ?>" alt="">
-                            <div class="text">
-                                <p class="cat bodyS-D">E-commerce</p>
-                                <p class="name">Lunar Habitat Initiative</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="img-L middle">
-                    <a href="">
-                        <div class="wrap-img">
-                            <img src="<?php echo get_template_directory_uri() . '/imgs/Rectangle-2.png'; ?>" alt="">
-                            <div class="text">
-                                <p class="cat bodyS-D">E-commerce</p>
-                                <p class="name">Lunar Habitat Initiative</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="wraper-grid-2">
-                <div class="img-M left2">
-                    <a href="">
-                        <div class="wrap-img">
-                            <img src="<?php echo get_template_directory_uri() . '/imgs/Rectangle-3.png'; ?>" alt="">
-                            <div class="text">
-                                <p class="cat bodyS-D">E-commerce</p>
-                                <p class="name">Lunar Habitat Initiative</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="img-S right2">
-                    <a href="">
-                        <div class="wrap-img">
-                            <img src="<?php echo get_template_directory_uri() . '/imgs/Rectangle-1.png'; ?>" alt="">
-                            <div class="text">
-                                <p class="cat bodyS-D">E-commerce</p>
-                                <p class="name">Lunar Habitat Initiative</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="img-L middle2">
-                    <a href="">
-                        <div class="wrap-img">
-                            <img src="<?php echo get_template_directory_uri() . '/imgs/Rectangle-2.png'; ?>" alt="">
-                            <div class="text">
-                                <p class="cat bodyS-D">E-commerce</p>
-                                <p class="name">Lunar Habitat Initiative</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="img-S left3">
-                    <a href="">
-                        <div class="wrap-img">
-                            <img src="<?php echo get_template_directory_uri() . '/imgs/Rectangle-1.png'; ?>" alt="">
-                            <div class="text">
-                                <p class="cat bodyS-D">E-commerce</p>
-                                <p class="name">Lunar Habitat Initiative</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
             <div class="img-1 img-last">
                 <a href="">
                     <div class="wrap-img">
@@ -107,7 +12,7 @@
             </div>
         </div>
     </div>
-</section>   -->
+</section>    -->
 
 
 
