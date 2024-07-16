@@ -97,6 +97,7 @@
                                 margin-bottom: 0;
                                 margin-top: 0;
                                 color: $color-cat;
+                                text-transform: capitalize;
                             }
                             .name{
                                 margin-bottom: 0;
@@ -105,6 +106,7 @@
                                 color: $priamry_color;
                                 font-size: 18px;
                                 line-height: 28.8px;
+                                text-transform: uppercase;
                             }
                         }
                     }
@@ -133,6 +135,8 @@
                                     margin-bottom: 0;
                                     margin-top: 0;
                                     color: $color-cat;
+                                    text-transform: capitalize;
+
                                 }
                                 .name{
                                     margin-bottom: 0;
@@ -141,6 +145,8 @@
                                     color: $priamry_color;
                                     font-size: 18px;
                                     line-height: 28.8px;
+                                    text-transform: uppercase;
+
                                 }
                             }
                         }
@@ -167,6 +173,8 @@
                                     margin-bottom: 0;
                                     margin-top: 0;
                                     color: $color-cat;
+                                    text-transform: capitalize;
+
                                 }
                                 .name{
                                     margin-bottom: 0;
@@ -175,6 +183,8 @@
                                     color: $priamry_color;
                                     font-size: 18px;
                                     line-height: 28.8px;
+                                    text-transform: uppercase;
+
                                 }
                             }
                         }
@@ -201,6 +211,7 @@
                                     margin-bottom: 0;
                                     margin-top: 0;
                                     color: $color-cat;
+                                    text-transform: capitalize;
                                 }
                                 .name{
                                     margin-bottom: 0;
@@ -209,6 +220,7 @@
                                     color: $priamry_color;
                                     font-size: 18px;
                                     line-height: 28.8px;
+                                    text-transform: uppercase;
                                 }
                             }
                         }
@@ -278,6 +290,7 @@
                                     margin-bottom: 0;
                                     margin-top: 0;
                                     color: $color-cat;
+                                    text-transform: capitalize;
                                 }
                                 .name{
                                     margin-bottom: 0;
@@ -286,6 +299,8 @@
                                     color: $priamry_color;
                                     font-size: 18px;
                                     line-height: 28.8px;
+                                    text-transform: uppercase;
+
                                 }
                             }
                         }
@@ -313,6 +328,7 @@
                                     margin-bottom: 0;
                                     margin-top: 0;
                                     color: $color-cat;
+                                    text-transform: capitalize;
                                 }
                                 .name{
                                     margin-bottom: 0;
@@ -321,6 +337,7 @@
                                     color: $priamry_color;
                                     font-size: 18px;
                                     line-height: 28.8px;
+                                    text-transform: uppercase;
                                 }
                             }
                         }
@@ -347,6 +364,7 @@
                     margin-bottom: 0;
                     margin-top: 0;
                     color: $color-cat;
+                    text-transform: capitalize;
                 }
                 .name{
                     margin-bottom: 0;
@@ -355,16 +373,10 @@
                     color: $priamry_color;
                     font-size: 18px;
                     line-height: 28.8px;
+                    text-transform: uppercase;
                 }
             }
         }
     }
 }
 
-// .project-item {
-//     display: none;
-// }
-
-// .project-item.visible {
-//     display: block;
-// }

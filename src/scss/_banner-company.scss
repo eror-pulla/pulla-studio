@@ -1,0 +1,66 @@
+@import 'globals';
+@import 'variables';
+
+
+.company{
+    margin-top: 62px;
+    .wraper-company{
+        padding:0 48px;
+        .inside-company{
+            .text-wrap{
+                position: relative;
+                &::after{
+                    content: "";
+                    background-image: url('../../imgs/hypon.svg');
+                    display: block; 
+                    top: 21%;
+                    right: 35%;       
+                    width: 220px;
+                    height: 13px;
+                    position: absolute;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    z-index: 2;
+                }
+                .crack{
+                    height: 70%;
+                    width: 100%;
+                    font-family: 'Defectica-Regular', sans-serif;
+                    color: $priamry_color;
+                    font-size: 177px;
+                    line-height: 212.4px;
+                    font-weight: 400;
+                    margin: 0;
+                }
+                .break-text{
+                    display: flex;
+                    justify-content: end;
+                    gap: 24px;
+                    margin: 0;
+                    width: 100%;
+                    font-family: 'Defectica-Regular', sans-serif;
+                    color: $priamry_color;
+                    font-size: 177px;
+                    line-height: 212.4px;
+                    font-weight: 400;
+                    text-align: end;
+                    p{
+                        font-family: 'Aeonik-Regular', sans-serif;
+                        color: $priamry_color;
+                        font-size: 18px;
+                        line-height: 28.8px;
+                        font-weight: 400;
+                        text-align: end;
+                        text-transform: uppercase;
+                    }
+                }
+            }
+            .img-wraper{
+                img{
+                    width: 100%;
+
+                }
+            }
+        }
+    }
+}
