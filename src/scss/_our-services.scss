@@ -1,0 +1,109 @@
+@import 'globals';
+@import 'variables';
+
+.services{
+    .wraper-services{
+        padding:0 48px;
+        padding-top:100px;
+        .inside-services{
+            .headline{
+                position: relative;
+                &::after{
+                    content: "";
+                    background-image: url('../../imgs/hypon.svg');
+                    display: block;
+                    bottom: 30%;
+                    left: 30%;
+                    width: 220px;
+                    height: 13px;
+                    position: absolute;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    z-index: 2;
+                }
+                h1{
+                    margin: 0;
+                    font-family: 'Defectica-Regular', sans-serif;
+                    color: $priamry_color;
+                    font-size: 177px;
+                    line-height: 212.4px;
+                    font-weight: 400;
+                    text-transform: uppercase;
+                }
+                .indent{
+                    text-indent: 45%;
+                }
+            }
+            .services-products{
+                .products-inside{
+                    p{
+                        margin: 0;
+                        margin-bottom: 24px;
+                        font-family: 'Aeonik-Regular', sans-serif;
+                        color: $priamry_color;
+                        font-size: 16px;
+                        line-height: 13.52px;
+                        font-weight: 600;
+                        text-transform: uppercase;
+                    }
+                    .wrap-products{
+                        padding-top: 41px;
+                        margin-bottom: 118px;
+                        border-top: 1px solid $priamry_color;
+                        display: flex;
+                        justify-content: space-between;
+                        .name{
+                            max-width: 515px;
+                            text-wrap: wrap;
+                            h3{
+                                margin: 0;
+                                font-family: 'Defectica-Regular', sans-serif;
+                                color: $priamry_color;
+                                font-size: 60px;
+                                line-height: 72px;
+                                font-weight: 400;
+                                text-transform: uppercase;
+                            }
+                        }
+                        .categories{
+                            display: flex;
+                            flex-direction: column;
+                            gap: 120px;
+                            .button-wraper{
+                                max-width: 465px;
+                                gap: 12px;
+                                display: flex;
+                                flex-wrap: wrap;
+                                .button{
+                                    padding:11px 40px;
+                                    border-radius: 51px;
+                                    border: none;
+                                    background-color: $btn-color;
+                                    color: $priamry_color;
+                                    font-family: 'Aeonik-Regular', sans-serif;
+                                    color: $priamry_color;
+                                    font-size: 18px;
+                                    line-height: 28.8px;
+                                    font-weight: 400;
+                                    text-transform: uppercase;
+                                }
+                            }
+                            .text-wraper{
+                                p{
+                                    text-transform: none;
+                                    max-width: 717px;
+                                    padding-right: 33px;
+                                    font-family: 'Aeonik-Regular', sans-serif;
+                                    color: $priamry_color;
+                                    font-size: 18px;
+                                    line-height: 25.2px;
+                                    font-weight: 400;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

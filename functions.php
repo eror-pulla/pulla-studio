@@ -195,10 +195,22 @@ add_action('wp_enqueue_scripts', 'enqueue_locomotive_scroll_styles');
 
 // Enqueue custom script
 function enqueue_custom_script() {
-    // Here, we enqueue 'app.js' with 'locomotive-scroll.js' as a dependency
-    wp_enqueue_script('custom-script', get_template_directory_uri() . '/src/js/app.js', array('jquery'), '1.0', true);
+	 // Enqueue Swiper CSS
+	 wp_enqueue_style('swiper-css', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css', array(), null);
+	 // Enqueue Swiper JS
+	 wp_enqueue_script('swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', array('jquery'), null, true);
+
+	 wp_enqueue_script('custom-script', get_template_directory_uri() . '/src/js/app.js',  array('swiper-js', 'jquery'), '1.0', true);
 }
 add_action('wp_enqueue_scripts', 'enqueue_custom_script');
+
+// function enqueue_custom_script() {
+//     wp_enqueue_script('swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', null, null, true);
+//     wp_enqueue_style('swiper-css', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css');
+//     wp_enqueue_script('custom-script', get_template_directory_uri() . '/src/js/app.js', array('swiper-js'), '1.0', true);
+// }
+// add_action('wp_enqueue_scripts', 'enqueue_custom_script');
+
 
 // Register the menu location
 function my_custom_theme_setup() {

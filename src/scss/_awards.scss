@@ -1,0 +1,65 @@
+@import 'globals';
+@import 'variables';
+
+.awards{
+    .wraper-awards{
+        padding:0 48px;
+        .inside-awards{
+            .title{
+                margin: 0;
+                text-align: center;
+                font-family: 'Defectica-Regular', sans-serif;
+                color: $priamry_color;
+                font-size: 177px;
+                line-height: 212.4px;
+                font-weight: 400;
+                margin-bottom: 20px;
+            }
+                .swiper,
+                .mySwiper{
+                    .swiper-wrapper{
+                        .swiper-slide{
+                            max-height: 444px;
+                            height: 444px;
+                            width: 25% ;
+                            background: $secondary_color;
+                            .inside-slide{
+                                .img-wrap{
+                                    img{
+                                        position: absolute;
+                                        top: 50%;
+                                        left: 50%;
+                                        transform: translate(-50%,-50%);
+                                    }
+                                }
+                                .text-wrap{
+                                    padding: 0 24px;
+                                    justify-content: space-between;
+                                    align-items: center;
+                                    display: flex;
+                                    position: absolute;
+                                    width: -webkit-fill-available;
+                                    bottom: 24px;
+                                    .name{
+                                        font-family: 'Aeonik-Regular', sans-serif;
+                                        color: $priamry_color;
+                                        font-size: 18px;
+                                        line-height: 28.4px;
+                                        font-weight: 400;
+                                    }
+                                    .number{
+                                        font-family: 'Aeonik-Regular', sans-serif;
+                                        color: $priamry_color;
+                                        font-size: 18px;
+                                        line-height: 28.4px;
+                                        font-weight: 400;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            
+        }
+    }
+}

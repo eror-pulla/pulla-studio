@@ -1,47 +1,13 @@
 jQuery(document).ready(function($) {
 
+    var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 4,
+        spaceBetween: 16,
+        pagination: false,
+
+      });
+
     console.log("u kliku111");
-    // $('.filter-button').on('click', function() {
-    //     var category = $(this).data('category');
-    //     $('.project-item').each(function() {
-    //         var projectCategory = $(this).data('category');
-    //         if (category === '' || projectCategory === category) {
-    //             $(this).show();
-    //         } else {
-    //             $(this).hide();
-    //         }
-    //     });
-    // });
-
-    
-
-    // $('.filter-button').on('click', function() {
-    //     console.log('on click');
-    //     var category = $(this).data('category');
-
-    //     // Show all projects
-    //     $('.wrap-grid-1, .wrap-grid-2').show();
-
-    //     // Hide projects not matching the category
-    //     $('.wrap-grid-1, .wrap-grid-2').each(function() {
-    //         var wrapper = $(this);
-    //         var projects = wrapper.find('.project');
-
-    //         projects.each(function() {
-    //             var projectCategory = $(this).data('category');
-
-    //             if (category === 'all' || projectCategory === category) {
-    //                 $(this).show();
-    //             } else {
-    //                 $(this).hide();
-    //             }
-    //         });
-    //     });
-    // });
-
-    
-
-
     
     // Store the initial state of the entire project section
     const initialHTML = $('.inside-cases').html();
@@ -114,5 +80,7 @@ jQuery(document).ready(function($) {
         $('.filter-button').removeClass('active');
         $(this).addClass('active');
     });
+
+
 
 });
