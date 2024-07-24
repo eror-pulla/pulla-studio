@@ -1,0 +1,80 @@
+@import 'globals';
+@import 'variables';
+
+.social-media{
+    margin-top: 190px;
+    .wraper-social{
+        padding:0 48px;
+        .inside-social{
+            h1{
+                margin: 0;
+                font-family: 'Defectica-Regular', sans-serif;
+                color: $priamry_color;
+                font-size: 177px;
+                line-height: 212.4px;
+                font-weight: 400;
+                margin-bottom: 24px;
+            }
+            .socials{
+               border-top: 1px solid;
+                ul{
+                    padding: 0;
+                    margin: 0;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: end;
+                    .socials-wraper{
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: flex-start;
+                        width: 75%;
+                        border-bottom: 1px solid;
+                        padding-bottom: 60px;
+                        padding-top: 24px;
+                        &:last-child{
+                            border: none;
+                        }
+                        .nr{
+                            margin: 0;
+                            font-family: 'Aeonik-Regular', sans-serif;
+                            color: $priamry_color;
+                            font-size: 18px;
+                            line-height: 28.8px;
+                            font-weight: 400;
+                        }
+                        .name{
+                            margin: 0;
+                            font-family: 'Defectica-Regular', sans-serif;
+                            color: $priamry_color;
+                            font-size: 60px;
+                            line-height: 72px;
+                            font-weight: 400;
+                        }
+                        .go-to{
+                            a{
+                                margin: 0;
+                                text-decoration: none;
+                                display: flex;
+                                gap: 8px;
+                                align-items: baseline;
+                                p{
+                                    margin: 0;
+                                    font-family: 'Aeonik-Regular', sans-serif;
+                                    color: $priamry_color;
+                                    font-size: 18px;
+                                    line-height: 28.8px;
+                                    font-weight: 400;
+                                    text-transform: uppercase;
+                                }
+                                img{
+                                    width: 12px;
+                                    height: 12px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

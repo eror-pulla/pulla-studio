@@ -10,6 +10,7 @@ get_header();
 			get_template_part( 'template-parts/content', 'our-services' );        
 			get_template_part( 'template-parts/content', 'awards' );        
 			get_template_part( 'template-parts/content', 'values' );        
+			get_template_part( 'template-parts/content', 'social-media' );        
 
 			if ( comments_open() || get_comments_number() ) :
 				comments_template();
