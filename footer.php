@@ -71,8 +71,8 @@ $info=$footer['info'];
 				<div class="columns-2">
 					<p><?php echo($copyrights); ?></p>
 				</div>
-				<div class="columns-2">
-					<p><?php echo($site_by); ?> <b class='white'>Pulla Digital</b></p>
+				<div class="columns-6">
+					<p><?php echo($site_by); ?></p><p class='white'>Pulla Digital</p>
 				</div>
 				<div class="columns-5">
 					<p><?php echo($message); ?></p>
