@@ -75,7 +75,7 @@ if (!$cases) {
                                 } elseif ($case_post instanceof WP_Post) {
                                     $case_post_obj = $case_post;
                                 } else {
-                                    echo '<p>Error: Invalid data format in 3 cases group.</p>';
+                                    // echo '<p>Error: Invalid data format in 3 cases group.</p>';
                                     continue;
                                 }
 
@@ -84,13 +84,10 @@ if (!$cases) {
                                     $class = $classes_grid_1[$case_counter]; // Directly using the counter for the class
                                     render_project($class, $post_details);
                                     $case_counter++; // Increment the counter
-                                } else {
-                                    echo '<p>Error: Invalid post object in 3 cases group.</p>';
-                                }
+                                } 
                             }
-                        } else {
-                            echo '<p>No cases found or incorrect format in 3 cases group.</p>';
                         }
+
                         echo '</div>'; // End wraper-grid-1
                     }
 
@@ -106,23 +103,18 @@ if (!$cases) {
                                     $case_post_obj = get_post((int) $case_post);
                                 } elseif ($case_post instanceof WP_Post) {
                                     $case_post_obj = $case_post;
-                                } else {
-                                    echo '<p>Error: Invalid data format in 4 cases group.</p>';
-                                    continue;
                                 }
+
 
                                 if ($case_post_obj instanceof WP_Post) {
                                     $post_details = get_project_details($case_post_obj->ID);
                                     $class = $classes_grid_2[$case_counter]; // Directly using the counter for the class
                                     render_project($class, $post_details);
                                     $case_counter++; // Increment the counter
-                                } else {
-                                    echo '<p>Error: Invalid post object in 4 cases group.</p>';
-                                }
+                                } 
                             }
-                        } else {
-                            echo '<p>No cases found or incorrect format in 4 cases group.</p>';
                         }
+
                         echo '</div>'; // End wraper-grid-2
                     }
                 }

@@ -1,0 +1,110 @@
+@import 'globals';
+@import 'variables';
+@import 'plyr';
+
+.single-banner{
+    margin-top: 36px;
+    .inside-single-banner{
+        padding:0 48px;
+        h1{
+            margin: 0;
+            font-family: 'Defectica-Regular', sans-serif;
+            color: $priamry_color;
+            font-size: 177px;
+            line-height: 212.4px;
+            font-weight: 400;
+        }
+        .wraper-single-banner{
+            .img-wraper{
+                img{
+                    width: 100%;
+                    max-height: 900px;
+                    height: 900px;
+                }
+            }
+            .video-wraper{
+                position: relative;
+                .plyr__video-embed{
+                    width: 100%;
+                    max-height: 900px;
+                    height: 900px;
+                    iframe{
+             
+                    }
+                }
+                .button-wraper{
+                    position: absolute;
+                    right: 3%;
+                    bottom: 5%;
+                    display: flex;
+                    gap: 16px;
+                    align-items: self-start;
+                    .play-text{
+                        margin: 0;
+                        font-family: 'Defectica-Regular', sans-serif;
+                        color: $secondary_color;
+                        font-size: 60px;
+                        line-height: 72px;
+                        font-weight: 400;
+                        cursor: pointer;
+                        text-transform: uppercase;
+                    }
+                    .btn-play{
+                        padding: 19px;
+                        padding-left: 22px;
+                        padding-top: 21px;
+                        border: 1px solid $secondary_color;
+                        border-radius: 50%;
+                        background:none;
+                        cursor: pointer;
+                        img{
+                            height: 16px;
+                            width: 16px;
+                        }
+                    }
+                }
+            }
+            .text-wrap{
+                margin-top:40px;
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                .cat{
+                    font-family: 'Defectica-Regular', sans-serif;
+                    color: $cat-single-color;
+                    opacity: 30%;
+                    font-size: 60px;
+                    line-height: 72px;
+                    font-weight: 400;
+                    margin: 0;
+                }
+                .date{
+                    font-family: 'Aeonik-Regular', sans-serif;
+                    color: $priamry_color;
+                    font-size: 18px;
+                    line-height: 25.4px;
+                    font-weight: 400;
+                    margin: 0;
+                }
+                .text{
+                    max-width: 700px;
+                    font-family: 'Aeonik-Regular', sans-serif;
+                    color: $priamry_color;
+                    font-size: 18px;
+                    line-height: 25.4px;
+                    font-weight: 400;
+                    margin: 0;
+                    padding-right: 1%;
+                }
+            }
+        }
+
+    }
+}
+
+
+video::-webkit-media-controls-panel {
+    display: none !important;
+    opacity: 1 !important;
+}
+

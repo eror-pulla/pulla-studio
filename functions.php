@@ -230,4 +230,8 @@ if( function_exists('acf_add_options_page') ) {
 
 }
 
-
+function enqueue_plyr_and_jquery() {
+    wp_enqueue_style('plyr-css', 'https://cdn.plyr.io/3.7.2/plyr.css');
+    wp_enqueue_script('plyr-js', 'https://cdn.plyr.io/3.7.2/plyr.js', array('jquery'), null, true);
+}
+add_action('wp_enqueue_scripts', 'enqueue_plyr_and_jquery');
