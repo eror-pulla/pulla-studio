@@ -19,9 +19,7 @@
                 height: 60%;
                 .img-1{
                     width: 600px;
-
                     height: 551px;
-                    // -o-object-fit: cover;
                     object-fit: cover;
                     position: absolute;
                     top: 42%;
@@ -31,7 +29,6 @@
                 .img-2{
                     width: 291px;
                     height: 350px;
-                    // -o-object-fit: cover;
                     object-fit: cover;
                     position: absolute;
                     top: 40px;
@@ -39,7 +36,6 @@
                 .img-3{
                     width: 292px;
                     height: 350px;
-                    // -o-object-fit: cover;
                     object-fit: cover;
                     position: absolute;
                     top: 245px;
@@ -111,3 +107,81 @@
         }
     }
 }
+
+
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -100%) scale(0.8);
+    }
+    50% {
+        opacity: 1;
+        transform: translate(-50%, -52%) scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -45%) scale(1);
+    }
+}
+
+@keyframes fadeInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(300%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(-300%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+        transform: translateY(10%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.fade-in-up,
+ .fade-in-left, .fade-in-right, .fade-in-text {
+    opacity: 0;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+}
+
+.fade-in-up {
+    animation-name: fadeInUp;
+}
+
+.fade-in-left {
+    animation-name: fadeInLeft;
+    animation-delay: 1s;
+}
+
+.fade-in-right {
+    animation-name: fadeInRight;
+    animation-delay: 1s;
+}
+
+.fade-in-text {
+    animation-name: fadeInText;
+    animation-delay: 2.5s;
+}
+

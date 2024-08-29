@@ -20,13 +20,26 @@
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class(); ?>  data-scroll-container>
 <?php wp_body_open(); ?>
 <!-- <div id="page" class="site"> -->
 	<?php
 	$logo= get_field('logo', 'option');
 	?>
-	<header class="header">
+	<section class="overlay-loader">
+		<div class="loader">
+			<div class="inside-loader">
+				<div class="loading-process">
+					<p>/loading process/</p>
+				</div>
+				<div class="wrap-text">
+					<p>We're glad you're here!</p>
+					<h3>Thank you for visiting.</h3>
+				</div>
+			</div>
+		</div>
+	</section>
+	<header class="header fade-in-header">
 		<div class="header-wrpaper">
 			<div class="inside-header">
 				<div class="img-logo-wrap">
@@ -45,3 +58,5 @@
 			</div>
 		</div>
 	</header>
+	<section class="site-wraper">
+

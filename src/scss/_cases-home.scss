@@ -7,7 +7,7 @@
         padding: 0 48px;
         .inside-cases{
             width: 100%;
-            .img-1,
+            .img-1-big,
             .img-last{
                 // margin-top: 20%;
                 margin-bottom: 140px;
@@ -283,4 +283,45 @@
             }
         }
     }
+}
+
+
+@keyframes fadeInImg {
+    0% {
+        opacity: 0;  
+        transform: scale(.8, 1);
+    }
+    100% {
+        opacity: 1; 
+        transform: scale(1, 1);
+    }
+}
+
+// .img-1-big , .img-M , .img-S , .img-L{
+//     animation-duration: 1s;
+//     animation-delay: .5s;
+//     animation-name: fadeInImg;
+//     animation-fill-mode: forwards;
+//     animation-timing-function: ease-out;
+// }
+
+// .fade-in-img {
+//     animation-name: fadeInImg;
+// }
+
+.fade-in-img {
+    opacity: 0;
+    transform: scale(.9, 1);
+    transform-origin: left;
+    transition: opacity .7s ease-out, transform .7s ease-out;
+}
+
+.fade-in-img.is-inview {
+    opacity: 1;
+    transform: scale(1, 1);
+}
+
+.img-last.fade-in-img,
+.img-1-big.fade-in-img {
+    transform-origin: center !important;  /* Transform origin to center for these classes */
 }

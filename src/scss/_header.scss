@@ -2,7 +2,19 @@
 @import 'variables';
 
 .header{
+    min-height: 66px;
     width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0; 
+    z-index: 3;
+    transition: transform 0.3s ease-out;
+    &.hidden {
+        transform: translateY(-200%);
+    }
+    &.scrolled-up {
+        background-color:$third_color;  // Semi-transparent background
+    }
     .header-wrpaper{
         padding: 0 $s6;
         height: 29px;
@@ -41,4 +53,78 @@
             }
         }
     }
+}
+
+.overlay-loader{
+    width: 100vw;
+    height: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: $priamry_color;
+    z-index: 4;
+    transition: opacity 0.3s ease;
+    .loader{
+        padding: 0 48px;
+        height: 100%;
+        width: 100%;
+        .inside-loader{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 45%;
+            width: 100%;
+            .loading-process{
+                p{
+                    font-family: 'Aeonik-Regular', sans-serif;
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 28.8px;
+                    color: $third_color;
+                }
+            }
+            .wrap-text{
+                p{
+                    font-family: 'Aeonik-Regular', sans-serif;
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 28.8px;
+                    color: $third_color;
+                    margin: 0;
+                    margin-bottom: 22px;
+                }
+                h3{
+                    font-family: 'Defectica-Regular', sans-serif;
+                    text-transform: uppercase;
+                    font-weight: 400;
+                    font-size: 52px;
+                    line-height: 28.8px;
+                    color: $third_color;
+                    margin: 0;
+                }
+            }
+        }
+    }
+}
+
+@keyframes fadeInHeader {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.header {
+    opacity: 0;
+    animation-name: fadeInHeader;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+}
+
+.fade-in-header{
+    animation-name: fadeInHeader;
+    animation-delay: 1.1s;
 }

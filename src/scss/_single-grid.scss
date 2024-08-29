@@ -42,11 +42,19 @@
                     max-height: 620px;
                     height: 620px;
                     position: absolute;
-                    bottom: 0;                
+                    bottom: 0;
+                    width: 445px;
                     img{
                         width: 100%;
                         height: 100%;
                         object-fit: cover;
+                    }
+                    .plyr{
+                        height: 100%;
+                        width: 100%;
+                        iframe{
+
+                        }
                     }
                     .plyr__video-embed{
                         iframe{
@@ -107,6 +115,7 @@
                 }
                 .img-S{
                     width: 25%;
+                    height:620px;
                     img{
                         width: 100%;
                         height:620px;
@@ -114,7 +123,15 @@
                         object-fit: cover;
                     }
                     .video-wrap{
+                        height: 100%;
+                        .plyr{
+                            height: 100%;
+                            iframe{
+                                
+                            }
+                        }
                         .plyr__video-embed{
+                            height: 100%;
                             iframe{
                                 
                             }
@@ -162,6 +179,7 @@
                 .img-S{
                     width: 25%;
                     text-decoration: none;
+                    height:620px;
                     img{
                         width: 100%;
                         height:620px;
@@ -169,6 +187,14 @@
                         object-fit: cover;
                     }
                     .video-wrap{
+                        height: 100%;
+                        .plyr{
+                            height: 100%;
+                            width: 100%;
+                            iframe{
+                                
+                            }
+                        }
                         .plyr__video-embed{
                             iframe{
                                 
@@ -182,6 +208,7 @@
                 justify-content: space-between;
                 align-items: center;
                 margin-bottom: 7%;
+                padding-top: 4%;
                 .wraper-pagination{
                     a{
                         text-decoration: none;

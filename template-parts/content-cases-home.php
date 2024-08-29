@@ -2,7 +2,7 @@
 // Function to render a project
 function render_project($class, $project) {
     ?>
-    <div class="<?php echo esc_attr($class); ?>">
+    <div class="<?php echo esc_attr($class); ?> fade-in-img" data-scroll data-scroll-class="is-inview">
         <a href="<?php echo esc_url($project['permalink']); ?>">
             <div class="wrap-img">
                 <img src="<?php echo esc_url($project['image_url']); ?>" alt="">
@@ -15,7 +15,6 @@ function render_project($class, $project) {
     </div>
     <?php
 }
-
 // Function to get project details by ID
 function get_project_details($post_id) {
     return [
@@ -26,29 +25,27 @@ function get_project_details($post_id) {
     ];
 }
 
-// Define the CSS class patterns for the grids
 $classes_grid_1 = [
-    'img-M right', // First project
-    'img-S left',  // Second project
-    'img-L middle' // Third project
+    'img-M right', 
+    'img-S left',  
+    'img-L middle' 
 ];
 
 $classes_grid_2 = [
-    'img-M left2',   // First project
-    'img-S right2',  // Second project
-    'img-L middle2', // Third project
-    'img-S left3'    // Fourth project
+    'img-M left2',   
+    'img-S right2',  
+    'img-L middle2', 
+    'img-S left3'   
 ];
 
-// Fetch cases from ACF
 $cases = get_field('cases');
 
 if (!$cases) {
     echo '<p>No cases found.</p>';
 } else {
     ?>
-    <section class="cases">
-        <div class="wraper-cases">
+    <section class="cases" data-scroll-section>
+        <div class="wraper-cases" >
             <div class="inside-cases">
                 <?php
                 foreach ($cases['section'] as $section) {
@@ -58,8 +55,8 @@ if (!$cases) {
                     if ($select_grid === 'one' && isset($section['case']) && $section['case'] instanceof WP_Post) {
                         $post_details = get_project_details($section['case']->ID);
                         echo '<div class="">';
-                        render_project('img-1', $post_details); // For single case, use the 'img-1' class
-                        echo '</div>'; // End wraper-single-case
+                        render_project('img-1-big', $post_details); 
+                        echo '</div>'; 
                     }
 
                     // Handle 3_cases group
@@ -67,9 +64,9 @@ if (!$cases) {
                         echo '<div class="wraper-grid-1">';
                         
                         if (isset($section['3_cases']) && is_array($section['3_cases']) && count($section['3_cases']) === 3) {
-                            $case_counter = 0; // Counter for the case index
+                            $case_counter = 0; 
                             foreach ($section['3_cases'] as $case_post) {
-                                // Check if $case_post is an ID or an object
+                               
                                 if (is_numeric($case_post)) {
                                     $case_post_obj = get_post((int) $case_post);
                                 } elseif ($case_post instanceof WP_Post) {
@@ -81,7 +78,7 @@ if (!$cases) {
 
                                 if ($case_post_obj instanceof WP_Post) {
                                     $post_details = get_project_details($case_post_obj->ID);
-                                    $class = $classes_grid_1[$case_counter]; // Directly using the counter for the class
+                                    $class = $classes_grid_1[$case_counter]; 
                                     render_project($class, $post_details);
                                     $case_counter++; // Increment the counter
                                 } 

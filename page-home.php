@@ -1,8 +1,8 @@
 <?php 
 get_header();
 ?>
-<!-- 
-	<main id="primary" class="site-main" > -->
+
+	<!-- <section class="site-main" data-scroll-container> -->
 
 		<?php
 		while ( have_posts() ) :
@@ -17,7 +17,7 @@ get_header();
 
 		endwhile; // End of the loop.
 		?>
-	<!-- </main> -->
+	<!-- </section> -->
 
  <?php
 get_footer(); 

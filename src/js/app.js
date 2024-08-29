@@ -1,5 +1,63 @@
 jQuery(document).ready(function($) {
 
+    let lastScrollY = 0;
+    const header = document.querySelector('.header');
+    const triggerPoint = 100; 
+
+    var scroll = new LocomotiveScroll({
+        el: document.querySelector('[data-scroll-container]'),
+        smooth: true,
+    });
+    
+    scroll.on('scroll', function (event) {
+        document.querySelectorAll('.fade-in-img').forEach(function (element, index) {
+            if (element.classList.contains('is-inview')) return;
+    
+            // Check if the element is within the viewport
+            if (element.getBoundingClientRect().top < window.innerHeight && element.getBoundingClientRect().bottom > 0) {
+                // Apply a staggered delay based on the index
+                setTimeout(function () {
+                    element.classList.add('is-inview');
+                }, index * 200); // Adjust the delay as needed (200ms in this case)
+            }
+        });
+    });
+    
+    // scroll.on('call', (func, way, obj) => {
+    //     if(func === 'projectInView') {
+    //         const element = obj.el;
+    //         setTimeout(function() {
+    //             $(element).addClass('is-inview');
+    //         }, $(element).data('scroll-delay') * 1000); // Multiply delay by 1000 to convert to milliseconds
+    //     }
+    // });
+    
+    // scroll.on('call', (funcName, state, target) => {
+    //     if (funcName === 'fadeIn' && state === 'enter') {
+    //         $(target).addClass('in-view');
+    //     }
+    // });
+
+    scroll.on('scroll', (obj) => {
+        const currentScrollY = obj.scroll.y;
+
+        if (currentScrollY > lastScrollY) {
+            // Scrolling down
+            header.classList.add('hidden');
+            header.classList.remove('scrolled-up');
+        } else {
+            // Scrolling up
+            header.classList.remove('hidden');
+            if (currentScrollY > triggerPoint) {
+                header.classList.add('scrolled-up');
+            } else {
+                header.classList.remove('scrolled-up');
+            }
+        }
+
+        lastScrollY = currentScrollY;
+    });
+
     var swiper = new Swiper(".mySwiper", {
         slidesPerView: 4,
         spaceBetween: 16,
@@ -7,9 +65,16 @@ jQuery(document).ready(function($) {
 
       });
 
-    console.log("u kliku111");
 
 
+       var $img = $('.img-1');
+       var $loader = $('.overlay-loader');
+    //    setTimeout(function() {
+            $loader.fadeOut(500); 
+        // }, 1000);
+       if ($img[0].complete) {
+           $img.trigger('load');
+       }
 
 
 
@@ -99,6 +164,17 @@ const players = new Plyr('#player', {
     controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen'],
 
 });
+// const player = new Plyr('#player-single', {
+//     controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen'],
+
+// });
+
+$('.plyr__video-embed').each(function() {
+    const player = new Plyr($(this)[0], {
+        controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen'],
+    });
+});
+
     
 
 
