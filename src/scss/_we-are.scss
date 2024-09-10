@@ -55,13 +55,13 @@
             margin-top: 200px;
             margin-bottom: 120px;
             position: relative;
-            .img-1{
+            .img-1-comp{
                 max-width: 751px;
                 max-height: 620px;
                 height: 620px;
                 object-fit: cover;
             }
-            .img-2{
+            .img-2-comp{
                 max-width: 444px;
                 max-height: 620px;
                 height: 620px;
@@ -71,5 +71,29 @@
                 top: 15%;
             }
         }
+    }
+}
+
+.inside-we-are{
+    opacity: 0;
+    transition: all ease-in .3s;
+    // transform: translateY(20%);
+    transition-delay: .3s;
+    &.is-inview{
+        opacity: 1;
+        // transform: translateY(0);
+    }
+}
+
+.img-1-comp, .img-2-comp {
+    opacity: 0;
+    transform: scale(.9);
+    transform-origin: left;
+    transform-origin: center ; 
+    transition: opacity .7s ease-out, transform .7s ease-out;
+    transition-delay: .5s;
+    &.is-inview{
+        opacity: 1;
+        transform: scale(1);
     }
 }

@@ -1,5 +1,5 @@
 
-<section class="awards">
+<section class="awards" data-scroll-section>
     <div class="wraper-awards">
         <div class="inside-awards">
             <h2 class="title">AwaRds</h2>
@@ -13,14 +13,14 @@
                         ?>
                             <div class="swiper-slide">
                                 <div class="inside-slide">
-                                    <div class="img-wrap">
+                                    <div class="img-wrap-company">
                                         <?php if ($image): ?>
                                             <img src="<?php echo esc_url($image); ?>" alt="">
                                         <?php else: ?>
                                             <p>No image available</p>
                                         <?php endif; ?>
                                     </div>
-                                    <div class="text-wrap">
+                                    <div class="text-wrap-award">
                                         <p class="name"><?php echo esc_html($name); ?></p>
                                         <p class="number">/<?php echo esc_html($times_won); ?>/</p>
                                     </div>

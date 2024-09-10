@@ -8,9 +8,9 @@ $text_right = $we_are['text_right'];
 ?>
 
 
-<section class="we-are">
+<section class="we-are"  data-scroll-section>
     <div class="wrap-we-are">
-        <div class="inside-we-are">
+        <div class="inside-we-are" data-scroll>
             <p> / WE ARE /</p>
             <div class="wraper-inside-text">
                 <h5><?php echo $title ?></h5>
@@ -29,9 +29,8 @@ $text_right = $we_are['text_right'];
                         while( have_rows('repeater_img') ): the_row(); 
                             $img_url = get_sub_field('img'); 
                             
-                            // Check if the image URL is not empty
                             if( !empty($img_url) ): ?>
-                                <img class="img-<?php echo $count; ?>" src="<?php echo esc_url($img_url); ?>" alt="Image <?php echo $count; ?>">
+                                <img class="img-<?php echo $count; ?>-comp" data-scroll src="<?php echo esc_url($img_url); ?>" alt="Image <?php echo $count; ?>">
                                 <?php $count++; ?>
                             <?php endif; 
                         endwhile; 

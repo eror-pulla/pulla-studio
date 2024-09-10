@@ -1,42 +1,92 @@
 jQuery(document).ready(function($) {
 
+    // gsap.registerPlugin(ScrollTrigger);
+
     let lastScrollY = 0;
     const header = document.querySelector('.header');
     const triggerPoint = 100; 
 
+    const scroller = document.querySelector('[data-scroll-container]');
     var scroll = new LocomotiveScroll({
-        el: document.querySelector('[data-scroll-container]'),
+        el: scroller,
         smooth: true,
+        getDirection:true,
+        direction: 'vertical'
     });
+
+
+    // //    
+
+    // scroll.on('scroll', ScrollTrigger.update);
+
+    // ScrollTrigger.scrollerProxy(scroller, {
+    //   scrollTop(value) {
+    //     return arguments.length ? scroll.scrollTo(value, 0, 0) : scroll.scroll.instance.scroll.y;
+    //   },
+    //   getBoundingClientRect() {
+    //     return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
+    //   },
+    //   pinType: scroller.style.transform ? "transform" : "fixed"
+    // });
+    // ScrollTrigger.defaults({
+    //     scroller: scroller
+    //   })
+
+    //   const horizontalSections = gsap.utils.toArray('.horizontal-scroll')
+    //   console.log("test12" , horizontalSections);
+
+    //   horizontalSections.forEach(function (sec, i) {	
+  
+    //     var thisPinWrap = sec.querySelector('.pin-wrap');
+    //     var thisAnimWrap = thisPinWrap.querySelector('.animation-wrap');
+        
+    //     var getToValue = () => -(thisAnimWrap.scrollWidth - window.innerWidth); 
+      
+    //     gsap.fromTo(thisAnimWrap, { 
+    //       x: () => thisAnimWrap.classList.contains('to-right') ? 0 : getToValue() 
+    //     }, { 
+    //       x: () => thisAnimWrap.classList.contains('to-right') ? getToValue() : 0, 
+    //       ease: "none",
+    //       scrollTrigger: {
+    //         trigger: sec,		
+    //         scroller: scroller,
+    //         start: "top top",
+    //         end: () => "+=" + (thisAnimWrap.scrollWidth - window.innerWidth),
+    //         pin: thisPinWrap,
+    //         invalidateOnRefresh: true,
+    //         anticipatePin: 1,
+    //         scrub: true,
+    //         //markers: true
+    //       }
+    //     });
+      
+    //   });	
+
+    // ScrollTrigger.addEventListener("refresh", () => scroll.update());
+    // ScrollTrigger.refresh();
+
+    // 
     
+
+
     scroll.on('scroll', function (event) {
         document.querySelectorAll('.fade-in-img').forEach(function (element, index) {
             if (element.classList.contains('is-inview')) return;
     
-            // Check if the element is within the viewport
             if (element.getBoundingClientRect().top < window.innerHeight && element.getBoundingClientRect().bottom > 0) {
-                // Apply a staggered delay based on the index
                 setTimeout(function () {
                     element.classList.add('is-inview');
-                }, index * 200); // Adjust the delay as needed (200ms in this case)
+                }, index * 200); 
             }
         });
     });
+
+
+    scroll.on('call', function(args) {
+        const sectionId = parseInt(args[1].dataset.sectionId);
+        changeScrollDirection(sectionId);
+    });
     
-    // scroll.on('call', (func, way, obj) => {
-    //     if(func === 'projectInView') {
-    //         const element = obj.el;
-    //         setTimeout(function() {
-    //             $(element).addClass('is-inview');
-    //         }, $(element).data('scroll-delay') * 1000); // Multiply delay by 1000 to convert to milliseconds
-    //     }
-    // });
-    
-    // scroll.on('call', (funcName, state, target) => {
-    //     if (funcName === 'fadeIn' && state === 'enter') {
-    //         $(target).addClass('in-view');
-    //     }
-    // });
 
     scroll.on('scroll', (obj) => {
         const currentScrollY = obj.scroll.y;
@@ -66,119 +116,107 @@ jQuery(document).ready(function($) {
       });
 
 
+      var $img = $('.img-1-home');
+      var $loader = $('.overlay-loader');
+      $loader.fadeOut(500);
+      
+      if ($img.length > 0 && $img[0].complete) {
+          $img.trigger('load');
+      }
+      
+      $img.on('load', function() {
+          $loader.fadeOut(500);
+      }).each(function() {
+          if (this.complete) $(this).trigger('load');
+      });
 
-       var $img = $('.img-1');
-       var $loader = $('.overlay-loader');
-    //    setTimeout(function() {
-            $loader.fadeOut(500); 
-        // }, 1000);
-       if ($img[0].complete) {
-           $img.trigger('load');
-       }
 
+    const players = new Plyr('#player', {
+        controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen'],
 
+    });
 
-// Store the initial state of the entire project section
-const initialHTML = $('.inside-cases').html();
-const allProjects = [];
+    $('.plyr__video-embed').each(function() {
+        const player = new Plyr($(this)[0], {
+            controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen'],
+        });
+    });
 
-// Store individual project data
-$('.project').each(function() {
-    const projectData = {
-        html: $(this).prop('outerHTML'),
-        category: $(this).data('category')
-    };
-    allProjects.push(projectData);
-});
 
 // Define the class patterns
-const classesGrid1 = ['img-M right', 'img-S left', 'img-L middle'];
-const classesGrid2 = ['img-M left2', 'img-S right2', 'img-L middle2', 'img-S left3'];
+    const classesGrid1 = ['img-M right', 'img-S left', 'img-L middle'];
+    const classesGrid2 = ['img-M left2', 'img-S right2', 'img-L middle2', 'img-S left3'];
 
-// Handle filter button click
-$('.filter-button').click(function() {
-    const category = $(this).data('category');
+    const initialHTML = $('.inside-cases').html();
+    const allProjects = [];
 
-    if (category === 'all') {
-        // Reset to the initial state
-        $('.inside-cases').html(initialHTML);
-    } else {
-        // Filter projects by category
-        const filteredProjects = allProjects.filter(project => project.category === category);
-
-        // Clear the project display area
-        $('.inside-cases').empty();
-
-        // Display filtered projects with alternating wrappers
-        let currentWrapper = 1;
-        let projectsInWrapper = 0;
-        const wrapperClasses = [classesGrid1, classesGrid2];
-
-        filteredProjects.forEach((projectData) => {
-            const currentClasses = wrapperClasses[currentWrapper - 1];
-            const classesCount = currentClasses.length;
-
-            // Check if we need to start a new wrapper
-            if (projectsInWrapper % classesCount === 0) {
-                // Close the previous wrapper if it's open
-                if (projectsInWrapper !== 0) {
-                    $('.inside-cases').append('</div>');
-                }
-                // Start a new wrapper
-                $('.inside-cases').append('<div class="wraper-grid-' + currentWrapper + '"></div>');
-            }
-
-            // Create a new project element and add the class
-            const newClass = currentClasses[projectsInWrapper % classesCount] + ' project';
-            const projectHtml = $(projectData.html);
-            projectHtml.removeClass().addClass(newClass);
-
-            // Ensure the inner div only has the class 'img'
-            projectHtml.find('div').first().removeClass().addClass('img');
-
-            // Append the project to the current wrapper
-            const wrapperSelector = '.wraper-grid-' + currentWrapper;
-            $(wrapperSelector).last().append(projectHtml);
-
-            projectsInWrapper++;
-            // Check if we need to switch to the next wrapper
-            if (projectsInWrapper % classesCount === 0) {
-                currentWrapper = (currentWrapper === 1) ? 2 : 1;
-                projectsInWrapper = 0;
-            }
-        });
-
-        // Handle the last unclosed wrapper
-        if (projectsInWrapper % classesCount !== 0) {
-            $('.inside-cases').append('</div>');
-        }
-    }
-
-    // Manage active button class
-    $('.filter-button').removeClass('active');
-    $(this).addClass('active');
-});
-
-
-const players = new Plyr('#player', {
-    controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen'],
-
-});
-// const player = new Plyr('#player-single', {
-//     controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen'],
-
-// });
-
-$('.plyr__video-embed').each(function() {
-    const player = new Plyr($(this)[0], {
-        controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen'],
+    $('.project').each(function() {
+        const projectData = {
+            html: $(this).prop('outerHTML'),
+            category: $(this).data('category')
+        };
+        allProjects.push(projectData);
     });
+
+    $('.filter-button').click(function() {
+        const category = $(this).data('category');
+
+        if (category === 'all') {
+            $('.inside-cases').html(initialHTML);
+        } else {
+            const filteredProjects = allProjects.filter(project => project.category === category);
+            $('.inside-cases').empty();
+
+            let currentWrapper = 1;
+            let projectsInWrapper = 0;
+            const wrapperClasses = [classesGrid1, classesGrid2];
+
+            filteredProjects.forEach((projectData) => {
+                const currentClasses = wrapperClasses[currentWrapper - 1];
+                const classesCount = currentClasses.length;
+
+                if (projectsInWrapper % classesCount === 0) {
+                    if (projectsInWrapper !== 0) {
+                        $('.inside-cases').append('</div>');
+                    }
+                    $('.inside-cases').append('<div class="wraper-grid-' + currentWrapper + '"></div>');
+                }
+
+                const newClass = currentClasses[projectsInWrapper % classesCount] + ' project';
+              
+                const projectHtml = $(projectData.html);
+                projectHtml.removeClass().addClass(newClass);
+                setTimeout(() => {
+                    projectHtml.addClass('is-inview');
+                }, 100);
+                projectHtml.find('div').first().removeClass().addClass('img');
+
+                const wrapperSelector = '.wraper-grid-' + currentWrapper;
+                $(wrapperSelector).last().append(projectHtml);
+
+                projectsInWrapper++;
+
+                if (projectsInWrapper % classesCount === 0) {
+                    currentWrapper = (currentWrapper === 1) ? 2 : 1;
+                    projectsInWrapper = 0;
+                }
+            });
+
+            if (projectsInWrapper !== 0) {
+                $('.inside-cases').append('</div>');
+            }
+        }
+
+        $('.filter-button').removeClass('active');
+        $(this).addClass('active');
+
+        setTimeout(() => {
+            scroll.update();
+        }, 100);
+    });
+
+
 });
 
-    
 
 
-});
-
-
- 

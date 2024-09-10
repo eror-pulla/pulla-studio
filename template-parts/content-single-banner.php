@@ -1,8 +1,8 @@
-<section class="single-banner">
+<section class="single-banner" data-scroll-section>
     <div class="inside-single-banner">
-        <h1><?php the_title(); ?></h1>
+        <h1 data-scroll><?php the_title(); ?></h1>
         <div class="wraper-single-banner">
-            <div class="video-wraper">
+            <div class="video-wraper" data-scroll>
                 <?php
                 $banner_single = get_field('banner_single');
                 if ($banner_single && isset($banner_single['img_or_video'])):
@@ -35,7 +35,7 @@
                 endif;
                 ?>
             </div>
-            <div class="text-wrap">
+            <div class="text-wrap" data-scroll>
                 <?php 
                 $categories = get_the_category();
                 if (!empty($categories)) {

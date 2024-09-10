@@ -30,7 +30,7 @@ $info=$footer['info'];
 ?>
 	</section>
 	<footer class="footer" data-scroll-section>
-		<div class="footer-wraper">
+		<div class="footer-wraper" data-scroll>
 			<div class="menus-footer">
 				<div class="columns-2">
 					<div class="wrap-menu-footer">

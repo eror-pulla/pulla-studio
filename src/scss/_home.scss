@@ -17,23 +17,39 @@
                 justify-content: space-between;
                 position: relative;
                 height: 60%;
-                .img-1{
-                    width: 600px;
-                    height: 551px;
-                    object-fit: cover;
-                    position: absolute;
-                    top: 42%;
-                    left: 50%;
-                    transform: translate(-50%, -52%);
+                .img-div-wrap{
+                    width: 100%;
+                    opacity: 0;
+                    transition: all ease-out 1.2s;
+                    transform: translate(0%, -100%);
+                    transition-delay: .3s;
+                    &.is-inview{
+                        opacity: 1;
+                        transform: translate(0%, 0%);
+                    }
+                    .img-1-home{
+                        transition: all ease-out 1s;
+                        transition-delay: 1.8s;
+                        width: 600px;
+                        height: 551px;
+                        object-fit: cover;
+                        position: absolute;
+                        top: 42%;
+                        left: 50%;
+                        transform: translate(-50%, -46%) scale(.8);
+                        &.fade-in-up{
+                            transform: translate(-50%, -46%) scale(1);
+                        }
+                    }
                 }
-                .img-2{
+                .img-2-home{
                     width: 291px;
                     height: 350px;
                     object-fit: cover;
                     position: absolute;
                     top: 40px;
                 }
-                .img-3{
+                .img-3-home{
                     width: 292px;
                     height: 350px;
                     object-fit: cover;
@@ -43,7 +59,7 @@
                 }
             }
             .wraper-content-banner{
-                height: 70%;
+                height: 50%;
                 h1{
                     font-family: 'Defectica-Regular', sans-serif;
                     font-weight: 400;
@@ -71,7 +87,7 @@
                         background-image: url('../../imgs/hypon.svg');
                         display: block; 
                         top: 21%;
-                        right: 33%;       
+                        right: 26%;       
                         width: 220px;
                         height: 13px;
                         position: absolute;
@@ -108,23 +124,6 @@
     }
 }
 
-
-
-@keyframes fadeInUp {
-    0% {
-        opacity: 0;
-        transform: translate(-50%, -100%) scale(0.8);
-    }
-    50% {
-        opacity: 1;
-        transform: translate(-50%, -52%) scale(0.8);
-    }
-    100% {
-        opacity: 1;
-        transform: translate(-50%, -45%) scale(1);
-    }
-}
-
 @keyframes fadeInLeft {
     0% {
         opacity: 0;
@@ -152,36 +151,46 @@
         opacity: 0;
         transform: translateY(10%);
     }
+    35%{
+        opacity: 1;
+    }
     100% {
         opacity: 1;
         transform: translateX(0);
     }
 }
 
-.fade-in-up,
- .fade-in-left, .fade-in-right, .fade-in-text {
+.fade-in-right{
     opacity: 0;
-    animation-duration: 1.5s;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+}
+.fade-in-left{
+    opacity: 0;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+}
+.fade-in-text{
+    opacity: 0;
+    animation-duration: .9s;
     animation-fill-mode: forwards;
     animation-timing-function: ease-out;
 }
 
-.fade-in-up {
-    animation-name: fadeInUp;
-}
-
 .fade-in-left {
     animation-name: fadeInLeft;
-    animation-delay: 1s;
+    animation-delay: 1.8s;
 }
 
 .fade-in-right {
     animation-name: fadeInRight;
-    animation-delay: 1s;
+    animation-delay: 1.8s;
 }
 
 .fade-in-text {
     animation-name: fadeInText;
-    animation-delay: 2.5s;
+    animation-delay: 2.6s;
 }
 

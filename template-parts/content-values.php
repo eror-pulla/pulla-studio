@@ -1,77 +1,96 @@
-<!-- <section class="values">
-    <div class="wraper-values">
-        <h1 class="text-principles">Our pRinciplEs</h1>
-        <h1 class="text-values">and valuEs</h1>
-        <div class="inside-values">
-            <div class="section-1">
-                <img src="<?php echo get_template_directory_uri() . '/imgs/Rectangle-1.png'; ?>" alt="">
-                <div class="wrap-text-value">
-                    <p class="val">/ values /</p>
-                    <p class="text">“At, we're on a mission to transform the digital landscape. We're a dynamic team of experts driven”.</p>
-                </div>
-            </div>
-            <div class="section-2">
-                <img src="<?php echo get_template_directory_uri() . '/imgs/Rectangle-2.png'; ?>" alt="">
-                <div class="wrap-text-value">
-                    <p class="val">/ values /</p>
-                    <p class="text">“At, we're on a mission to transform the digital landscape. We're a dynamic team of experts driven”.</p>
-                </div>
-            </div>
-             <div class="section-3">
-                <img src="<?php echo get_template_directory_uri() . '/imgs/Rectangle-2.png'; ?>" alt="">
-                <div class="wrap-text-value">
-                    <p class="val">/ values /</p>
-                    <p class="text">“At, we're on a mission to transform the digital landscape. We're a dynamic team of experts driven”.</p>
-                </div>
-            </div>
-             <div class="section-4">
-                <img src="<?php echo get_template_directory_uri() . '/imgs/Rectangle-1.png'; ?>" alt="">
-                <div class="wrap-text-value">
-                    <p class="val">/ values /</p>
-                    <p class="text">“At, we're on a mission to transform the digital landscape. We're a dynamic team of experts driven”.</p>
-                </div>
-            </div>
-             <div class="section-5">
-                <img src="<?php echo get_template_directory_uri() . '/imgs/Rectangle-1.png'; ?>" alt="">
-                <div class="wrap-text-value">
-                    <p class="val">/ values /</p>
-                    <p class="text">“At, we're on a mission to transform the digital landscape. We're a dynamic team of experts driven”.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section> -->
-<section class="values">
+<!-- 
+ <section class="values" data-scroll-section>
     <div class="wraper-values">
         <h1 class="text-principles">Our pRinciplEs</h1>
         <h1 class="text-values">and valuEs</h1>
         <div class="inside-values">
             <?php 
-            if( have_rows('values') ): // Check if the 'values' group exists
+            if( have_rows('values') ): 
                 while( have_rows('values') ): the_row(); 
-                    if( have_rows('values_repeater') ): // Check if 'values_repeater' rows exist within 'values'
-                        $counter = 1; // To handle the section classes dynamically
+                    if( have_rows('values_repeater') ): 
+                        $counter = 1; 
                         while( have_rows('values_repeater') ): the_row(); 
-                            $img = get_sub_field('img'); // Get the image field
-                            $name = get_sub_field('name'); // Get the name field
-                            $text = get_sub_field('text'); // Get the text field
+                            $img = get_sub_field('img'); 
+                            $name = get_sub_field('name'); 
+                            $text = get_sub_field('text');
                             ?>
-                            <div class="section-<?php echo $counter; ?>">
+                            <div class="section-<?php echo $counter; ?>" data-scroll data-scroll-repeat="true" data-section-id="<?php echo $counter; ?>">
                                 <img src="<?php echo esc_url($img); ?>" alt="<?php echo esc_attr($img['alt']); ?>">
                                 <div class="wrap-text-value">
                                     <p class="val">/ <?php echo esc_html($name); ?> /</p>
                                     <p class="text"><?php echo esc_html($text); ?></p>
                                 </div>
                             </div>
-                            <?php $counter++; // Increment the counter ?>
+                            <?php $counter++; ?>
                         <?php endwhile; ?>
                     <?php endif; ?>
                 <?php endwhile; ?>
             <?php endif; ?>
         </div>
     </div>
-</section>
+</section> -->
 
+<section class="values">
+    <div class="wraper-values">
+        <h1 class="text-principles">Our pRinciplEs</h1>
+        <h1 class="text-values">and valuEs</h1>
+        <div class="inside-values">
+            <?php 
+            if( have_rows('values') ): 
+                $sections = []; 
+                while( have_rows('values') ): the_row(); 
+                    if( have_rows('values_repeater') ): 
+                        $counter = 1; 
+                        while( have_rows('values_repeater') ): the_row(); 
+                            $img = get_sub_field('img'); 
+                            $name = get_sub_field('name'); 
+                            $text = get_sub_field('text');
+                            $sections[] = '<div class="section-' . $counter . '" data-section-id="' . $counter . '">
+                                <img src="' . $img . '" alt="' . $img_alt . '">
+                                <div class="wrap-text-value">
+                                    <p class="val">/ ' . esc_html($name) . ' /</p>
+                                    <p class="text">' . esc_html($text) . '</p>
+                                </div>
+                            </div>';
+                            $counter++; 
+                        endwhile; 
+                    endif; 
+                endwhile;
+                $current_wrapper = '';
+                $section_count = count($sections);
+                for ($i = 0; $i < $section_count; $i++) {
+                    if ( $i == 4) {
+                        if ($current_wrapper != 'vertical-scroll') {
+                            if ($current_wrapper != '') {
+                                echo '</div>'; 
+                            }
+                            echo '<div class="vertical-scroll">';
+                            $current_wrapper = 'vertical-scroll';
+                        }
+                        echo $sections[$i];
+                    } elseif ($i == 0 || $i == 1 || $i == 2 || $i == 3) {
+                        if ($current_wrapper != 'horizontal-scroll') {
+                            if ($current_wrapper != '') {
+                                echo '</div>'; 
+                            }
+                            echo '<div class="horizontal-scroll"> <div class="pin-wrap"> <div class="animation-wrap to-right">';
+                            $current_wrapper = 'horizontal-scroll';
+                        }
+                        echo $sections[$i];
+
+                        if($i == 3){
+                            echo '</div></div>';
+                        }
+                    }
+                }
+                if ($current_wrapper != '') {
+                    echo '</div>';
+                }
+            endif;
+            ?>
+        </div>
+    </div>
+</section>
 
 
 
@@ -84,7 +103,7 @@ $text_left= $under_values_section['text_left'];
 
 
 ?>
-<section class="stats">
+<section class="stats" data-scroll-section>
     <div class="wraper-stats">
         <div class="inside-stats">
             <div class="wraper-inside-text">
@@ -94,7 +113,7 @@ $text_left= $under_values_section['text_left'];
                     <p class="left-right"><?php echo $text_right ?></p>
                 </div>
             </div>
-            <div class="img-wrap">
+            <div class="img-wrap-comp">
                 <img src="<?php echo $img ?>" alt=""></div>
         </div>
     </div>

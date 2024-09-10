@@ -1,6 +1,7 @@
 <?php 
 get_header();
 ?>
+<section class="about-page-wrap"> 
 		<?php
 		while ( have_posts() ) :
 			the_post();
@@ -18,7 +19,7 @@ get_header();
 
 		endwhile; 
 		?>
-
+</section>
  <?php
 get_footer(); 
 ?>

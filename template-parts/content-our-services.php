@@ -1,5 +1,5 @@
 <?php if (have_rows('our_services')) : ?>
-    <section class="services">
+    <section class="services" data-scroll-section>
         <div class="wraper-services">
             <div class="inside-services">
                 <div class="headline">
@@ -12,7 +12,7 @@
                             <?php if (have_rows('services_repeater')) : ?>
                                 <?php while (have_rows('services_repeater')) : the_row(); ?>
                                     <p>/ Our Services /</p>
-                                    <div class="wrap-products">
+                                    <div class="wrap-products" data-scroll>
                                         <div class="name">
                                             <h3><?php the_sub_field('service_name'); ?></h3>
                                         </div>
@@ -24,7 +24,7 @@
                                                     <?php endwhile; ?>
                                                 <?php endif; ?>
                                             </div>
-                                            <div class="text-wraper">
+                                            <div class="text-wraper" data-scroll>
                                                 <p><?php the_sub_field('service_text'); ?></p>
                                             </div>
                                         </div>

@@ -192,6 +192,17 @@ function enqueue_locomotive_scroll_script() {
     wp_enqueue_script('locomotive-scroll', get_template_directory_uri() . '/locomotive/locomotive-scroll.js', array('jquery'), null, true);
 }
 add_action('wp_enqueue_scripts', 'enqueue_locomotive_scroll_script');
+function enqueue_gsap_scripts() {
+    // Enqueue GSAP core
+    wp_enqueue_script('gsap', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js', array(), null, true);
+    
+    // Enqueue GSAP ScrollTrigger
+    wp_enqueue_script('gsap-scrolltrigger', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js', array('gsap'), null, true);
+    
+    // Your custom JS
+    // wp_enqueue_script('custom-js', get_template_directory_uri() . '/js/custom.js', array('jquery', 'gsap', 'gsap-scrolltrigger'), null, true);
+}
+add_action('wp_enqueue_scripts', 'enqueue_gsap_scripts');
 
 // Enqueue custom script
 function enqueue_custom_script() {
@@ -200,12 +211,23 @@ function enqueue_custom_script() {
 	 // Enqueue Swiper JS
 	 wp_enqueue_script('swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', array('jquery'), null, true);
 
-	 wp_enqueue_script('custom-script', get_template_directory_uri() . '/src/js/app.js',  array('swiper-js', 'jquery'), '1.0', true);
+	//  wp_enqueue_script('custom-script', get_template_directory_uri() . '/src/js/app.js',  array('swiper-js', 'jquery'), '1.0', true);
+
+	//  wp_enqueue_script('custom-about', get_template_directory_uri() . '/src/js/about.js',  array('swiper-js', 'jquery'), '1.0', true);
+	if (is_page_template('page-company.php')) {
+        // Enqueue about.js only on the company page
+        wp_enqueue_script('custom-about', get_template_directory_uri() . '/src/js/about.js', array('swiper-js', 'jquery'), '1.0', true);
+    } else {
+        // Enqueue app.js on all other pages except the company page
+        wp_enqueue_script('custom-script', get_template_directory_uri() . '/src/js/app.js', array('swiper-js', 'jquery'), '1.0', true);
+    }
 
 
 	 wp_enqueue_script('swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', null, null, true);
 	 wp_enqueue_style('swiper-css', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css');
+
 	 wp_enqueue_script('custom-script', get_template_directory_uri() . '/src/js/app.js', array('swiper-js'), '1.0', true);
+	 wp_enqueue_script('custom-about', get_template_directory_uri() . '/src/js/about.js', array('swiper-js'), '1.0', true);
 }
 add_action('wp_enqueue_scripts', 'enqueue_custom_script');
 

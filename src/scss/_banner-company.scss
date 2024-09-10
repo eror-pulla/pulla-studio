@@ -14,7 +14,7 @@
                     background-image: url('../../imgs/hypon.svg');
                     display: block; 
                     top: 21%;
-                    right: 35%;       
+                    right: 29%;       
                     width: 220px;
                     height: 13px;
                     position: absolute;
@@ -62,5 +62,28 @@
                 }
             }
         }
+    }
+}
+.text-wrap{
+    opacity: 0;
+    transition: all ease-in .5s;
+    transform: translateY(20%);
+    transition-delay: .5s;
+    &.is-inview{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.img-wraper{
+    opacity: 0;
+    transform: scale(.9);
+    transform-origin: left;
+    transform-origin: center ; 
+    transition: opacity .7s ease-out, transform .7s ease-out;
+    transition-delay: .5s;
+    &.is-inview{
+        opacity: 1;
+        transform: scale(1);
     }
 }

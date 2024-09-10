@@ -2,7 +2,7 @@
 // Function to render a project
 function render_project($class, $project) {
     ?>
-    <div class="<?php echo esc_attr($class); ?> fade-in-img" data-scroll data-scroll-class="is-inview">
+    <div class="<?php echo esc_attr($class); ?> fade-in-img-home" data-scroll data-scroll-class="is-inview">
         <a href="<?php echo esc_url($project['permalink']); ?>">
             <div class="wrap-img">
                 <img src="<?php echo esc_url($project['image_url']); ?>" alt="">

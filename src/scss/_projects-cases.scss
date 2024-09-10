@@ -380,3 +380,26 @@
     }
 }
 
+.filter{
+    opacity: 0;
+    transition: all ease-in .3s;
+    transform: translateY(20%);
+    transition-delay: .3s;
+    &.is-inview{
+        opacity: 1;
+    }
+}
+
+.img-1, .img-last,
+.img-L, .img-M, .img-S {
+    opacity: 0;
+    transform: scale(.9);
+    transform-origin: left;
+    transform-origin: center ; 
+    transition: opacity .7s ease-out, transform .7s ease-out;
+    transition-delay: .3s;
+    &.is-inview{
+        opacity: 1;
+        transform: scale(1);
+    }
+}

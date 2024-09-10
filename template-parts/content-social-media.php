@@ -1,4 +1,4 @@
-<section class="social-media">
+<section class="social-media" data-scroll-section>
     <div class="wraper-social">
         <div class="inside-social">
             <h1>Social Media</h1>
