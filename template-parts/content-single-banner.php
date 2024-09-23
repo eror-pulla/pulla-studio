@@ -1,6 +1,8 @@
 <section class="single-banner" data-scroll-section>
     <div class="inside-single-banner">
-        <h1 data-scroll><?php the_title(); ?></h1>
+        <div class="split-lines">
+            <h1 data-scroll><?php the_title(); ?></h1>
+        </div>
         <div class="wraper-single-banner">
             <div class="video-wraper" data-scroll>
                 <?php
@@ -12,7 +14,10 @@
                         if (!empty($image_url)):
                 ?>
                         <div class="img-wraper">
-                            <img src="<?php echo esc_url($image_url); ?>" alt="Banner Image">
+                            <div class="brick-img" data-scroll data-scroll-speed="-2">
+                                <img src="<?php echo esc_url($image_url); ?>" alt="Banner Image">
+                                <div class="curtain"></div>
+                            </div>
                         </div>
                 <?php 
                         endif;
@@ -39,11 +44,11 @@
                 <?php 
                 $categories = get_the_category();
                 if (!empty($categories)) {
-                    echo '<p class="cat">' . esc_html($categories[0]->name) . '</p>'; 
+                    echo '<p class="cat" data-scroll>' . esc_html($categories[0]->name) . '</p>'; 
                 }
                 ?>
-                <p class="date"><?php echo esc_html($banner_single['date']); ?></p> 
-                <p class="text"><?php echo esc_html($banner_single['description']); ?></p>
+                <p class="date" data-scroll><?php echo esc_html($banner_single['date']); ?></p> 
+                <p class="text" data-scroll><?php echo esc_html($banner_single['description']); ?></p>
             </div>
         </div>
     </div>

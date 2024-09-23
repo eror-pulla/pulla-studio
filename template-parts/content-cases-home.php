@@ -5,10 +5,15 @@ function render_project($class, $project) {
     <div class="<?php echo esc_attr($class); ?> fade-in-img-home" data-scroll data-scroll-class="is-inview">
         <a href="<?php echo esc_url($project['permalink']); ?>">
             <div class="wrap-img">
-                <img src="<?php echo esc_url($project['image_url']); ?>" alt="">
+                <div class="wrap-brick" data-scroll>
+                    <div class="brick-img" data-scroll data-scroll-speed="-2">
+                        <img src="<?php echo esc_url($project['image_url']); ?>">
+                        <div class="curtain"></div>
+                    </div>
+                </div>
                 <div class="text">
-                    <p class="cat bodyS-D"><?php echo esc_html($project['category']); ?></p>
-                    <p class="name"><?php echo esc_html($project['title']); ?></p>
+                    <p class="cat bodyS-D" data-scroll><?php echo esc_html($project['category']); ?></p>
+                    <p class="name" data-scroll><?php echo esc_html($project['title']); ?></p>
                 </div>
             </div>
         </a>
@@ -44,7 +49,7 @@ if (!$cases) {
     echo '<p>No cases found.</p>';
 } else {
     ?>
-    <section class="cases" data-scroll-section>
+    <section class="cases-home" data-scroll-section>
         <div class="wraper-cases" >
             <div class="inside-cases">
                 <?php

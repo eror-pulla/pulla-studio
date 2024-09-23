@@ -1,27 +1,19 @@
 @import 'globals';
 @import 'variables';
 
-
+.about-page-wrap123{
+    padding-top: 40px;
+}
 .company{
-    margin-top: 62px;
+    // margin-top: 62px;
     .wraper-company{
         padding:0 48px;
         .inside-company{
             .text-wrap{
                 position: relative;
-                &::after{
-                    content: "";
-                    background-image: url('../../imgs/hypon.svg');
-                    display: block; 
-                    top: 21%;
-                    right: 29%;       
-                    width: 220px;
-                    height: 13px;
-                    position: absolute;
-                    background-size: contain;
-                    background-repeat: no-repeat;
-                    z-index: 2;
-                }
+                opacity: 1;
+                transform: translateY(0);
+              
                 .crack{
                     height: 70%;
                     width: 100%;
@@ -31,10 +23,25 @@
                     line-height: 212.4px;
                     font-weight: 400;
                     margin: 0;
+                    transition-delay: .3s;
+                    &::after{
+                        content: "";
+                        background-image: url('../../imgs/hypon.svg');
+                        display: block; 
+                        top: 40%;
+                        right: 29%;       
+                        width: 220px;
+                        height: 13px;
+                        position: absolute;
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        z-index: 2;
+                    }
                 }
                 .break-text{
                     display: flex;
                     justify-content: end;
+                    align-items: flex-start;
                     gap: 24px;
                     margin: 0;
                     width: 100%;
@@ -44,6 +51,7 @@
                     line-height: 212.4px;
                     font-weight: 400;
                     text-align: end;
+                    transition-delay: .4s;
                     p{
                         font-family: 'Aeonik-Regular', sans-serif;
                         color: $priamry_color;
@@ -52,10 +60,14 @@
                         font-weight: 400;
                         text-align: end;
                         text-transform: uppercase;
+                        margin: 0;
                     }
                 }
             }
             .img-wraper{
+                .curtain{
+                    transition-delay:.9s;
+                }
                 img{
                     width: 100%;
 
@@ -64,26 +76,26 @@
         }
     }
 }
-.text-wrap{
-    opacity: 0;
-    transition: all ease-in .5s;
-    transform: translateY(20%);
-    transition-delay: .5s;
-    &.is-inview{
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+// .text-wrap{
+//     opacity: 0;
+//     transition: all ease-in .5s;
+//     transform: translateY(20%);
+//     transition-delay: .5s;
+//     &.is-inview{
+//         opacity: 1;
+//         transform: translateY(0);
+//     }
+// }
 
-.img-wraper{
-    opacity: 0;
-    transform: scale(.9);
-    transform-origin: left;
-    transform-origin: center ; 
-    transition: opacity .7s ease-out, transform .7s ease-out;
-    transition-delay: .5s;
-    &.is-inview{
-        opacity: 1;
-        transform: scale(1);
-    }
-}
+// .img-wraper{
+//     opacity: 0;
+//     transform: scale(.9);
+//     transform-origin: left;
+//     transform-origin: center ; 
+//     transition: opacity .7s ease-out, transform .7s ease-out;
+//     transition-delay: .5s;
+//     &.is-inview{
+//         opacity: 1;
+//         transform: scale(1);
+//     }
+// }

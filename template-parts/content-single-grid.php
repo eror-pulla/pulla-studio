@@ -31,7 +31,7 @@
                                                         $image_alt = esc_attr($image['alt']);
                                                     } else {
                                                         $image_url = esc_url($image);
-                                                        $image_alt = ''; // Provide a fallback if alt is not available
+                                                        $image_alt = ''; 
                                                     }
 
                                                     if( $choose == 'one' && $image_url ):
@@ -39,7 +39,11 @@
                                                         $img_class = 'img-wrap-' . $counter;
                                                         ?>
                                                         <div class="<?php echo esc_attr($img_class); ?>" data-scroll>
-                                                            <img src="<?php echo $image_url; ?>" alt="<?php echo $image_alt; ?>">
+                                                            
+                                                            <div class="brick-img" data-scroll data-scroll-speed="-2">
+                                                                <img src="<?php echo $image_url; ?>" alt="<?php echo $image_alt; ?>">
+                                                                <div class="curtain"></div>
+                                                            </div>
                                                         </div>
                                                         <?php
                                                     elseif( $choose == 'two' && $video ):
@@ -83,10 +87,14 @@
                                                     $image_alt = esc_attr($image['alt']);
                                                 } else {
                                                     $image_url = esc_url($image);
-                                                    $image_alt = ''; // Fallback for alt text if not available
+                                                    $image_alt = ''; 
                                                 }
                                                 ?>
-                                                <img src="<?php echo $image_url; ?>" alt="<?php echo $image_alt; ?>" data-scroll>
+                                                <div class="brick-img" data-scroll data-scroll-speed="-2">
+                                                    <img src="<?php echo $image_url; ?>" alt="<?php echo $image_alt; ?>" data-scroll>
+                                                    <div class="curtain"></div>
+                                                </div>
+                                                <!-- <img src="<?php echo $image_url; ?>" alt="<?php echo $image_alt; ?>" data-scroll> -->
                                                 <?php
                                             elseif (strtolower($choose_img_or_video) == 'video' && !empty($video)):
                                                 ?>
@@ -172,7 +180,11 @@
                                                                 $image_alt = ''; 
                                                             }
                                                             ?>
-                                                            <img src="<?php echo $image_url; ?>" alt="<?php echo $image_alt; ?>">
+                                                            <div class="brick-img" data-scroll data-scroll-speed="-2">
+                                                                <img src="<?php echo $image_url; ?>" alt="<?php echo $image_alt; ?>">
+                                                                <div class="curtain"></div>
+                                                            </div>
+                                                            <!-- <img src="<?php echo $image_url; ?>" alt="<?php echo $image_alt; ?>"> -->
                                                         <?php elseif (strtolower($choose_img_or_video) == 'video' && !empty($video)): ?>
                                                             <div class="video-wrap">
                                                                 <div class="plyr__video-embed">
@@ -224,7 +236,11 @@
                                                                 $image_alt = ''; 
                                                             }
                                                             ?>
-                                                            <img src="<?php echo $image_url; ?>" alt="<?php echo $image_alt; ?>">
+                                                            <div class="brick-img" data-scroll data-scroll-speed="-2">
+                                                                <img src="<?php echo $image_url; ?>" alt="<?php echo $image_alt; ?>">
+                                                                <div class="curtain"></div>
+                                                            </div>
+                                                            <!-- <img src="<?php echo $image_url; ?>" alt="<?php echo $image_alt; ?>"> -->
                                                         <?php elseif (strtolower($choose_img_or_video) == 'video' && !empty($video)): ?>
                                                             <div class="video-wrap">
                                                                 <div class="plyr__video-embed">
@@ -263,8 +279,8 @@
                 <?php if ($prev_post): ?>
                     <div class="wraper-pagination" data-scroll>
                         <a href="<?php echo get_permalink($prev_post->ID); ?>" class="prev-project">
-                            <p class="back">Back</p>
-                            <p class="next-title"><?php echo get_the_title($prev_post->ID); ?></p>
+                            <p class="back" data-scroll>Back</p>
+                            <p class="next-title" data-scroll><?php echo get_the_title($prev_post->ID); ?></p>
                         </a>
                     </div>
                 <?php endif; ?>
@@ -272,8 +288,8 @@
                 <?php if ($next_post): ?>
                     <div class="wraper-pagination-1" data-scroll>
                         <a href="<?php echo get_permalink($next_post->ID); ?>" class="next-project">
-                            <p class="back">Next</p>
-                            <p class="next-title"><?php echo get_the_title($next_post->ID); ?></p>
+                            <p class="back" data-scroll>Next</p>
+                            <p class="next-title" data-scroll><?php echo get_the_title($next_post->ID); ?></p>
                         </a>
                     </div>
                 <?php endif; ?>

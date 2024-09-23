@@ -212,11 +212,12 @@ function enqueue_custom_script() {
 	 wp_enqueue_script('swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', array('jquery'), null, true);
 
 	//  wp_enqueue_script('custom-script', get_template_directory_uri() . '/src/js/app.js',  array('swiper-js', 'jquery'), '1.0', true);
-
 	//  wp_enqueue_script('custom-about', get_template_directory_uri() . '/src/js/about.js',  array('swiper-js', 'jquery'), '1.0', true);
-	if (is_page_template('page-company.php')) {
+
+	if (is_page('company')) {
         // Enqueue about.js only on the company page
-        wp_enqueue_script('custom-about', get_template_directory_uri() . '/src/js/about.js', array('swiper-js', 'jquery'), '1.0', true);
+        wp_enqueue_script('custom-about', get_template_directory_uri() . '/src/js/about.js', array('swiper-js', 'jquery'), '1.1', true);
+		
     } else {
         // Enqueue app.js on all other pages except the company page
         wp_enqueue_script('custom-script', get_template_directory_uri() . '/src/js/app.js', array('swiper-js', 'jquery'), '1.0', true);
@@ -226,17 +227,9 @@ function enqueue_custom_script() {
 	 wp_enqueue_script('swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', null, null, true);
 	 wp_enqueue_style('swiper-css', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css');
 
-	 wp_enqueue_script('custom-script', get_template_directory_uri() . '/src/js/app.js', array('swiper-js'), '1.0', true);
-	 wp_enqueue_script('custom-about', get_template_directory_uri() . '/src/js/about.js', array('swiper-js'), '1.0', true);
+	//  wp_enqueue_script('custom-about', get_template_directory_uri() . '/src/js/about.js', array('swiper-js'), '1.0', true);
 }
 add_action('wp_enqueue_scripts', 'enqueue_custom_script');
-
-// function enqueue_custom_script() {
-//     wp_enqueue_script('swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', null, null, true);
-//     wp_enqueue_style('swiper-css', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css');
-//     wp_enqueue_script('custom-script', get_template_directory_uri() . '/src/js/app.js', array('swiper-js'), '1.0', true);
-// }
-// add_action('wp_enqueue_scripts', 'enqueue_custom_script');
 
 
 // Register the menu location

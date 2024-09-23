@@ -20,6 +20,13 @@
         background-size: contain;
         background-repeat: no-repeat;
         z-index: 2;
+        opacity: 0;
+        transition: all ease-in-out .4s;
+        transition-delay: .5s;
+    }        
+    &.is-inview::after{
+        opacity: 1;
+        transform: rotate(360deg);
     }
     .footer-wraper{
         padding: 0 48px;
@@ -45,10 +52,26 @@
                                     font-weight: 400;
                                     font-size: 18px;
                                     line-height: 22.32px;
+                                    position: relative;
                                     transition: all ease .3s;
+                                    &::after {
+                                        content: '';
+                                        position: absolute;
+                                        left: 0;
+                                        bottom: 0;
+                                        height: 1px; 
+                                        width: 100%;
+                                        background-color: $secondary_color; 
+                                        transform: scaleX(0); 
+                                        transform-origin: left;
+                                        transition: transform 0.5s ease-in-out;
+                                      }
                                     &:hover{
                                         color: $secondary_color;
                                         transition: all ease .3s;
+                                    &::after {
+                                        transform: scaleX(1);   
+                                        }
                                     }
                                 }    
                             }
@@ -73,6 +96,27 @@
                                     &:hover{
                                         color: $secondary_color;
                                         transition: all ease .3s;
+                                    }
+                                    position: relative;
+                                    transition: all ease .3s;
+                                    &::after {
+                                        content: '';
+                                        position: absolute;
+                                        left: 0;
+                                        bottom: 0;
+                                        height: 1px; 
+                                        width: 100%;
+                                        background-color: $secondary_color; 
+                                        transform: scaleX(0); 
+                                        transform-origin: left;
+                                        transition: transform 0.5s ease-in-out;
+                                      }
+                                    &:hover{
+                                        color: $secondary_color;
+                                        transition: all ease .3s;
+                                    &::after {
+                                        transform: scaleX(1);   
+                                        }
                                     }
                                 }    
                             }
@@ -107,27 +151,37 @@
         }
         .info-big-banner{
             width: 100%;
-            p{
-                margin: 0;
-                width: 100%;
-                margin: 0;
-                margin-top: 13px;
-                color: $third_color;
-                border-bottom: 1px solid $border-col;
-                a{
-                    text-decoration: none;
+            .split-lines{
+                p{
+                    margin: 0;
                     width: 100%;
                     margin: 0;
+                    margin-top: 13px;
                     color: $third_color;
-                    font-size: 10vw;
-                    font-family: 'Defectica-Regular', sans-serif;
-                    font-weight: 400;
-                    line-height: 256.68px;
-                    text-transform:none;
-                    transition: all ease .3s;
-                    &:hover{
-                        color: $secondary_color;
+                    border-bottom: 1px solid $border-col;
+                    opacity: 0;
+                    transform: translateY(20px) !important;
+                    transition: all ease-out .4s;
+                    transition-delay: .5s;
+                    &.is-inview{
+                        opacity: 1;
+                        transform: translateY(0) !important;
+                    }
+                    a{
+                        text-decoration: none;
+                        width: 100%;
+                        margin: 0;
+                        color: $third_color;
+                        font-size: 10vw;
+                        font-family: 'Defectica-Regular', sans-serif;
+                        font-weight: 400;
+                        line-height: 256.68px;
+                        text-transform:none;
                         transition: all ease .3s;
+                        &:hover{
+                            color: $secondary_color;
+                            transition: all ease .3s;
+                        }
                     }
                 }
             }
@@ -148,10 +202,12 @@
                     font-weight: 400;
                     font-size: 18px;
                     line-height: 22.32px;
+                    transition-delay: .5s;
                     .white{
                         color: $secondary_color !important;
                         opacity: 100% !important;
                         font-weight: 400;
+                        transition-delay: .5s;
                     }
                     b{
                         color: $secondary_color !important;
@@ -170,6 +226,7 @@
                     font-weight: 400;
                     font-size: 18px;
                     line-height: 22.32px;
+                    transition-delay: .5s;
                 }
             }
             .columns-4{
@@ -177,6 +234,7 @@
                 text-align: end;
                 p{
                     margin: 0;
+                    transition-delay: .5s;
                     .go-top{
                         color: $third_color;
                         text-transform: uppercase;
@@ -185,9 +243,26 @@
                         font-size: 18px;
                         line-height: 22.32px;
                         transition: all ease .3s;
+                        text-decoration: none;
+                        position: relative;
+                        &::after {
+                            content: '';
+                            position: absolute;
+                            left: 0;
+                            bottom: 0;
+                            height: 1px; 
+                            width: 100%;
+                            background-color: $secondary_color; 
+                            transform: scaleX(0); 
+                            transform-origin: left;
+                            transition: transform 0.5s ease-in-out;
+                          }
                         &:hover{
                             color: $secondary_color;
                             transition: all ease .3s;
+                        &::after {
+                            transform: scaleX(1);   
+                            }
                         }
                     }
                 }
@@ -200,19 +275,50 @@
     width: 20%;
     display: flex;
     gap: 4px;
-    p{
+    .gray-text{
         margin: 0;
+        color: $secondary_color !important;
+        opacity: 50%;
+        font-family: 'Aeonik-Regular', sans-serif;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 22.32px;
+        transition-delay: .5s;
+
+    }
+    .white{
+        color: $secondary_color !important;
+        opacity: 100% !important;
+        font-weight: 400;
         color: $secondary_color;
         opacity: 50%;
         font-family: 'Aeonik-Regular', sans-serif;
         font-weight: 400;
         font-size: 18px;
         line-height: 22.32px;
-    }
-    .white{
-        color: $secondary_color !important;
-        opacity: 100% !important;
-        font-weight: 400;
+        text-decoration: none;
+        cursor: pointer;
+        position: relative;
+        transition-delay: .5s;
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 1px; 
+            width: 100%;
+            background-color: $secondary_color; 
+            transform: scaleX(0); 
+            transform-origin: left;
+            transition: transform 0.5s ease-in-out;
+            }
+        &:hover{
+            color: $secondary_color;
+            transition: all ease .3s;
+        &::after {
+            transform: scaleX(1);   
+            }
+        }
     }
 
 }

@@ -1,3 +1,4 @@
+
 @import 'variables';
 //aeonik
 $Aeonik-bold: 'Aeonik-Bold';
@@ -177,4 +178,136 @@ $Switzer-Medium: 'Switzer-Medium';
 .no-prev{
     justify-content: end !important;
     text-align: end;
+}
+
+.brick-img {
+    img{
+        width: 100%; 
+        height: auto;
+        will-change: transform; 
+    }
+    .curtain {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        transform: translateY(0);
+        -webkit-transform: translateY(0);
+        -moz-transform: translateY(0);
+        -o-transform: translateY(0);
+        transition: all cubic-bezier(.12,.41,.11,.9) .5s;
+        -webkit-transition: all cubic-bezier(.12,.41,.11,.9) .5s;
+        -moz-transition: all cubic-bezier(.12, .41, .11, .9) .5s;
+        -o-transition: all cubic-bezier(.12, .41, .11, .9) .5s;
+    }
+    &.is-inview{
+        .curtain {
+            transform: translateY(-100%);
+            transition-delay: .5s;
+        }
+    }
+}
+
+.split-lines{
+    display: block;
+    position: relative;
+    overflow: hidden;
+    h1{
+        transform: translate(0px, 100%);
+        transition: all ease-in-out .6s;
+        transition-delay: .4s;
+        &.is-inview{
+            transform: translate(0px, 0%);
+        }
+    }
+    h2{
+        transform: translate(0px, 100%);
+        transition: all ease-in-out .6s;
+        transition-delay: .4s;
+        &.is-inview{
+            transform: translate(0px, 0%);
+        }
+    }
+    h3{
+        transform: translate(0px, 100%);
+        transition: all ease-in-out .6s;
+        transition-delay: .4s;
+        &.is-inview{
+            transform: translate(0px, 0%);
+        }
+    }
+    p{
+        transform: translate(0px, 100%);
+        transition: all ease-in-out .6s;
+        transition-delay: .4s;
+        &.is-inview{
+            transform: translate(0px, 0%) !important;
+        }
+    }
+    .scroll{
+        transform: translate(0px, 100%);
+        transition: all ease-in-out .6s;
+        transition-delay: 1s;
+        &.is-inview{
+            transform: translate(0px, 0%) ;
+        }
+    }
+}
+
+.wraper-lines{
+    display: flex;
+    gap: 20px;
+    .split-lines{
+        display: block;
+        position: relative;
+        overflow: hidden;
+        .word-1{
+            transform: translate(0px, 100%);
+            transition: all ease-in-out .6s;
+            transition-delay: .4s;
+            &.is-inview{
+                transform: translate(0px, 0%);
+            }
+        }
+        .word-2{
+            transform: translate(0px, 100%);
+            transition: all ease-in-out .6s;
+            transition-delay: .7s;
+            &.is-inview{
+                transform: translate(0px, 0%);
+            }
+        }
+    }
+}
+p{
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all ease-out .4s;
+    transition-delay: .3s;
+    &.is-inview{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+h5{
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all ease-out .4s;
+    transition-delay: .3s;
+    &.is-inview{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.white{
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all ease-out .4s;
+    transition-delay: .3s;
+    &.is-inview{
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

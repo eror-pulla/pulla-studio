@@ -8,19 +8,7 @@
         .inside-services{
             .headline{
                 position: relative;
-                &::after{
-                    content: "";
-                    background-image: url('../../imgs/hypon.svg');
-                    display: block;
-                    bottom: 30%;
-                    left: 30%;
-                    width: 220px;
-                    height: 13px;
-                    position: absolute;
-                    background-size: contain;
-                    background-repeat: no-repeat;
-                    z-index: 2;
-                }
+                
                 h1{
                     margin: 0;
                     font-family: 'Defectica-Regular', sans-serif;
@@ -31,6 +19,19 @@
                 }
                 .indent{
                     text-indent: 45%;
+                    &::after{
+                        content: "";
+                        background-image: url('../../imgs/hypon.svg');
+                        display: block;
+                        bottom: 50%;
+                        left: 30%;
+                        width: 220px;
+                        height: 13px;
+                        position: absolute;
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        z-index: 2;
+                    }
                 }
             }
             .services-products{
@@ -44,6 +45,7 @@
                         line-height: 13.52px;
                         font-weight: 600;
                         text-transform: uppercase;
+                        transition-delay: .5s;
                     }
                     .wrap-products{
                         padding-top: 41px;
@@ -61,6 +63,7 @@
                                 font-size: 60px;
                                 line-height: 72px;
                                 font-weight: 400;
+                                transition-delay: .7s;
                                 // text-transform: uppercase;
                             }
                         }
@@ -85,6 +88,20 @@
                                     line-height: 28.8px;
                                     font-weight: 400;
                                     text-transform: uppercase;
+                                    opacity: 0;
+                                    transition: all ease-in-out .3s;
+                                    transition-delay: .8s;
+                                    span{
+                                        opacity: 0;
+                                        transition: all ease-in-out .3s;
+                                        transition-delay: .9s;
+                                        &.is-inview{
+                                            opacity: 1;
+                                        }
+                                    }
+                                    &.is-inview{
+                                        opacity: 1;
+                                    }
                                 }
                             }
                             .text-wraper{
@@ -97,6 +114,7 @@
                                     font-size: 18px;
                                     line-height: 25.2px;
                                     font-weight: 400;
+                                    transition-delay: 1s;
                                 }
                             }
                         }
@@ -107,14 +125,14 @@
     }
 }
 
-.text-wraper{
-    opacity: 0;
-    transition: all ease-in .3s;
-    transition-delay: .3s;
-    &.is-inview{
-        opacity: 1;
-    }
-}
+// .text-wraper{
+//     opacity: 0;
+//     transition: all ease-in .3s;
+//     transition-delay: .3s;
+//     &.is-inview{
+//         opacity: 1;
+//     }
+// }
 
 
 
@@ -131,8 +149,8 @@
         background-color: $priamry_color; 
         transform: scaleX(0); 
         transform-origin: left;
-        transition: transform .7s linear;
-        transition-delay: .3s;
+        transition: transform .6s linear;
+        transition-delay: .6s;
     }
 
     &.is-inview::before {
@@ -148,3 +166,4 @@
         transform: scaleX(1); 
     }
 }
+

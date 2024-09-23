@@ -14,11 +14,18 @@
                 line-height: 212.4px;
                 font-weight: 400;
                 margin-bottom: 20px;
+                transition-delay: .3s;
             }
                 .swiper,
                 .mySwiper{
                     .swiper-wrapper{
                         .swiper-slide{
+                            opacity: 0;
+                            transition: all ease-in-out .3s;
+                            transition-delay: .4s;
+                            &.is-inview{
+                                opacity: 1;
+                            }
                             cursor: grabbing;
                             max-height: 444px;
                             height: 444px;
@@ -31,6 +38,12 @@
                                         top: 50%;
                                         left: 50%;
                                         transform: translate(-50%,-50%);
+                                        opacity: 0;
+                                        transition: all ease-in-out .3s;
+                                        transition-delay: .5s;
+                                        &.is-inview{
+                                            opacity: 1;
+                                        }
                                     }
                                 }
                                 .text-wrap-award{
@@ -48,6 +61,8 @@
                                         line-height: 28.4px;
                                         font-weight: 400;
                                         text-transform: uppercase;
+                                        transition-delay: .6s;
+
                                     }
                                     .number{
                                         font-family: 'Aeonik-Regular', sans-serif;
@@ -55,6 +70,7 @@
                                         font-size: 18px;
                                         line-height: 28.4px;
                                         font-weight: 400;
+                                        transition-delay: .7s;
                                     }
                                 }
                             }

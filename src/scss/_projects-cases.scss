@@ -3,6 +3,7 @@
 
 
 .filter-section{
+    margin-bottom: 5%;
     .wraper-filter{
         .inside-banner{
             padding: 0 48px;
@@ -26,7 +27,15 @@
                     background-repeat: no-repeat;
                     z-index: 2;
                     transform: translate(-65%, -50%);
+                    opacity: 0;
+                    transition: all ease-in-out .4s;
+                    transition-delay: .6s;
+                }        
+                &.is-inview::after{
+                    opacity: 1;
+                    transform: translate(-65%, -50%) rotate(360deg);
                 }
+
                 h2{
                     font-family: 'Defectica-Regular', sans-serif;
                     color: $priamry_color;
@@ -44,27 +53,49 @@
                         margin: 0;
                         li{
                             list-style: none;
-                            // a{
-                            //     text-decoration: underline;
-                            //     text-underline-offset: 6px;
-                            //     font-family: 'Aeonik-Regular', sans-serif;
-                            //     color: $priamry_color;
-                            //     font-size: 16px;
-                            //     line-height: 25.6px;
-                            //     font-weight: 400;
-                            // }
                             .filter-button{
+                                padding: 0;
                                 text-transform: uppercase;
                                 background: none;
                                 cursor: pointer;
                                 border: none;
-                                text-decoration: underline;
                                 text-underline-offset: 6px;
                                 font-family: 'Aeonik-Regular', sans-serif;
                                 color: $priamry_color;
                                 font-size: 16px;
                                 line-height: 25.6px;
                                 font-weight: 400;
+                                position: relative;
+                                opacity: 0;
+                                transition: all ease-in-out .3s;
+                                transform: translateY(20px);
+                                transition-delay: .8s;
+                                &.is-inview{
+                                    opacity: 1;
+                                    transform: translateY(0);
+                                }
+                                &::after {
+                                    content: '';
+                                    position: absolute;
+                                    left: 0;
+                                    bottom: 0;
+                                    height: 1px; 
+                                    width: 100%;
+                                    background-color: $priamry_color; 
+                                    transform: scaleX(0); 
+                                    transform-origin: left;
+                                    transition: transform 0.5s ease-in-out;
+                                  }
+                                &:hover{
+                                &::after {
+                                    transform: scaleX(1);   
+                                    }
+                                }
+                                &.active{
+                                    &::after {
+                                        transform: scaleX(1);  
+                                    }
+                                }
                             }
                         }
                     }
@@ -229,7 +260,7 @@
             }
             .wraper-grid-2{
                 position: relative;
-                margin-bottom: 5%;
+                margin-bottom: 15%;
                 // margin-bottom: 5% !important;
                 .img-M{
                     width: 37.2%;
@@ -380,26 +411,26 @@
     }
 }
 
-.filter{
-    opacity: 0;
-    transition: all ease-in .3s;
-    transform: translateY(20%);
-    transition-delay: .3s;
-    &.is-inview{
-        opacity: 1;
-    }
-}
+// .filter{
+//     opacity: 0;
+//     transition: all ease-in .3s;
+//     transform: translateY(20%);
+//     transition-delay: .8s;
+//     &.is-inview{
+//         opacity: 1;
+//     }
+// }
 
-.img-1, .img-last,
-.img-L, .img-M, .img-S {
-    opacity: 0;
-    transform: scale(.9);
-    transform-origin: left;
-    transform-origin: center ; 
-    transition: opacity .7s ease-out, transform .7s ease-out;
-    transition-delay: .3s;
-    &.is-inview{
-        opacity: 1;
-        transform: scale(1);
-    }
-}
+// .img-1, .img-last,
+// .img-L, .img-M, .img-S {
+//     opacity: 0;
+//     transform: scale(.9);
+//     transform-origin: left;
+//     transform-origin: center ; 
+//     transition: opacity .7s ease-out, transform .7s ease-out;
+//     transition-delay: .3s;
+//     &.is-inview{
+//         opacity: 1;
+//         transform: scale(1);
+//     }
+// }

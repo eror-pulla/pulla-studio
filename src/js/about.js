@@ -1,69 +1,139 @@
 
 jQuery(document).ready(function($) {
-    console.log("n about");
+
+    // gsap.registerPlugin(ScrollTrigger);
+    let lastScrollY = 0;
+    const header = document.querySelector('.header');
+    const triggerPoint = 100;
+    // const scroller1 = document.querySelector('[data-scroll-container]');
+    
+    function handleScroll() {
+        const currentScrollY = scrollLoco.scroll.instance.scroll.y;
+        console.log('Current Scroll Y:', currentScrollY); // Debugging
+        console.log('Last Scroll Y:', lastScrollY); // Debugging
+        
+        if (currentScrollY > lastScrollY) {
+            header.classList.add('hidden');
+            header.classList.remove('scrolled-up');
+        } else {
+            header.classList.remove('hidden');
+            if (currentScrollY > triggerPoint) {
+                header.classList.add('scrolled-up');
+            } else {
+                header.classList.remove('scrolled-up');
+            }
+        }
+    
+        lastScrollY = currentScrollY;
+    }
+
+
+    var $img = $('.img-wraper img');  
+    var $loader = $('.overlay-loader'); 
+    $loader.fadeOut(500);  
+    if ($img.length > 0 && $img[0].complete) {
+        $img.trigger('load');
+    }
+    $img.on('load', function() {
+        $loader.fadeOut(500);  
+    }).each(function() {
+        if (this.complete) {
+            $(this).trigger('load');
+        }
+    });
+
+    var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 4,
+        spaceBetween: 16,
+        pagination: false,
+    });
+
+    const scroller = document.querySelector('.about-page-wrap');
+    console.log('divsss', scroller);
+    
     
 
-gsap.registerPlugin(ScrollTrigger);
+    let scrollLoco;
+    function initLocomotiveScroll() {
+        scrollLoco = new LocomotiveScroll({
+            el: scroller,
+            smooth: true,
+            getDirection: true,
+            direction: 'vertical'
+        });
 
-const scroller = document.querySelector('.about-page-wrap');
-let scrollLoco = new LocomotiveScroll({
-    el: scroller,
-    smooth: true,
-    getDirection:true,
-    direction: 'vertical'
-});
+        scrollLoco.on('scroll', function() {
+            ScrollTrigger.update();
+            // initShowHideHeader();
+            handleScroll();
+        });
+
+        ScrollTrigger.scrollerProxy(scroller, {
+            scrollTop(value) {
+                return arguments.length ? scrollLoco.scrollTo(value, 0, 0) : scrollLoco.scroll.instance.scroll.y;
+            },
+            getBoundingClientRect() {
+                return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
+            },
+            pinType: scroller.style.transform ? "transform" : "fixed"
+        });
+
+        ScrollTrigger.defaults({
+            scroller: scroller
+        });
+
+        const horizontalSections = gsap.utils.toArray('.horizontal-scroll');
+        horizontalSections.forEach(function (sec, i) {	
+            var thisPinWrap = sec.querySelector('.pin-wrap');
+            var thisAnimWrap = thisPinWrap.querySelector('.animation-wrap');
+            var getToValue = () => -(thisAnimWrap.scrollWidth - window.innerWidth); 
+
+            gsap.fromTo(thisAnimWrap, { 
+                x: () => thisAnimWrap.classList.contains('to-right') ? 0 : getToValue() 
+            }, { 
+                x: () => thisAnimWrap.classList.contains('to-right') ? getToValue() : 0, 
+                ease: "none",
+                scrollTrigger: {
+                    trigger: sec,		
+                    scroller: scroller,
+                    start: "top top",
+                    end: () => "+=" + (thisAnimWrap.scrollWidth - window.innerWidth),
+                    pin: thisPinWrap,
+                    invalidateOnRefresh: true,
+                    anticipatePin: 1,
+                    scrub: true,
+                }
+            });
+        });
+
+        ScrollTrigger.addEventListener("refresh", () => scrollLoco.update());
+        ScrollTrigger.refresh();
+    }
+
+    window.scrollTo(0, 0);
+    window.addEventListener('load', function() {
+        setTimeout(() => {
+            if (scrollLoco) {
+                scrollLoco.scrollTo(0, { duration: 0, disableLerp: true }); 
+                scrollLoco.update(); 
+                ScrollTrigger.refresh(); 
+            } else {
+                initLocomotiveScroll();
+            }
+        }, 10);  
+    });
 
 
-//    
+    $('.go-top').on('click', function(e) {
+        e.preventDefault(); 
+        scrollLoco.scrollTo(0, { duration: 1000, easing: [0.25, 0.00, 0.35, 1.00] });
+    });
 
-// scrollLoco.on('scroll', ScrollTrigger.update);
-
-// ScrollTrigger.scrollerProxy(scroller, {
-//   scrollTop(value) {
-//     return arguments.length ? scrollLoco.scrollTo(value, 0, 0) : scrollLoco.scroll.instance.scroll.y;
-//   },
-//   getBoundingClientRect() {
-//     return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
-//   },
-//   pinType: scroller.style.transform ? "transform" : "fixed"
-// });
-// ScrollTrigger.defaults({
-//     scroller: scroller
-//   })
-
-//   const horizontalSections = gsap.utils.toArray('.horizontal-scroll')
-//   console.log("test12" , horizontalSections);
-
-//   horizontalSections.forEach(function (sec, i) {	
-
-//     var thisPinWrap = sec.querySelector('.pin-wrap');
-//     var thisAnimWrap = thisPinWrap.querySelector('.animation-wrap');
-    
-//     var getToValue = () => -(thisAnimWrap.scrollWidth - window.innerWidth); 
-  
-//     gsap.fromTo(thisAnimWrap, { 
-//       x: () => thisAnimWrap.classList.contains('to-right') ? 0 : getToValue() 
-//     }, { 
-//       x: () => thisAnimWrap.classList.contains('to-right') ? getToValue() : 0, 
-//       ease: "none",
-//       scrollTrigger: {
-//         trigger: sec,		
-//         scroller: scroller,
-//         start: "top top",
-//         end: () => "+=" + (thisAnimWrap.scrollWidth - window.innerWidth),
-//         pin: thisPinWrap,
-//         invalidateOnRefresh: true,
-//         anticipatePin: 1,
-//         scrub: true,
-//         //markers: true
-//       }
-//     });
-  
-//   });	
-
-// ScrollTrigger.addEventListener("refresh", () => scroll.update());
-// ScrollTrigger.refresh();
-
-// 
-
+    $('#menu-main-menu a:contains("Contacts")').on('click', function(e) {
+        e.preventDefault();
+        scrollLoco.scrollTo('.footer', {
+            duration: 1000,
+            easing: [0.25, 0.00, 0.35, 1.00]
+        });
+    });
 });

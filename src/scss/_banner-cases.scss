@@ -23,12 +23,18 @@
                         line-height: 212.4px;
                         font-weight: 400;
                     }
-                    p{
+                    .nr-cses{
                         font-family: 'Aeonik-Regular', sans-serif;
                         color: $priamry_color;
                         font-size: 18px;
                         line-height: 25.2px;
                         margin: 0;
+                        transition: all ease-out .3s;
+                        transition-delay: 1s;
+                        opacity: 0;
+                        &.is-inview{
+                            opacity: 1;
+                        }
                     }
                 }
 
@@ -42,12 +48,25 @@
                 background: none; 
                 border: none; 
                 cursor: pointer;
+                h6{
+                    text-decoration: none;
+                    font-family: 'Defectica-Regular', sans-serif;
+                    color: $color-cat;
+                    font-size: 60px;
+                    line-height: 74.4px;
+                    background: none; 
+                    border: none; 
+                    cursor: pointer;
+                    font-weight: 500;
+                    margin: 0;
+                    &.is-inview{
+                        animation: pulseUp 3s ease-in-out infinite;
+                    }
+                }
             }
-            
             .img-wrap{
-                img{
-                    width: 100%;
-                    max-height: 900px;
+                .curtain{
+                    transition-delay: 1.4s;
                 }
             }
         }
@@ -68,21 +87,51 @@
 
     }
 }
-
-
-
-.img-wrap{
-    opacity: 0;
-    transform: scale(.9);
-    transform-origin: left;
-    transform-origin: center ; 
-    transition: opacity .7s ease-out, transform .7s ease-out;
-    transition-delay: 1s;
-    &.is-inview{
-        opacity: 1;
-        transform: scale(1);
+// .scroll{
+//     h6{
+//         text-decoration: none;
+//         font-family: 'Defectica-Regular', sans-serif;
+//         color: $color-cat;
+//         font-size: 60px;
+//         line-height: 74.4px;
+//         background: none; 
+//         border: none; 
+//         cursor: pointer;
+//         font-weight: 500;
+//         &.is-inview{
+//             animation: pulseUp 3s ease-in-out infinite;
+//         }
+//     }
+    
+// }
+@keyframes pulseUp {
+    0% {
+      transform: translateY(0); 
     }
-    img{
-
+    30% {
+      transform: translateY(10px); 
     }
-}
+    60% {
+      transform: translateY(0); 
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+
+// .img-wrap{
+//     opacity: 0;
+//     transform: scale(.9);
+//     transform-origin: left;
+//     transform-origin: center ; 
+//     transition: opacity .7s ease-out, transform .7s ease-out;
+//     transition-delay: 1s;
+//     &.is-inview{
+//         opacity: 1;
+//         transform: scale(1);
+//     }
+//     img{
+
+//     }
+// }

@@ -1,19 +1,22 @@
 @import 'globals';
 @import 'variables';
 
+
 .header{
-    min-height: 66px;
+    min-height: 40px;
     width: 100%;
     position: fixed;
     top: 0;
     left: 0; 
     z-index: 3;
-    transition: transform 0.3s ease-out;
+    transition: transform 0.5s ease-out;
+    padding-top: 12px;
+    padding-bottom: 10px;
     &.hidden {
         transform: translateY(-200%);
     }
     &.scrolled-up {
-        background-color:$third_color;  // Semi-transparent background
+        background-color:$third_color; 
     }
     .header-wrpaper{
         padding: 0 $s6;
@@ -25,15 +28,19 @@
             .img-logo-wrap{
 
             }
-            .nav{
-                .menu-main-menu-container{
-                    .menu{ 
+            .nav {
+                .menu-main-menu-container {
+                    .menu {
+                        margin: 0;
                         display: flex;
                         align-items: center;
                         gap: 56px;
-                        li{
+            
+                        li {
                             list-style: none;
-                            a{
+            
+                            a {
+                                position: relative;
                                 text-decoration: none;
                                 font-family: 'Switzer-Regular', sans-serif;
                                 text-transform: uppercase;
@@ -41,10 +48,36 @@
                                 font-size: 18px;
                                 line-height: 28.8px;
                                 color: $priamry_color;
-                                transition: all ease .3s;
-                                &:hover{
-                                    color: $secondary_50;
-                                    transition: all ease .3s;
+                                transition: all ease 0.3s;
+            
+                                // &:hover {
+                                //     color: $secondary_50;
+                                //     transition: all ease 0.3s;
+                                // }
+            
+                                &::after {
+                                    content: '';
+                                    position: absolute;
+                                    left: 0;
+                                    bottom: -2px; 
+                                    height: 2px; 
+                                    width: 100%;
+                                    background-color: $priamry_color;
+                                    transform: scaleX(0); 
+                                    transform-origin: left;
+                                    transition: transform 0.3s ease-in-out;
+                                }
+            
+                                &:hover::after,
+                                &.current-menu-item::after {
+                                    transform: scaleX(1); 
+                                }
+                                &[aria-current="page"]::after {
+                                    transform: scaleX(1); 
+                                }
+            
+                                &[aria-current="page"] {
+                                    color: $priamry_color; 
                                 }
                             }
                         }
@@ -54,7 +87,6 @@
         }
     }
 }
-
 .overlay-loader{
     width: 100vw;
     height: 100vw;
@@ -64,6 +96,8 @@
     background-color: $priamry_color;
     z-index: 4;
     transition: opacity 0.3s ease;
+    overflow-y: hidden;
+    overflow-x: hidden;
     .loader{
         padding: 0 48px;
         height: 100%;

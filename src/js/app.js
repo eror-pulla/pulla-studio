@@ -1,139 +1,95 @@
+
 jQuery(document).ready(function($) {
 
-    // gsap.registerPlugin(ScrollTrigger);
+    console.log("gjithkah tjeter");
+    
+    if ($('section').hasClass('about-page-wrap')) {
+        console.log('jena n about');
+        return; 
+    }
+
+   
+    window.scrollTo(0, 0);
 
     let lastScrollY = 0;
     const header = document.querySelector('.header');
-    const triggerPoint = 100; 
+    const triggerPoint = 100;
 
-    const scroller = document.querySelector('[data-scroll-container]');
-    var scroll = new LocomotiveScroll({
-        el: scroller,
-        smooth: true,
-        getDirection:true,
-        direction: 'vertical'
-    });
+    let scroll = null;  
 
-
-    // //    
-
-    // scroll.on('scroll', ScrollTrigger.update);
-
-    // ScrollTrigger.scrollerProxy(scroller, {
-    //   scrollTop(value) {
-    //     return arguments.length ? scroll.scrollTo(value, 0, 0) : scroll.scroll.instance.scroll.y;
-    //   },
-    //   getBoundingClientRect() {
-    //     return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
-    //   },
-    //   pinType: scroller.style.transform ? "transform" : "fixed"
-    // });
-    // ScrollTrigger.defaults({
-    //     scroller: scroller
-    //   })
-
-    //   const horizontalSections = gsap.utils.toArray('.horizontal-scroll')
-    //   console.log("test12" , horizontalSections);
-
-    //   horizontalSections.forEach(function (sec, i) {	
-  
-    //     var thisPinWrap = sec.querySelector('.pin-wrap');
-    //     var thisAnimWrap = thisPinWrap.querySelector('.animation-wrap');
-        
-    //     var getToValue = () => -(thisAnimWrap.scrollWidth - window.innerWidth); 
-      
-    //     gsap.fromTo(thisAnimWrap, { 
-    //       x: () => thisAnimWrap.classList.contains('to-right') ? 0 : getToValue() 
-    //     }, { 
-    //       x: () => thisAnimWrap.classList.contains('to-right') ? getToValue() : 0, 
-    //       ease: "none",
-    //       scrollTrigger: {
-    //         trigger: sec,		
-    //         scroller: scroller,
-    //         start: "top top",
-    //         end: () => "+=" + (thisAnimWrap.scrollWidth - window.innerWidth),
-    //         pin: thisPinWrap,
-    //         invalidateOnRefresh: true,
-    //         anticipatePin: 1,
-    //         scrub: true,
-    //         //markers: true
-    //       }
-    //     });
-      
-    //   });	
-
-    // ScrollTrigger.addEventListener("refresh", () => scroll.update());
-    // ScrollTrigger.refresh();
-
-    // 
-    
-
-
-    scroll.on('scroll', function (event) {
-        document.querySelectorAll('.fade-in-img').forEach(function (element, index) {
-            if (element.classList.contains('is-inview')) return;
-    
-            if (element.getBoundingClientRect().top < window.innerHeight && element.getBoundingClientRect().bottom > 0) {
-                setTimeout(function () {
-                    element.classList.add('is-inview');
-                }, index * 200); 
-            }
+    function initLocomotiveScroll() {
+        const scroller = document.querySelector('[data-scroll-container]');
+        scroll = new LocomotiveScroll({
+            el: scroller,
+            smooth: true,
+            getDirection: true,
+            multiplier: 1,
+            direction: 'vertical'
         });
-    });
 
+        scroll.on('scroll', function (event) {
+            document.querySelectorAll('.fade-in-img').forEach(function (element, index) {
+                if (element.classList.contains('is-inview')) return;
 
-    scroll.on('call', function(args) {
-        const sectionId = parseInt(args[1].dataset.sectionId);
-        changeScrollDirection(sectionId);
-    });
-    
+                if (element.getBoundingClientRect().top < window.innerHeight && element.getBoundingClientRect().bottom > 0) {
+                    setTimeout(function () {
+                        element.classList.add('is-inview');
+                    }, index * 200);
+                }
+            });
+        });
 
-    scroll.on('scroll', (obj) => {
-        const currentScrollY = obj.scroll.y;
+        scroll.on('call', function(args) {
+            const sectionId = parseInt(args[1].dataset.sectionId);
+            changeScrollDirection(sectionId);
+        });
 
-        if (currentScrollY > lastScrollY) {
-            // Scrolling down
-            header.classList.add('hidden');
-            header.classList.remove('scrolled-up');
-        } else {
-            // Scrolling up
-            header.classList.remove('hidden');
-            if (currentScrollY > triggerPoint) {
-                header.classList.add('scrolled-up');
-            } else {
+        scroll.on('scroll', (obj) => {
+            const currentScrollY = obj.scroll.y;
+
+            if (currentScrollY > lastScrollY) {
+                header.classList.add('hidden');
                 header.classList.remove('scrolled-up');
+            } else {
+                header.classList.remove('hidden');
+                if (currentScrollY > triggerPoint) {
+                    header.classList.add('scrolled-up');
+                } else {
+                    header.classList.remove('scrolled-up');
+                }
             }
-        }
 
-        lastScrollY = currentScrollY;
+            lastScrollY = currentScrollY;
+        });
+    }
+
+    window.addEventListener('load', function() {
+        setTimeout(() => {
+            if (scroll) {
+                scroll.scrollTo(0, 0); 
+                scroll.update(); 
+            } else {
+                initLocomotiveScroll();
+            }
+        }, 10);
     });
 
-    var swiper = new Swiper(".mySwiper", {
-        slidesPerView: 4,
-        spaceBetween: 16,
-        pagination: false,
-
-      });
-
-
-      var $img = $('.img-1-home');
-      var $loader = $('.overlay-loader');
-      $loader.fadeOut(500);
+    var $img = $('.img-1-home');
+    var $loader = $('.overlay-loader');
+    $loader.fadeOut(500);
       
-      if ($img.length > 0 && $img[0].complete) {
-          $img.trigger('load');
-      }
+    if ($img.length > 0 && $img[0].complete) {
+        $img.trigger('load');
+    }
       
-      $img.on('load', function() {
-          $loader.fadeOut(500);
-      }).each(function() {
-          if (this.complete) $(this).trigger('load');
-      });
-
+    $img.on('load', function() {
+        $loader.fadeOut(500);
+    }).each(function() {
+        if (this.complete) $(this).trigger('load');
+    });
 
     const players = new Plyr('#player', {
         controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen'],
-
     });
 
     $('.plyr__video-embed').each(function() {
@@ -142,8 +98,6 @@ jQuery(document).ready(function($) {
         });
     });
 
-
-// Define the class patterns
     const classesGrid1 = ['img-M right', 'img-S left', 'img-L middle'];
     const classesGrid2 = ['img-M left2', 'img-S right2', 'img-L middle2', 'img-S left3'];
 
@@ -211,12 +165,35 @@ jQuery(document).ready(function($) {
         $(this).addClass('active');
 
         setTimeout(() => {
-            scroll.update();
+            if (scroll) {
+                scroll.update();
+            }
         }, 100);
     });
 
+    $('.go-top').on('click', function(e) {
+        console.log("u kliku butoni");
+        
+        e.preventDefault(); 
+        scroll.scrollTo(0, { duration: 1000, easing: [0.25, 0.00, 0.35, 1.00] });
+    });
 
+    $('#menu-main-menu a:contains("Contacts")').on('click', function(e) {
+        e.preventDefault();
+        scroll.scrollTo('.footer', {
+            duration: 1000,
+            easing: [0.25, 0.00, 0.35, 1.00]
+        });
+    });
+
+    $('.scroll').on('click', function(e) {
+        e.preventDefault();
+
+        // Scroll to the next section with Locomotive Scroll
+        scroll.scrollTo('#filter-section', {
+            offset: 0, // Adjust this offset if you need spacing before the section
+            duration: 1000, // Adjust the scrolling duration in milliseconds
+            easing: [0.25, 0.00, 0.35, 1.00] // Customize the easing function
+        });
+    });
 });
-
-
-

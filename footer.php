@@ -29,7 +29,11 @@ $info=$footer['info'];
 
 ?>
 	</section>
-	<footer class="footer" data-scroll-section>
+	<?php if (is_page('company')) { 
+		echo '<footer class="footer" data-scroll>'; }
+		else{
+			echo '<footer class="footer" data-scroll-section data-scroll>';
+		} ?>
 		<div class="footer-wraper" data-scroll>
 			<div class="menus-footer">
 				<div class="columns-2">
@@ -52,40 +56,44 @@ $info=$footer['info'];
 				</div>
 				<div class="columns-3">
 					<div class="address">
-						<p><?php echo($address);?> <br><?php echo($address_brake);?></p>
+						<p data-scroll><?php echo($address);?> <br><?php echo($address_brake);?></p>
 					</div>
 				</div>
 				<div class="columns-3">
 					<div class="one-click">
-						<p><?php echo($text_footer); ?><br><?php echo($text_footer_brake); ?></p>
+						<p data-scroll><?php echo($text_footer); ?><?php echo($text_footer_brake); ?></p>
 					</div>
 				</div>
 			</div>
 			<div class="info-big-banner">
-				<p>
-					<a href="">
-					<?php echo($info); ?>
-					</a>
-				</p>
+				<div class="split-lines">
+					<p data-scroll>
+						<a href="">
+						<?php echo($info); ?>
+						</a>
+					</p>
+				</div>
 			</div>
 			<div class="copy-rights">
 				<div class="columns-2">
-					<p><?php echo($copyrights); ?></p>
+					<p data-scroll><?php echo($copyrights); ?></p>
 				</div>
 				<div class="columns-6">
-					<p><?php echo($site_by); ?></p><p class='white'>Pulla Digital</p>
+					<p data-scroll class="gray-text"><?php echo($site_by); ?></p><a class='white' target="_blank" href="https://pulla.digital/"  rel="noopener noreferrer" data-scroll>Pulla Digital</a>
 				</div>
 				<div class="columns-5">
-					<p><?php echo($message); ?></p>
+					<p data-scroll><?php echo($message); ?></p>
 				</div>
 				<div class="columns-4">
-					<p>
+					<p data-scroll>
 						<a href="" class="go-top">Go to Top</a>
 					</p>
 				</div>
 			</div>
 		</div>
 	</footer>
+	<?php if (is_page('company')) { 
+		echo '</div>'; } ?> 
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

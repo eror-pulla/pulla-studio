@@ -2,15 +2,17 @@
     <div class="wraper-filter">
         <div class="inside-banner">
             <div class="filter" data-scroll>
-                <h2>Filter</h2>
+                <div class="split-lines">
+                    <h2 data-scroll>Filter</h2>
+                </div>
                 <div class="wrap-filters">
                     <ul>
                         <?php
                         $categories = get_terms('category', ['hide_empty' => true]);
 
-                        echo '<li><button class="filter-button" data-category="all">All</button></li>'; 
+                        echo '<li><button class="filter-button" data-category="all" data-scroll>All</button></li>'; 
                         foreach ($categories as $category) {
-                            echo '<li><button class="filter-button" data-category="' . esc_attr($category->slug) . '">' . esc_html($category->name) . '</button></li>';
+                            echo '<li><button class="filter-button" data-category="' . esc_attr($category->slug) . '" data-scroll>' . esc_html($category->name) . '</button></li>';
                         }
                         ?>
                     </ul>
@@ -43,10 +45,15 @@
                     <div class="<?php echo esc_attr($class); ?>" data-scroll>
                         <a href="<?php echo esc_url($project['permalink']); ?>">
                             <div class="wrap-img">
-                                <img src="<?php echo esc_url($project['image_url']); ?>" alt="">
+                                <div class="wrap-brick" data-scroll>
+                                    <div class="brick-img" data-scroll data-scroll-speed="-2">
+                                        <img src="<?php echo esc_url($project['image_url']); ?>" alt="">
+                                        <div class="curtain"></div>
+                                    </div>
+                                </div>
                                 <div class="text">
-                                    <p class="cat bodyS-D"><?php echo esc_html($project['category']); ?></p>
-                                    <p class="name"><?php echo esc_html($project['title']); ?></p>
+                                    <p class="cat bodyS-D" data-scroll><?php echo esc_html($project['category']); ?></p>
+                                    <p class="name" data-scroll><?php echo esc_html($project['title']); ?></p>
                                 </div>
                             </div>
                         </a>

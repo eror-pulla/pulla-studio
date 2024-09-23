@@ -8,15 +8,15 @@ $text_right = $we_are['text_right'];
 ?>
 
 
-<section class="we-are"  data-scroll-section>
+<section class="we-are">
     <div class="wrap-we-are">
-        <div class="inside-we-are" data-scroll>
+        <div class="inside-we-are">
             <p> / WE ARE /</p>
             <div class="wraper-inside-text">
-                <h5><?php echo $title ?></h5>
+                <h5 data-scroll><?php echo $title ?></h5>
                 <div class="texts">
-                    <p class="left-right"><?php echo $text_left ?></p>
-                    <p class="left-right"><?php echo $text_right ?></p>
+                    <p class="left-right" data-scroll><?php echo $text_left ?></p>
+                    <p class="left-right" data-scroll><?php echo $text_right ?></p>
                 </div>
             </div>
         </div>
@@ -30,7 +30,12 @@ $text_right = $we_are['text_right'];
                             $img_url = get_sub_field('img'); 
                             
                             if( !empty($img_url) ): ?>
-                                <img class="img-<?php echo $count; ?>-comp" data-scroll src="<?php echo esc_url($img_url); ?>" alt="Image <?php echo $count; ?>">
+                                <div class="wrap-brick" data-scroll>
+                                    <div class="brick-img" data-scroll data-scroll-speed="-2">
+                                        <img class="img-<?php echo $count; ?>-comp" src="<?php echo esc_url($img_url); ?>" alt="Image <?php echo $count; ?>">
+                                        <div class="curtain"></div>
+                                    </div>
+                                </div>
                                 <?php $count++; ?>
                             <?php endif; 
                         endwhile; 

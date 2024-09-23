@@ -38,68 +38,6 @@ $subtitle = $banner['subtitle'] ?? '';
 $images = get_banner_images();
 ?>
 
-<!-- <section class="banner" data-scroll-section>
-    <div class="inside-banner" >
-        <div class="wraper-banner">
-        <div class="wraper-img-banner">
-            <?php if (!empty($images)): ?>
-                <?php foreach ($images as $index => $image_url): ?>
-                    <img 
-                        src="<?php echo esc_url($image_url); ?>" 
-                        alt="Banner Image <?php echo ($index + 1); ?>" 
-                        class="img-<?php echo ($index + 1); ?>" 
-                        data-scroll 
-                        data-scroll-class="<?php echo ($index === 0) ? 'fade-in-up' : ($index === 1 ? 'fade-in-left' : 'fade-in-right'); ?> <?php  ?> " 
-                        data-scroll-delay="<?php echo ($index * 0.3); ?>"
-                    >
-                <?php endforeach; ?>
-            <?php else: ?>
-                <p>No images available.</p>
-            <?php endif; ?>
-        </div>
-            <div class="wraper-content-banner" data-scroll data-scroll-class="fade-in-text">
-                <h1><?php echo esc_html($banner['title']); ?><br><b class='break-text'><?php echo esc_html($banner['title_break']); ?></b></h1>
-                <p><?php echo esc_html($banner['subtitle']); ?></p>
-            </div>
-        </div>
-    </div>
-</section> -->
-
-
-<!-- <section class="banner" data-scroll-section>
-    <div class="inside-banner">
-        <div class="wraper-banner">
-            <div class="wraper-img-banner">
-                <?php if (!empty($images)): ?>
-                    <?php foreach ($images as $index => $image_url): 
-                        // Determine the correct scroll classes
-                        $scrollClasses = ($index === 0) ? 'fade-in-up' : ($index === 1 ? 'fade-in-left' : 'fade-in-right');
-                    ?>
-                        <img 
-                            src="<?php echo esc_url($image_url); ?>" 
-                            alt="Banner Image <?php echo esc_attr($index + 1); ?>" 
-                            class="img-<?php echo esc_attr($index + 1); ?>-home" 
-                            data-scroll
-                            data-scroll-class="<?php echo esc_attr($scrollClasses); ?>" 
-                            data-scroll-delay="<?php echo esc_attr($index * 0.3); ?>"
-                        >
-                    <?php endforeach; ?>
-                <?php else: ?>
-                    <p>No images available.</p>
-                <?php endif; ?>
-            </div>
-            <div class="wraper-content-banner" data-scroll data-scroll-class="fade-in-text">
-                <?php if (!empty($title)): ?>
-                    <h1><?php echo esc_html($title); ?><br><b class='break-text'><?php echo esc_html($title_break); ?></b></h1>
-                <?php endif; ?>
-                <?php if (!empty($subtitle)): ?>
-                    <p><?php echo esc_html($subtitle); ?></p>
-                <?php endif; ?>
-            </div>
-        </div>
-    </div>
-</section> -->
-
 <section class="banner" data-scroll-section>
     <div class="inside-banner">
         <div class="wraper-banner">
@@ -108,34 +46,33 @@ $images = get_banner_images();
                     <?php foreach ($images as $index => $image_url): 
                         $scrollClasses = ($index === 0) ? 'fade-in-up' : ($index === 1 ? 'fade-in-left' : 'fade-in-right');
                     ?>
-                        <?php if ($index === 0): ?>
-                            <div class="img-div-wrap" data-scroll>
-                        <?php endif; ?>
-
-                        <img 
-                            src="<?php echo esc_url($image_url); ?>" 
-                            alt="Banner Image <?php echo esc_attr($index + 1); ?>" 
-                            class="img-<?php echo esc_attr($index + 1); ?>-home" 
-                            data-scroll
-                            data-scroll-class="<?php echo esc_attr($scrollClasses); ?>" 
-                            data-scroll-delay="<?php echo esc_attr($index * 0.3); ?>"
-                        >
-
-                        <?php if ($index === 0): ?>
-                            </div>
-                        <?php endif; ?>
+                    <div class="brick-<?php echo $index ?>" data-scroll>
+                        <div class="above-img-brick-<?php echo $index ?>" data-scroll data-scroll-speed="-2">
+                            <img 
+                                src="<?php echo esc_url($image_url); ?>" 
+                                alt="Banner Image <?php echo esc_attr($index + 1); ?>" 
+                                class="img-<?php echo esc_attr($index + 1); ?>-home"
+                            >
+                            <div class="curtain"></div>
+                        </div>
+                    </div>
 
                     <?php endforeach; ?>
                 <?php else: ?>
                     <p>No images available.</p>
                 <?php endif; ?>
             </div>
-            <div class="wraper-content-banner" data-scroll data-scroll-class="fade-in-text">
+            <div class="wraper-content-banner" data-scroll>
                 <?php if (!empty($title)): ?>
-                    <h1><?php echo esc_html($title); ?><br><b class='break-text'><?php echo esc_html($title_break); ?></b></h1>
+                    <div class="split-lines">
+                        <h1 class="title-1" data-scroll ><?php echo esc_html($title); ?></h1>
+                    </div>
+                    <div class="split-lines">
+                        <h1 class='break-text' data-scroll><?php echo esc_html($title_break); ?></h1>
+                    </div>
                 <?php endif; ?>
                 <?php if (!empty($subtitle)): ?>
-                    <p><?php echo esc_html($subtitle); ?></p>
+                    <p data-scroll><?php echo esc_html($subtitle); ?></p>
                 <?php endif; ?>
             </div>
         </div>

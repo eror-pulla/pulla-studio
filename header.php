@@ -58,5 +58,8 @@
 			</div>
 		</div>
 	</header>
+	<?php if (is_page('company')) { 
+		echo '<div class="about-page-wrap">';
+		} ?> 
 	<section class="site-wraper">
 

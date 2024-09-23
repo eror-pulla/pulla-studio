@@ -1,7 +1,7 @@
 <?php 
 get_header();
 ?>
-<section class="about-page-wrap"> 
+<section class="about-page-wrap123"> 
 		<?php
 		while ( have_posts() ) :
 			the_post();
