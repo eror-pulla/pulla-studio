@@ -26,53 +26,58 @@
                             &.is-inview{
                                 opacity: 1;
                             }
-                            cursor: grabbing;
+                            cursor: pointer;
                             max-height: 444px;
                             height: 444px;
                             width: 25% ;
                             background: $secondary_color;
-                            .inside-slide{
-                                .img-wrap-company{
-                                    img{
-                                        position: absolute;
-                                        top: 50%;
-                                        left: 50%;
-                                        transform: translate(-50%,-50%);
-                                        opacity: 0;
-                                        transition: all ease-in-out .3s;
-                                        transition-delay: .5s;
-                                        &.is-inview{
-                                            opacity: 1;
-                                        }
-                                    }
-                                }
-                                .text-wrap-award{
-                                    padding: 0 24px;
-                                    justify-content: space-between;
-                                    align-items: center;
-                                    display: flex;
-                                    position: absolute;
-                                    width: -webkit-fill-available;
-                                    bottom: 24px;
-                                    .name{
-                                        font-family: 'Aeonik-Regular', sans-serif;
-                                        color: $priamry_color;
-                                        font-size: 18px;
-                                        line-height: 28.4px;
-                                        font-weight: 400;
-                                        text-transform: uppercase;
-                                        transition-delay: .6s;
-
-                                    }
-                                    .number{
-                                        font-family: 'Aeonik-Regular', sans-serif;
-                                        color: $priamry_color;
-                                        font-size: 18px;
-                                        line-height: 28.4px;
-                                        font-weight: 400;
-                                        transition-delay: .7s;
-                                    }
-                                }
+                            a{
+                              display: flex;
+                              width: 100%;
+                              height: 100%;
+                              .inside-slide{
+                                  .img-wrap-company{
+                                      img{
+                                          position: absolute;
+                                          top: 50%;
+                                          left: 50%;
+                                          transform: translate(-50%,-50%);
+                                          opacity: 0;
+                                          transition: all ease-in-out .3s;
+                                          transition-delay: .5s;
+                                          &.is-inview{
+                                              opacity: 1;
+                                          }
+                                      }
+                                  }
+                                  .text-wrap-award{
+                                      padding: 0 24px;
+                                      justify-content: space-between;
+                                      align-items: center;
+                                      display: flex;
+                                      position: absolute;
+                                      width: -webkit-fill-available;
+                                      bottom: 24px;
+                                      .name{
+                                          font-family: 'Aeonik-Regular', sans-serif;
+                                          color: $priamry_color;
+                                          font-size: 18px;
+                                          line-height: 28.4px;
+                                          font-weight: 400;
+                                          text-transform: uppercase;
+                                          transition-delay: .6s;
+  
+                                      }
+                                      .number{
+                                          font-family: 'Aeonik-Regular', sans-serif;
+                                          color: $priamry_color;
+                                          font-size: 18px;
+                                          line-height: 28.4px;
+                                          font-weight: 400;
+                                          transition-delay: .7s;
+                                      }
+                                  }
+                              }
                             }
                         }
                     }
@@ -81,3 +86,67 @@
         }
     }
 }
+
+
+.swiper-slide {
+    position: relative;
+    overflow: hidden;
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: $priamry_color;
+      border-radius: 50%;
+      transition: transform 0.5s, background-color 0.5s,  border-radius 0.5s;
+      transform: scale(0); 
+      transform-origin: bottom left; 
+      z-index: 1;
+    }
+    .inside-slide {
+    //   position: relative;
+    //   z-index: 2;
+      transition: color 0.3s;
+  
+      .text-wrap-award {
+        transition: color 0.3s;
+        .name, .number {
+          color: inherit;
+        }
+      }
+  
+      .img-wrap-company img {
+        filter: grayscale(100%);
+        transition: filter 0.3s;
+      }
+    }
+  
+    &:hover {
+      &::before {
+        transform: scale(2);
+        background-color: $priamry_color; 
+        border-radius: 0;
+      }
+  
+      .inside-slide {
+        color: $third_color; 
+  
+        .text-wrap-award {
+          color: $third_color;
+          position: relative;
+          z-index: 2;
+          .name, .number {
+            color: $third_color !important;
+            transition-delay: 0s !important;
+          }
+        }
+        
+        .img-wrap-company img {
+            z-index: 2;
+          filter: invert(1);
+        }
+      }
+    }
+  }

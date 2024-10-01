@@ -68,11 +68,12 @@ $info=$footer['info'];
 			<div class="info-big-banner">
 				<div class="split-lines">
 					<p data-scroll>
-						<a href="">
+						<a href="javascript:void(0);" class="copy-text">
 						<?php echo($info); ?>
 						</a>
 					</p>
 				</div>
+				<div class="custom-cursor">Copy to Clipboard</div>
 			</div>
 			<div class="copy-rights">
 				<div class="columns-2">

@@ -19,7 +19,7 @@
                 height: 56%;
                 .brick-0{
                     width: 25%;
-                    transition: all cubic-bezier(.12,.41,.11,.9) .5s;
+                    transition: all cubic-bezier(.47,.15,0,.99) .5s;
                     .above-img-brick-0{
                         width: 100%;
                         height: 100%;
@@ -41,10 +41,10 @@
                             -webkit-transform: translateY(0);
                             -moz-transform: translateY(0);
                             -o-transform: translateY(0);
-                            transition: all cubic-bezier(.12,.41,.11,.9) .6s;
-                            -webkit-transition: all cubic-bezier(.12,.41,.11,.9) .6s;
-                            -moz-transition: all cubic-bezier(.12, .41, .11, .9) .6s;
-                            -o-transition: all cubic-bezier(.12, .41, .11, .9) .6s;
+                            transition: all cubic-bezier(.47,.15,0,.99) .6s;
+                            -webkit-transition: all cubic-bezier(.47,.15,0,.99) .6s;
+                            -moz-transition: all cubic-bezier(.47,.15,0,.99) .6s;
+                            -o-transition: all cubic-bezier(.47,.15,0,.99) .6s;
                         }
                         &.is-inview{
                             .curtain {
@@ -86,10 +86,10 @@
                             -webkit-transform: translateY(0);
                             -moz-transform: translateY(0);
                             -o-transform: translateY(0);
-                            transition: all cubic-bezier(.12,.41,.11,.9) .6s;
-                            -webkit-transition: all cubic-bezier(.12,.41,.11,.9) .6s;
-                            -moz-transition: all cubic-bezier(.12, .41, .11, .9) .6s;
-                            -o-transition: all cubic-bezier(.12, .41, .11, .9) .6s;
+                            transition: all cubic-bezier(.47,.15,0,.99) .6s;
+                            -webkit-transition: all cubic-bezier(.47,.15,0,.99) .6s;
+                            -moz-transition: all cubic-bezier(.47,.15,0,.99) .6s;
+                            -o-transition: all cubic-bezier(.47,.15,0,.99) .6s;
                         }
                     }
                 }
@@ -124,10 +124,10 @@
                                 -webkit-transform: translateY(0);
                                 -moz-transform: translateY(0);
                                 -o-transform: translateY(0);
-                                transition: all cubic-bezier(.12,.41,.11,.9) .6s;
-                                -webkit-transition: all cubic-bezier(.12,.41,.11,.9) .6s;
-                                -moz-transition: all cubic-bezier(.12, .41, .11, .9) .6s;
-                                -o-transition: all cubic-bezier(.12, .41, .11, .9) .6s;
+                                transition: all cubic-bezier(.47,.15,0,.99) .6s;
+                                -webkit-transition: all cubic-bezier(.47,.15,0,.99) .6s;
+                                -moz-transition: all cubic-bezier(.47,.15,0,.99) .6s;
+                                -o-transition: all cubic-bezier(.47,.15,0,.99) .6s;
                         }
                     }
                 }
@@ -211,75 +211,6 @@
     }
 }
 
-// @keyframes fadeInLeft {
-//     0% {
-//         opacity: 0;
-//         transform: translateX(300%);
-//     }
-//     100% {
-//         opacity: 1;
-//         transform: translateX(0);
-//     }
-// }
-
-// @keyframes fadeInRight {
-//     0% {
-//         opacity: 0;
-//         transform: translateX(-300%);
-//     }
-//     100% {
-//         opacity: 1;
-//         transform: translateX(0);
-//     }
-// }
-
-// @keyframes fadeInText {
-//     0% {
-//         opacity: 0;
-//         transform: translateY(10%);
-//     }
-//     35%{
-//         opacity: 1;
-//     }
-//     100% {
-//         opacity: 1;
-//         transform: translateX(0);
-//     }
-// }
-
-// .fade-in-right{
-//     opacity: 0;
-//     animation-duration: 1s;
-//     animation-fill-mode: forwards;
-//     animation-timing-function: ease-out;
-// }
-// .fade-in-left{
-//     opacity: 0;
-//     animation-duration: 1s;
-//     animation-fill-mode: forwards;
-//     animation-timing-function: ease-out;
-// }
-// .fade-in-text{
-//     opacity: 0;
-//     animation-duration: .9s;
-//     animation-fill-mode: forwards;
-//     animation-timing-function: ease-out;
-// }
-
-// .fade-in-left {
-//     animation-name: fadeInLeft;
-//     animation-delay: 1.8s;
-// }
-
-// .fade-in-right {
-//     animation-name: fadeInRight;
-//     animation-delay: 1.8s;
-// }
-
-// .fade-in-text {
-//     animation-name: fadeInText;
-//     animation-delay: 2.6s;
-// }
 
 .brick-0 , .brick-1 , .brick-2s{
     position: relative;

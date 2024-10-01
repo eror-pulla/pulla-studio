@@ -197,10 +197,10 @@ $Switzer-Medium: 'Switzer-Medium';
         -webkit-transform: translateY(0);
         -moz-transform: translateY(0);
         -o-transform: translateY(0);
-        transition: all cubic-bezier(.12,.41,.11,.9) .5s;
-        -webkit-transition: all cubic-bezier(.12,.41,.11,.9) .5s;
-        -moz-transition: all cubic-bezier(.12, .41, .11, .9) .5s;
-        -o-transition: all cubic-bezier(.12, .41, .11, .9) .5s;
+        transition: all cubic-bezier(.47,.15,0,.99) .5s;
+        -webkit-transition: all cubic-bezier(.47,.15,0,.99) .5s;
+        -moz-transition: all cubic-bezier(.47,.15,0,.99) .5s;
+        -o-transition: all cubic-bezier(.47,.15,0,.99) .5s;
     }
     &.is-inview{
         .curtain {
@@ -249,7 +249,7 @@ $Switzer-Medium: 'Switzer-Medium';
     .scroll{
         transform: translate(0px, 100%);
         transition: all ease-in-out .6s;
-        transition-delay: 1s;
+        transition-delay: s;
         &.is-inview{
             transform: translate(0px, 0%) ;
         }

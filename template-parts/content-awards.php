@@ -12,8 +12,11 @@
                             $image = get_sub_field('image');
                             $name = get_sub_field('name');
                             $times_won = get_sub_field('times_won');
+                            $link = get_sub_field('link');
                         ?>
+                        
                             <div class="swiper-slide" data-scroll>
+                                <a href="<?php echo $link ; ?>">
                                 <div class="inside-slide" >
                                     <div class="img-wrap-company">
                                         <?php if ($image): ?>
@@ -27,6 +30,7 @@
                                         <p class="number" data-scroll>/<?php echo esc_html($times_won); ?>/</p>
                                     </div>
                                 </div>
+                                </a>
                             </div>
                         <?php endwhile; ?>
                     <?php else: ?>

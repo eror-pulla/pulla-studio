@@ -74,19 +74,61 @@ jQuery(document).ready(function($) {
         }, 10);
     });
 
-    var $img = $('.img-1-home');
-    var $loader = $('.overlay-loader');
-    $loader.fadeOut(500);
+    // var $img = $('.img-1-home');
+    // var $loader = $('.overlay-loader');
+    // $loader.fadeOut(500);
       
-    if ($img.length > 0 && $img[0].complete) {
-        $img.trigger('load');
+    // if ($img.length > 0 && $img[0].complete) {
+    //     $img.trigger('load');
+    // }
+      
+    // $img.on('load', function() {
+    //     $loader.fadeOut(500);
+    // }).each(function() {
+    //     if (this.complete) $(this).trigger('load');
+    // });
+
+
+
+
+    // var $firstLoader = $('.overlay-loader');
+    // var $secondLoader = $('.loader-next-page');
+
+    // // Show the first loader on initial load
+    // $firstLoader.show();
+
+    // // Simulate image loading
+    // var $img = $('.img-1-home'); // Change this selector based on your actual image class
+    // if ($img.length > 0 && $img[0].complete) {
+    //     $img.trigger('load');
+    // }
+
+    // $img.on('load', function() {
+    //     // Fade out first loader when the image loads
+    //     $firstLoader.fadeOut(500);
+    // }).each(function() {
+    //     if (this.complete) {
+    //         $(this).trigger('load');
+    //     }
+    // });
+
+    if (performance.navigation.type === performance.navigation.TYPE_RELOAD) {
+        // Page was reloaded
+        $('.overlay-loader').addClass('show');
+        setTimeout(function() {
+            $('.overlay-loader').removeClass('show');
+        }, 600);
+    } else {
+        // First time loading the page or navigating to it
+        $('.loader-next-page').addClass('show');
+        $('.overlay-loader').removeClass('show');
+        
+        setTimeout(function() {
+            $('.loader-next-page').removeClass('show');
+        }, 600); 
     }
-      
-    $img.on('load', function() {
-        $loader.fadeOut(500);
-    }).each(function() {
-        if (this.complete) $(this).trigger('load');
-    });
+
+
 
     const players = new Plyr('#player', {
         controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen'],
@@ -189,11 +231,43 @@ jQuery(document).ready(function($) {
     $('.scroll').on('click', function(e) {
         e.preventDefault();
 
-        // Scroll to the next section with Locomotive Scroll
+       
         scroll.scrollTo('#filter-section', {
-            offset: 0, // Adjust this offset if you need spacing before the section
-            duration: 1000, // Adjust the scrolling duration in milliseconds
-            easing: [0.25, 0.00, 0.35, 1.00] // Customize the easing function
+            offset: 0, 
+            duration: 1000, 
+            easing: [0.25, 0.00, 0.35, 1.00] 
         });
+    });
+
+    var $customCursor = $('.custom-cursor');
+    $(document).on('mousemove', function(e) {
+      
+        if ($('.copy-text:hover').length > 0) {
+            $customCursor.show();
+            $customCursor.css({
+                top: e.pageY - 35 + 'px', 
+                left: e.pageX - 75 + 'px'
+            });
+        } else {
+            $customCursor.hide();
+        }
+    });
+
+    
+    $('.copy-text').on('click', function(e) {
+        e.preventDefault();
+
+        var textToCopy = $(this).text();
+
+        var tempElement = $('<textarea>');
+        $('body').append(tempElement);
+        tempElement.val(textToCopy).select();
+        document.execCommand('copy');
+        tempElement.remove();
+
+        $customCursor.text('Copied').addClass('copied');
+        setTimeout(function() {
+            $customCursor.text('Copy to clipboard').removeClass('copied');
+        }, 2000);
     });
 });

@@ -39,6 +39,19 @@
 			</div>
 		</div>
 	</section>
+	<section class="loader-next-page">
+		<div class="loader">
+			<div class="inside-loader">
+				<div class="loading-process">
+					<p>/loading process/</p>
+				</div>
+				<div class="wrap-text">
+					<p>We're glad you're here!</p>
+					<h3>Almost there, loading the next page...</h3>
+				</div>
+			</div>
+		</div>
+	</section>
 	<header class="header fade-in-header">
 		<div class="header-wrpaper">
 			<div class="inside-header">

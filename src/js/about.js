@@ -9,8 +9,8 @@ jQuery(document).ready(function($) {
     
     function handleScroll() {
         const currentScrollY = scrollLoco.scroll.instance.scroll.y;
-        console.log('Current Scroll Y:', currentScrollY); // Debugging
-        console.log('Last Scroll Y:', lastScrollY); // Debugging
+        // console.log('Current Scroll Y:', currentScrollY); // Debugging
+        // console.log('Last Scroll Y:', lastScrollY); // Debugging
         
         if (currentScrollY > lastScrollY) {
             header.classList.add('hidden');
@@ -28,20 +28,36 @@ jQuery(document).ready(function($) {
     }
 
 
-    var $img = $('.img-wraper img');  
-    var $loader = $('.overlay-loader'); 
-    $loader.fadeOut(500);  
-    if ($img.length > 0 && $img[0].complete) {
-        $img.trigger('load');
-    }
-    $img.on('load', function() {
-        $loader.fadeOut(500);  
-    }).each(function() {
-        if (this.complete) {
-            $(this).trigger('load');
-        }
-    });
+    // var $img = $('.img-wraper img');  
+    // var $loader = $('.overlay-loader'); 
+    // $loader.fadeOut(500);  
+    // if ($img.length > 0 && $img[0].complete) {
+    //     $img.trigger('load');
+    // }
+    // $img.on('load', function() {
+    //     $loader.fadeOut(500);  
+    // }).each(function() {
+    //     if (this.complete) {
+    //         $(this).trigger('load');
+    //     }
+    // });
 
+    if (performance.navigation.type === performance.navigation.TYPE_RELOAD) { 
+        $('.overlay-loader').addClass('show');
+        setTimeout(function() {
+            $('.overlay-loader').removeClass('show');
+        }, 600);
+
+    } else {
+        $('.loader-next-page').addClass('show');
+        $('.overlay-loader').removeClass('show'); 
+        
+        setTimeout(function() {
+            $('.loader-next-page').removeClass('show');
+        }, 600); 
+    }
+
+    
     var swiper = new Swiper(".mySwiper", {
         slidesPerView: 4,
         spaceBetween: 16,
@@ -136,4 +152,132 @@ jQuery(document).ready(function($) {
             easing: [0.25, 0.00, 0.35, 1.00]
         });
     });
+
+
+    var $customCursor = $('.custom-cursor');
+    $(document).on('mousemove', function(e) {
+      
+        if ($('.copy-text:hover').length > 0) {
+            $customCursor.show();
+            $customCursor.css({
+                top: e.pageY - 35 + 'px', 
+                left: e.pageX - 75 + 'px'
+            });
+        } else {
+            $customCursor.hide();
+        }
+    });
+
+    
+    $('.copy-text').on('click', function(e) {
+        e.preventDefault();
+
+        var textToCopy = $(this).text();
+
+        var tempElement = $('<textarea>');
+        $('body').append(tempElement);
+        tempElement.val(textToCopy).select();
+        document.execCommand('copy');
+        tempElement.remove();
+
+        $customCursor.text('Copied').addClass('copied');
+        setTimeout(function() {
+            $customCursor.text('Copy to clipboard').removeClass('copied');
+        }, 1500);
+    });
+
+ 
+// hover video
+// gsap.set(".artists .hover-iframe", { xPercent: -50, yPercent: -50 }); // Center the image by default
+
+// let targets = gsap.utils.toArray(".artists .socials-wraper .hover-iframe");  // Select all the images
+
+// window.addEventListener("mousemove", (e) => {
+//   targets.forEach((image) => {
+//     const el = image.closest(".socials-wraper");
+//     const top = el.getBoundingClientRect().top - 40;
+//     const left = el.getBoundingClientRect().left + 180;
+    
+//     gsap.to(image, {
+//       x: e.clientX - left,
+//       y: e.clientY - top,
+//       duration: 1,
+//       ease: "power3.out",
+//       overwrite: "auto",
+//       stagger: 0.02
+//     });
+//   });
+// });
+
+// // Handle mouseenter/mouseleave for fade animation on the entire array of images
+// gsap.utils.toArray(".artists .socials-wraper").forEach((el) => {
+//   const image = el.querySelector(".hover-iframe");
+
+//   const fadeIn = gsap.to(image, {
+//     autoAlpha: 1,
+//     scale: 1,
+//     duration: 1,
+//     ease: "power3.out",
+//     overwrite: "auto",
+//     paused: true,
+//   });
+
+//   el.addEventListener("mouseenter", (e) => {
+//     fadeIn.play();  // Play fade-in on hover
+//   });
+
+//   el.addEventListener("mouseleave", () => {
+//     fadeIn.reverse();  // Reverse fade on mouse leave
+//   });
+// });
+
+gsap.set(".artists .hover-iframe", { xPercent: -50, yPercent: -50 });
+
+let targets = gsap.utils.toArray(".artists .socials-wraper .hover-iframe"); 
+
+function postMessageToVimeo(player, command) {
+  player.contentWindow.postMessage(JSON.stringify({ method: command }), '*');
+}
+
+window.addEventListener("mousemove", (e) => {
+  targets.forEach((iframe) => {
+    const el = iframe.closest(".socials-wraper");
+    const top = el.getBoundingClientRect().top - 40;
+    const left = el.getBoundingClientRect().left + 180;
+    
+    gsap.to(iframe, {
+      x: e.clientX - left,
+      y: e.clientY - top,
+      duration: 1,
+      ease: "power3.out",
+      overwrite: "auto",
+      stagger: 0.02
+    });
+  });
+});
+
+gsap.utils.toArray(".artists .socials-wraper").forEach((el) => {
+  const iframe = el.querySelector(".hover-iframe");
+
+  const fadeIn = gsap.to(iframe, {
+    autoAlpha: 1,
+    scale: 1,
+    duration: 1,
+    ease: "power3.out",
+    overwrite: "auto",
+    paused: true,
+  });
+
+  el.addEventListener("mouseenter", () => {
+    fadeIn.play();  
+    postMessageToVimeo(iframe, 'play'); 
+  });
+
+  el.addEventListener("mouseleave", () => {
+    fadeIn.reverse();  
+    postMessageToVimeo(iframe, 'pause'); 
+    postMessageToVimeo(iframe, 'setCurrentTime', 0); 
+  });
+});
+
 });

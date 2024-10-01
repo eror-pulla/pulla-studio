@@ -11,7 +11,7 @@
     z-index: 3;
     transition: transform 0.5s ease-out;
     padding-top: 12px;
-    padding-bottom: 10px;
+    padding-bottom: 12px;
     &.hidden {
         transform: translateY(-200%);
     }
@@ -88,6 +88,7 @@
     }
 }
 .overlay-loader{
+    display: none;
     width: 100vw;
     height: 100vw;
     position: fixed;
@@ -95,7 +96,7 @@
     left: 0;
     background-color: $priamry_color;
     z-index: 4;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.4s ease;
     overflow-y: hidden;
     overflow-x: hidden;
     .loader{
@@ -139,6 +140,66 @@
             }
         }
     }
+}
+.loader-next-page{
+    display: none;
+    width: 100vw;
+    height: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: $priamry_color;
+    z-index: 4;
+    transition: opacity 0.4s ease;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    .loader{
+        padding: 0 48px;
+        height: 100%;
+        width: 100%;
+        .inside-loader{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 45%;
+            width: 100%;
+            .loading-process{
+                p{
+                    font-family: 'Aeonik-Regular', sans-serif;
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 28.8px;
+                    color: $third_color;
+                }
+            }
+            .wrap-text{
+                p{
+                    font-family: 'Aeonik-Regular', sans-serif;
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 28.8px;
+                    color: $third_color;
+                    margin: 0;
+                    margin-bottom: 22px;
+                }
+                h3{
+                    font-family: 'Defectica-Regular', sans-serif;
+                    text-transform: uppercase;
+                    font-weight: 400;
+                    font-size: 52px;
+                    line-height: 28.8px;
+                    color: $third_color;
+                    margin: 0;
+                }
+            }
+        }
+    }
+}
+
+.show {
+    display: flex; 
+    opacity: 1; 
+    transition: opacity 0.4s ease;
 }
 
 @keyframes fadeInHeader {
