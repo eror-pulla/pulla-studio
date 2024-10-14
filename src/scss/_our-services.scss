@@ -125,17 +125,6 @@
     }
 }
 
-// .text-wraper{
-//     opacity: 0;
-//     transition: all ease-in .3s;
-//     transition-delay: .3s;
-//     &.is-inview{
-//         opacity: 1;
-//     }
-// }
-
-
-
 .wrap-products {
     position: relative;
     overflow: hidden; 
@@ -165,5 +154,150 @@
     100% {
         transform: scaleX(1); 
     }
+}
+
+@media(max-width:1600px){
+    .services .wraper-services .inside-services .headline h1 {
+        font-size: 155px;
+        line-height: 200.4px;
+    }
+    .services .wraper-services .inside-services .headline .indent::after {
+        left: 27%;
+    }
+}
+@media(max-width:1440px){
+    .about-page-wrap123 {
+        padding-top: 50px;
+    }
+    .services .wraper-services .inside-services .headline h1 {
+        font-size: 135px;
+        line-height: 190.4px;
+    }
+    .services .wraper-services .inside-services .headline .indent::after {
+        left: 27%;
+    }
+}
+@media(max-width:1200px){
+    .services .wraper-services .inside-services .headline h1 {
+        font-size: 105px;
+        line-height: 170.4px;
+    }
+    .services .wraper-services .inside-services .headline .indent::after {
+        width: 165px;
+    }
+}
+@media(max-width:992px){
+    .services .wraper-services .inside-services .headline h1 {
+        font-size: 80px;
+        line-height: 126.4px;
+    }
+    .services .wraper-services .inside-services .headline .indent::after {
+        width: 125px; 
+        left: 23%;   
+    }
+    .services .wraper-services .inside-services .services-products .products-inside .wrap-products .categories {
+        gap: 70px;
+    }
+    .services .wraper-services .inside-services .services-products .products-inside .wrap-products .name h3 {
+        font-size: 42px;
+        line-height: 62px;
+    }
+    .services .wraper-services .inside-services .services-products .products-inside .wrap-products .categories .button-wraper .button {
+        padding: 11px 30px;
+        font-size: 14px;
+        line-height: 21.8px;
+    }
+    .services .wraper-services .inside-services .services-products .products-inside .wrap-products {
+        padding-top: 41px;
+        margin-bottom: 70px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .services .wraper-services .inside-services .services-products .products-inside .wrap-products {
+        gap: 30px;
+    }
+}
+
+@media(max-width:768px){
+    .services .wraper-services .inside-services .services-products .products-inside .wrap-products {
+        flex-direction: column;
+    }
+    .services .wraper-services .inside-services .services-products .products-inside .wrap-products .categories {
+        gap: 56px;
+        flex-direction: column-reverse;
+    }
+    .services .wraper-services .inside-services .services-products .products-inside .wrap-products {
+        gap: 22px;
+    }
+    .services .wraper-services {
+        padding: 0 16px;
+        padding-top: 100px;
+    }
+    .services .wraper-services .inside-services .services-products .products-inside .wrap-products .categories .text-wraper p {
+        font-size: 16px;
+        line-height: 24.2px;
+    }
+    .services .wraper-services .inside-services .services-products .products-inside .wrap-products .name h3 {
+        font-size: 34px;
+        line-height: 56px;
+    }
+}
+
+@media(max-width:680px){
+    .services .wraper-services .inside-services .headline h1 {
+        font-size: 60px;
+        line-height: 74.4px;
+    }
+    .services .wraper-services .inside-services .headline .indent {
+        text-indent: 50%;
+    }
+    .services .wraper-services .inside-services .services-products .products-inside p {
+        margin: 0;
+        margin-bottom: 16px;
+        font-size: 12px;
+        line-height: 13.52px;
+    }
+}
+@media(max-width:550px){
+    .services .wraper-services .inside-services .headline h1 {
+        font-size: 46px;
+        line-height: 62.4px;
+    }
+    .services .wraper-services .inside-services .headline .indent::after {
+        width: 80px;
+        left: 25%;
+    }
+    .services .wraper-services .inside-services .services-products .products-inside .wrap-products .name h3 {
+        font-size: 30px;
+        line-height: 52px;
+    }
+    .services .wraper-services .inside-services .services-products .products-inside .wrap-products .categories .button-wraper .button {
+        padding: 11px 24px;
+
+    }
+}
+@media(max-width:425px){
+    .services .wraper-services .inside-services .headline .indent {
+        text-indent: 48%;
+    }
+    .services .wraper-services .inside-services .services-products .products-inside .wrap-products .categories .button-wraper {
+        gap: 10px;
+    }
+    .services .wraper-services .inside-services .headline h1 {
+        font-size: 44px;
+        line-height: 60.4px;
+    }
+    .services .wraper-services .inside-services .headline .indent::after {
+        width: 75px;
+        left: 25%;
+    }
+}
+@media(max-width:390px){
+
+    .services .wraper-services .inside-services .headline h1 {
+        font-size: 42px;
+        line-height: 60.4px;
+    }
+
 }
 

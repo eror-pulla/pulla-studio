@@ -51,12 +51,15 @@
                                                         $video_class = 'img-wrap-' . $counter;
                                                         ?>
                                                         <div class="<?php echo esc_attr($video_class); ?>" data-scroll>
+                                                            <div class="brick-img" data-scroll data-scroll-speed="-2">
                                                             <div class="plyr__video-embed">
                                                                 <iframe
                                                                     src="https://player.vimeo.com/video/<?php echo esc_attr($video); ?>?loop=false&amp;byline=false&amp;portrait=false&amp;title=false&amp;speed=true&amp;transparent=0&amp;gesture=media"
                                                                     allow="autoplay; fullscreen; picture-in-picture"
                                                                     allowfullscreen
                                                                 ></iframe>
+                                                            </div>
+                                                            <div class="curtain"></div>
                                                             </div>
                                                         </div>
                                                         <?php
@@ -99,12 +102,15 @@
                                             elseif (strtolower($choose_img_or_video) == 'video' && !empty($video)):
                                                 ?>
                                                 <div class="video-wrap">
+                                                <div class="brick-img" data-scroll data-scroll-speed="-2">
                                                     <div class="plyr__video-embed">
                                                         <iframe
                                                             src="https://player.vimeo.com/video/<?php echo esc_attr($video); ?>?loop=false&amp;byline=false&amp;portrait=false&amp;title=false&amp;speed=true&amp;transparent=0&amp;gesture=media"
                                                             allow="autoplay; fullscreen; picture-in-picture"
                                                             allowfullscreen
                                                         ></iframe>
+                                                    </div>
+                                                    <div class="curtain"></div>
                                                     </div>
                                                 </div>
                                                 <?php
@@ -156,7 +162,7 @@
                                 if( have_rows('3_grid') ):
                                     while( have_rows('3_grid') ): the_row();
                                         if( have_rows('repeater') ):
-                                            $class_names = ['img-M right', 'img-S left', 'img-L middle'];
+                                            $class_names = ['img-M right-3', 'img-S left', 'img-L middle-3'];
                                             ?>
                                             <div class="wraper-grid-3" data-scroll-section>
                                                 <?php 
@@ -187,12 +193,15 @@
                                                             <!-- <img src="<?php echo $image_url; ?>" alt="<?php echo $image_alt; ?>"> -->
                                                         <?php elseif (strtolower($choose_img_or_video) == 'video' && !empty($video)): ?>
                                                             <div class="video-wrap">
+                                                                <div class="brick-img" data-scroll data-scroll-speed="-2">
                                                                 <div class="plyr__video-embed">
                                                                     <iframe
                                                                         src="https://player.vimeo.com/video/<?php echo esc_attr($video); ?>?loop=false&amp;byline=false&amp;portrait=false&amp;title=false&amp;speed=true&amp;transparent=0&amp;gesture=media"
                                                                         allow="autoplay; fullscreen; picture-in-picture"
                                                                         allowfullscreen
                                                                     ></iframe>
+                                                                </div>
+                                                                <div class="curtain"></div>
                                                                 </div>
                                                             </div>
                                                         <?php endif; ?>
@@ -243,12 +252,15 @@
                                                             <!-- <img src="<?php echo $image_url; ?>" alt="<?php echo $image_alt; ?>"> -->
                                                         <?php elseif (strtolower($choose_img_or_video) == 'video' && !empty($video)): ?>
                                                             <div class="video-wrap">
+                                                            <div class="brick-img" data-scroll data-scroll-speed="-2">
                                                                 <div class="plyr__video-embed">
                                                                     <iframe
                                                                         src="https://player.vimeo.com/video/<?php echo esc_attr($video); ?>?loop=false&amp;byline=false&amp;portrait=false&amp;title=false&amp;speed=true&amp;transparent=0&amp;gesture=media"
                                                                         allow="autoplay; fullscreen; picture-in-picture"
                                                                         allowfullscreen
                                                                     ></iframe>
+                                                                </div>
+                                                                <div class="curtain"></div>
                                                                 </div>
                                                             </div>
                                                         <?php endif; ?>

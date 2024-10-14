@@ -56,10 +56,7 @@
 		<div class="header-wrpaper">
 			<div class="inside-header">
 				<div class="img-logo-wrap">
-					<a href="/pulla/">
-						<img src="<?php echo($logo); ?>" alt="">
-					</a>
-					<!-- <p>Logo</p> -->
+					<li><a href="/pulla/">HOME</a></li>
 				</div>
 				<nav class="nav">
 				<?php
@@ -68,11 +65,41 @@
                     ));
                 ?>
 				</nav>
+				<li class="mob-menu"><button>MENU</button></li>
 			</div>
 		</div>
 	</header>
+	<section class="header-mobile">
+		<div class="wrap-mobile-header">
+			<div class="inside-mobile-header">
+				<div class="top-section">
+					<p><a href="/pulla/">HOME</a></p>
+					<div class="close-btn"></div>
+				</div>
+				<div class="inside-header">
+					<a href="/pulla/">HOME</a>
+					<nav class="nav-mob">
+					<?php
+						wp_nav_menu(array(
+							'theme_location' => 'main-menu',
+						));
+					?>
+					</nav>
+				</div>
+				<div class="columns-2">
+					<div class="wrap-menu-footer">
+						<?php
+						wp_nav_menu(array(
+							'theme_location' => 'social-menu'
+						));
+						?>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 	<?php if (is_page('company')) { 
 		echo '<div class="about-page-wrap">';
 		} ?> 
-	<section class="site-wraper">
+	<section class="all-site-wraper">
 

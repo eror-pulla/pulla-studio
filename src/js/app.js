@@ -22,9 +22,20 @@ jQuery(document).ready(function($) {
         scroll = new LocomotiveScroll({
             el: scroller,
             smooth: true,
+            smoothMobile: true,
             getDirection: true,
             multiplier: 1,
-            direction: 'vertical'
+            direction: 'vertical',
+            mobile: {
+                breakpoint: 0,
+                smooth: true,
+                getDirection: true,
+            },
+            tablet: {
+                breakpoint: 0,
+                smooth: true,
+                getDirection: true,
+            }
         });
 
         scroll.on('scroll', function (event) {
@@ -269,5 +280,14 @@ jQuery(document).ready(function($) {
         setTimeout(function() {
             $customCursor.text('Copy to clipboard').removeClass('copied');
         }, 2000);
+    });
+
+    $('.mob-menu button').click(function() {
+        $('.header-mobile').addClass('active');
+        $('body').addClass('menu-active'); 
+    });
+    $('.close-btn').click(function() {
+        $('.header-mobile').removeClass('active');
+        $('body').removeClass('menu-active');
     });
 });

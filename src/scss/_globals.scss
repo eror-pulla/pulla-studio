@@ -137,8 +137,17 @@ $Switzer-Medium: 'Switzer-Medium';
     position: relative;
     left: 35%;
 }
+.middle-3{
+    position: relative;
+    left: 35%;
+}
 
 .right{
+    position: relative;
+    left: 62.8%;
+    margin-bottom: 140px;
+}
+.right-3{
     position: relative;
     left: 62.8%;
     margin-bottom: 140px;
@@ -156,11 +165,9 @@ $Switzer-Medium: 'Switzer-Medium';
 }
 
 .right2{
-    // padding-top: 20%;
     position: absolute;
     top: 10%;
     left: 62.8%;
-    // margin-bottom: 140px;
 }
 .left3{
     position: absolute;
@@ -309,5 +316,37 @@ h5{
     &.is-inview{
         opacity: 1;
         transform: translateY(0);
+    }
+}
+@media(max-width:1200px){
+    .right2{
+        top: 7%;
+    }
+    .right{
+
+        margin-bottom: 120px;
+    }
+}
+@media(max-width:768px){
+    .middle2
+    {
+        margin-top: 0;
+    }
+}
+
+@media(max-width:1024px){
+    .middle-3{
+        left: 40%;
+    }
+    .right-3{
+        left: 60.8%;
+    }
+}
+@media(max-width:1024px){
+    .middle-3{
+        left: 0%;
+    }
+    .right-3{
+        left: 25%;
     }
 }

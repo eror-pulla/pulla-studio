@@ -87,7 +87,6 @@
     }
 }
 
-
 .swiper-slide {
     position: relative;
     overflow: hidden;
@@ -150,3 +149,29 @@
       }
     }
   }
+
+  @media(max-width:992px){
+    .awards .wraper-awards .inside-awards .swiper .swiper-wrapper .swiper-slide a .inside-slide .text-wrap-award .name, .awards .wraper-awards .inside-awards .mySwiper .swiper-wrapper .swiper-slide a .inside-slide .text-wrap-award .name {
+      font-size: 16px;
+      line-height: 28.4px;
+  }
+  .awards .wraper-awards .inside-awards .title {
+    font-size: 90px;
+    line-height: 110.4px;
+  }
+}
+
+
+  @media(max-width:768px){
+
+    .awards .wraper-awards {
+      padding: 0 16px;
+  }
+  .awards .wraper-awards .inside-awards .title {
+    font-size: 60px;
+    line-height: 72.4px;
+  }
+  
+}
+
+

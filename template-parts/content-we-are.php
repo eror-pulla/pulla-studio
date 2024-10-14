@@ -11,7 +11,7 @@ $text_right = $we_are['text_right'];
 <section class="we-are">
     <div class="wrap-we-are">
         <div class="inside-we-are">
-            <p> / WE ARE /</p>
+            <p class="we"> / WE ARE /</p>
             <div class="wraper-inside-text">
                 <h5 data-scroll><?php echo $title ?></h5>
                 <div class="texts">

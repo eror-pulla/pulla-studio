@@ -73,7 +73,7 @@ $info=$footer['info'];
 						</a>
 					</p>
 				</div>
-				<div class="custom-cursor">Copy to Clipboard</div>
+				<div class="custom-cursor">Copy Email</div>
 			</div>
 			<div class="copy-rights">
 				<div class="columns-2">
@@ -93,6 +93,60 @@ $info=$footer['info'];
 			</div>
 		</div>
 	</footer>
+
+	<?php if (is_page('company')) { 
+		echo '<footer class="footer-mobile" data-scroll>'; }
+		else{
+			echo '<footer class="footer-mobile" data-scroll-section data-scroll>';
+		} ?>
+		<div class="footer-mobile-wrap">
+			<div class="intro-wrap">
+				<h5 data-scroll><?php echo($message); ?></h5>
+				<p data-scroll><?php echo($text_footer); ?><?php echo($text_footer_brake); ?></p>
+			</div>
+			<div class="wrap-foot-menu">
+				<div class="columns-2">
+					<div class="wrap-menu-footer">
+						<?php
+						wp_nav_menu(array(
+							'theme_location' => 'footer-main-menu',
+						));
+						?>
+					</div>
+				</div>
+				<div class="columns-2">
+					<div class="wrap-menu-footer">
+						<?php
+						wp_nav_menu(array(
+							'theme_location' => 'social-menu'
+						));
+						?>
+					</div>
+				</div>
+			</div>
+			<div class="info-big-banner">
+				<div class="split-lines">
+					<p data-scroll>
+						<?php echo($info); ?>
+					</p>
+				</div>
+			</div>
+			<div class="columns-3">
+					<div class="address">
+						<p data-scroll><?php echo($address);?> <br><?php echo($address_brake);?></p>
+					</div>
+			</div>
+			<div class="copy-rights">
+				<div class="columns-2">
+					<p data-scroll><?php echo($copyrights); ?></p>
+				</div>
+				<div class="columns-6">
+					<p data-scroll class="gray-text"><?php echo($site_by); ?></p><a class='white' target="_blank" href="https://pulla.digital/"  rel="noopener noreferrer" data-scroll>Pulla Digital</a>
+				</div>
+			</div>
+		</div>
+	</footer>
+
 	<?php if (is_page('company')) { 
 		echo '</div>'; } ?> 
 </div><!-- #page -->

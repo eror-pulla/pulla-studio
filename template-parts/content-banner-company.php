@@ -10,7 +10,7 @@ $banner_img = get_field('img_banner');
                     <h1 class="crack" data-scroll>MoRE ABouT </h1>
                 </div>
                 <div class="split-lines">
-                    <h1 class='break-text' data-scroll> <p>/ Text /</p> Our cOmpany </h1>
+                    <h1 class='break-text' data-scroll> <p data-scroll>/ Text /</p> Our cOmpany </h1>
                 </div>
             </div>
             <div class="img-wraper">
