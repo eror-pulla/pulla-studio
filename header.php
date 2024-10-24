@@ -76,8 +76,7 @@
 					<p><a href="/pulla/">HOME</a></p>
 					<div class="close-btn"></div>
 				</div>
-				<div class="inside-header">
-					<a href="/pulla/">HOME</a>
+				<div class="inside-header" >
 					<nav class="nav-mob">
 					<?php
 						wp_nav_menu(array(
@@ -86,7 +85,7 @@
 					?>
 					</nav>
 				</div>
-				<div class="columns-2">
+				<div class="columns-2" >
 					<div class="wrap-menu-footer">
 						<?php
 						wp_nav_menu(array(

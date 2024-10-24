@@ -26,64 +26,62 @@
                     flex-direction: column;
                     align-items: end;
                     .socials-wraper{
-                        // display: flex;
-                        // justify-content: space-between;
-                        // align-items: flex-start;
                         width: 75%;
-                        // padding-bottom: 60px;
-                        // padding-top: 24px;
                         &:last-child{
                             border: none;
                         }
-                        .nr{
-                            margin: 0;
-                            font-family: 'Aeonik-Regular', sans-serif;
-                            color: $priamry_color;
-                            font-size: 18px;
-                            line-height: 28.8px;
-                            font-weight: 400;
-                            transition-delay: .4s;
-                        }
-                        .name{
-                            margin: 0;
-                            font-family: 'Defectica-Regular', sans-serif;
-                            color: $priamry_color;
-                            font-size: 60px;
-                            line-height: 72px;
-                            font-weight: 400;
-                            width: 310px;
-                            max-width: 310px;
-                            text-align: left;
-                            transition-delay: .5s;
-                        }
-                        .go-to{
-                            .link-in-link{
+                        .show-img{
+                            .nr{
                                 margin: 0;
-                                text-decoration: none;
-                                display: flex;
-                                gap: 8px;
-                                align-items: baseline;
-                                p{
+                                font-family: 'Aeonik-Regular', sans-serif;
+                                color: $socials-col;
+                                font-size: 18px;
+                                line-height: 28.8px;
+                                font-weight: 400;
+                                transition-delay: .4s;
+                            }
+                            .name{
+                                margin: 0;
+                                font-family: 'Defectica-Regular', sans-serif;
+                                color: $socials-col;
+                                font-size: 60px;
+                                line-height: 72px;
+                                font-weight: 400;
+                                width: 310px;
+                                max-width: 310px;
+                                text-align: left;
+                                transition-delay: .5s;
+                            }
+                            .go-to{
+                                .link-in-link{
                                     margin: 0;
-                                    font-family: 'Aeonik-Regular', sans-serif;
-                                    color: $priamry_color;
-                                    font-size: 18px;
-                                    line-height: 28.8px;
-                                    font-weight: 400;
-                                    text-transform: uppercase;
-                                    transition-delay: .6s;
-
-                                }
-                                img{
-                                    width: 12px !important;
-                                    height: 12px !important;
-                                    opacity: 0 ;
-                                    transform: translateY(20px) ;
-                                    transition: all ease-in-out .4s ;
-                                    transition-delay: .6s ;
-                                    &.is-inview{
-                                        opacity: 1;
-                                        transform: translateY(0) !important;
+                                    text-decoration: none;
+                                    display: flex;
+                                    gap: 8px;
+                                    align-items: baseline;
+                                    p{
+                                        margin: 0;
+                                        font-family: 'Aeonik-Regular', sans-serif;
+                                        color: $socials-col;
+                                        font-size: 18px;
+                                        line-height: 28.8px;
+                                        font-weight: 400;
+                                        text-transform: uppercase;
+                                        transition-delay: .6s;
+    
+                                    }
+                                    img{
+                                        width: 12px !important;
+                                        height: 12px !important;
+                                        opacity: 0 ;
+                                        transform: translateY(20px) ;
+                                        transition: all ease-in-out .4s ;
+                                        transition-delay: .6s ;
+                                        filter: brightness(0) saturate(100%) invert(83%) sepia(6%) saturate(480%) hue-rotate(201deg) brightness(87%) contrast(87%);
+                                        &.is-inview{
+                                            opacity: 1;
+                                            transform: translateY(0) !important;
+                                        }
                                     }
                                 }
                             }
@@ -200,8 +198,41 @@
 }
 
 
+.social-media .wraper-social .inside-social .socials ul .socials-wraper .show-img {
+    &:hover {
+        .nr {
+            transition: color ease 0.2s; 
+            color: $priamry_color; 
+            transition-delay: 0s; 
+        }
 
+        .name {
+            transition: color ease 0.2s; 
+            color: $priamry_color; 
+            transition-delay: 0s; 
+        }
 
+        .go-to .link-in-link {
+            p {
+                transition: color ease 0.2s; 
+                color: $priamry_color; 
+                transition-delay: 0s; 
+            }
+            img {
+                transition: filter ease 0.2s; 
+                filter: revert;
+                transition-delay: 0s; 
+            }
+        }
+    }
+    .nr,
+    .name,
+    .go-to .link-in-link p,
+    .go-to .link-in-link img {
+        transition: all ease 0.3s;
+        transition-delay: 0.3s; 
+    }
+}
 
 @media(max-width:1440px){
 
