@@ -326,6 +326,13 @@ jQuery(document).ready(function($) {
             window.location.href = $(this).attr('href');
         }
     });
+    $('.home .header-mobile .wrap-mobile-header .inside-mobile-header .top-section p a').click(function (e) {
+        e.preventDefault();
+        $('.header-mobile').removeClass('active');
+        setTimeout(() => {                
+            window.location.href = $(this).attr('href');
+        }, 300);
+    });
 });
 
 
