@@ -551,6 +551,9 @@
     }
 }
 @media(max-width:768px){
+    .cases-home .wraper-cases .inside-cases .img-1-big, .cases-home .wraper-cases .inside-cases .img-last {
+        margin-bottom: 0px;
+    }
     .cases-home{
         .wraper-cases{
             padding: 0 16px;
@@ -558,7 +561,7 @@
                 .img-1-big,
                 .img-last{
                     max-height: 480px;
-                    height: 480px;
+                    height: 370px;
                     a{
                         .text{
                             margin-top: 8px;

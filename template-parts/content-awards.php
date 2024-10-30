@@ -20,7 +20,7 @@
                                 <div class="inside-slide" >
                                     <div class="img-wrap-company">
                                         <?php if ($image): ?>
-                                             src="<?php echo esc_url($image); ?>" alt="" data-scroll>
+                                             <img src="<?php echo esc_url($image); ?>" alt="" data-scroll>
                                         <?php else: ?>
                                             <p>No image available</p>
                                         <?php endif; ?>

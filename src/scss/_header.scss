@@ -8,7 +8,7 @@
         position: fixed;
         top: 0;
         left: 0; 
-        z-index: 3;
+        z-index: 7;
         transition: transform 0.5s ease-out;
         padding-top: 12px;
         padding-bottom: 12px;
@@ -493,8 +493,14 @@
             transition: transform 0.3s ease-in-out;
             .wrap-mobile-header{
                 padding: 0 16px;
+                height: 100%;
                 .inside-mobile-header{
                     transition: all ease-in-out .3s;
+                    display: flex;
+                    justify-content: space-around;
+                    flex-direction: column;
+                    height: 100%;
+                    width: 100%;
                     .top-section{
                         padding-top: 16px;
                         padding-bottom: 15%;
@@ -549,6 +555,7 @@
                         border-top: 1px solid $border-col;
                         border-bottom: 1px solid $border-col;
                         position: relative;
+                        height: 100%;
                         &.is-inview{
                             &::after{
                                 opacity: 1;
@@ -637,7 +644,8 @@
                     }
                     .columns-2{
                         width: 100%;
-                        padding-top: 5%;
+                        height: 45%;
+                        // padding-top: 5%;
                         opacity: 0;
                         transition: all ease-in-out .3s;
                         transform: translateY(50px);
@@ -650,11 +658,12 @@
                             display: flex;
                             width: 100%;
                             height: 100%;
-                            align-items: end;
+                            align-items: center;
                             justify-content: center;
                             .menu-social-menu-container{
                                 max-width: 270px;
                                 ul{
+                                    margin: 20px 0;
                                     display: flex;
                                     flex-direction: row;
                                     flex-wrap: wrap;
@@ -705,6 +714,7 @@
         display: block;
 
         button {
+            padding: 0;
             font-family: 'Aeonik-Regular', sans-serif;
             font-weight: 400;
             font-size: 24px;
@@ -739,7 +749,11 @@
         transition: transform 0.3s ease-in-out;
         .wrap-mobile-header{
             padding: 0 16px;
+            height: 100%;
             .inside-mobile-header{
+                display: flex;
+                flex-direction: column;
+                height: 100%;
                 .top-section{
                     padding-top: 16px;
                     padding-bottom: 15%;
@@ -789,11 +803,12 @@
                 }
                 .inside-header{
                     padding-left: 16px;
-                    padding-top: 10%;
-                    padding-bottom: 20%;
+                    padding-top: 15%;
+                    padding-bottom: 0%;
                     border-top: 1px solid $border-col;
                     border-bottom: 1px solid $border-col;
                     position: relative;
+                    height: 100%;
                     &::after{
                         content: "";
                         background-image: url('../../imgs/union-white.svg');
@@ -860,7 +875,7 @@
                 }
                 .columns-2{
                     width: 100%;
-                    padding-top: 5%;
+                    // padding-top: 5%;
                     .wrap-menu-footer{
                         display: flex;
                         width: 100%;
@@ -870,6 +885,7 @@
                         .menu-social-menu-container{
                             max-width: 270px;
                             ul{
+                                margin: 20px 0;
                                 display: flex;
                                 flex-direction: row;
                                 flex-wrap: wrap;

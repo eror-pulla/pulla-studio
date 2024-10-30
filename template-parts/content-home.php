@@ -17,6 +17,7 @@ $video_id_mobile = $banner['video_id_mobile'] ?? '';
 <section class="home-banner" data-scroll-section>
     <div class="wrap-home-banner">
         <div class="inside-home-banner" data-scroll>
+            <div class="over-banner-home"></div>
             <div class="autoplay-video" data-scroll>
                 <iframe src="https://player.vimeo.com/video/<?php echo $video_id ?>?background=1&amp;autopause=0&amp;muted=1&amp;autoplay=1"
                     frameborder="0" autopause="0" allow="autoplay; picture-in-picture" allowfullscreen="" webkitallowfullscreen="" mozallowfullscreen="" 

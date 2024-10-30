@@ -163,7 +163,13 @@
 
 
   @media(max-width:768px){
+    .awards .wraper-awards .inside-awards .title {
+      transform: translate(0px, 117%);
+      &.is-inview{
+        transform: translate(0px, 0px);
 
+      }
+    }
     .awards .wraper-awards {
       padding: 0 16px;
   }

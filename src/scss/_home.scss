@@ -268,12 +268,13 @@
                     width: 100vw;
                     height: 52.6vw !important;
                     min-height: 100vh;
-                    min-width: 100% !important;
+                    min-width: 188.77vh !important;
                     background-color: #000;
                     position: absolute;
-                    top: 0;
-                    left: 0;
+                    top: 50%;
+                    left: 50%;
                     width: 100%;
+                    // transform: translate(-50%,-50%);
                     height: calc(100vh);
                     z-index: 2;
                 }
@@ -294,7 +295,7 @@
                 top: 15%;
                 left: 0%;
                 transform: translate(0%, -10%);
-                z-index: 3;
+                z-index: 5;
                 width: 100%;
                 .title-big{
                     padding: 0 48px;
@@ -338,12 +339,9 @@
             .bottom-wrap-home{
                 position: absolute;
                 bottom: 0%;
-                // left: 2%;
                 transform: translate(0%, -10%);
-                z-index: 3;
+                z-index: 5;
                 width: 100%;
-                // display: flex;
-                // flex-direction: column;
                 .wrap-bottom-home{
                     display: flex;
                     flex-direction: column;
@@ -432,6 +430,12 @@
                     }
                 }
             }
+            .over-banner-home{
+                position: absolute;
+                width: 100vw;
+                height: 100vh;
+                z-index: 5;
+            }
         }
     }
 }
@@ -480,11 +484,14 @@
         min-height: 100vh;
         background-color: $priamry_color;
         .iframe-vid-mobile{
-            position: absolute; 
-            top: 0; 
-            left: 0;
-            width: 100%; 
-            height: 100%; 
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            transform: translate(-50%, -50%);
+            min-width: 142vw !important;
+            min-height: 160vh;
         }
     }
     .home-banner .wrap-home-banner .inside-home-banner .title-wrap-home .title-big .split-lines h1 {

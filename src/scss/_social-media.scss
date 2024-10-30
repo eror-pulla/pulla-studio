@@ -95,7 +95,6 @@
 
 .socials{
     position: relative;
-    // overflow: hidden; 
     &::before {
         content: '';
         position: absolute;
@@ -124,7 +123,6 @@
 }
 .socials-wraper{
     position: relative;
-    // overflow: hidden; 
     cursor: default;
     &::before {
         content: '';
@@ -261,7 +259,8 @@
     .social-media .wraper-social .inside-social .socials ul .socials-wraper {
         width: 80%;
     }
-    .social-media .wraper-social .inside-social .socials ul .socials-wraper .name {
+    
+    .social-media .wraper-social .inside-social .socials ul .socials-wraper .show-img .name {
         font-size: 54px;
         line-height: 60px;
     }
@@ -280,7 +279,7 @@
         padding-bottom: 42px;
         padding-top: 24px;
     }
-    .social-media .wraper-social .inside-social .socials ul .socials-wraper .name {
+    .social-media .wraper-social .inside-social .socials ul .socials-wraper .show-img .name {
         font-size: 44px;
         line-height: 54px;
         width: 240px;
@@ -292,6 +291,9 @@
 
 
 @media(max-width:768px){
+    .socials-wraper .imgs-wrap-social {
+        display: none;
+    }
     .social-media .wraper-social {
         padding: 0 16px;
     }
@@ -306,7 +308,7 @@
         font-size: 64px;
         margin-bottom: 14px;
     }
-    .social-media .wraper-social .inside-social .socials ul .socials-wraper .name {
+    .social-media .wraper-social .inside-social .socials ul .socials-wraper .show-img .name {
         font-size: 28px;
         line-height: 34px;
         width: 170px;

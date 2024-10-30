@@ -30,3 +30,9 @@ html.has-scroll-smooth {
 html{
     overflow: hidden;
 }
+
+@media(max-width:768px) {
+    html{
+        overflow: auto;
+    }
+}
